@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Company>NewCity</Company>
+    <Authors>NewCity</Authors>
+    <Product>NewCity</Product>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.4</Version>
+    <Description>新都興共用元件庫</Description>
+    <RootNamespace>NewCity.Common</RootNamespace>
+  </PropertyGroup>
+
+</Project>
