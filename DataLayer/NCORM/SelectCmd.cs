@@ -34,9 +34,20 @@ namespace NewCity.DataAccess
                 }
 
                 if (sbQry.ToString() == string.Empty)
-                    sbQry.AppendFormat("{0}={1}", base.QuotedFieldName(pi.Name), base.QuotedValueByType(pi.GetValue(row).ToString(), pi));
+                {
+                    if (pi.GetValue(row).ToString().StartsWith("%") || pi.GetValue(row).ToString().EndsWith("%"))
+                        sbQry.AppendFormat("{0} like {1}", base.QuotedFieldName(pi.Name), base.QuotedValueByType(pi.GetValue(row).ToString(), pi));
+                    else
+                        sbQry.AppendFormat("{0}={1}", base.QuotedFieldName(pi.Name), base.QuotedValueByType(pi.GetValue(row).ToString(), pi));
+                }
                 else
-                    sbQry.AppendFormat(" and {0}={1}", base.QuotedFieldName(pi.Name), base.QuotedValueByType(pi.GetValue(row).ToString(), pi));
+                {
+                    if (pi.GetValue(row).ToString().StartsWith("%") || pi.GetValue(row).ToString().EndsWith("%"))
+                        sbQry.AppendFormat("and {0} like {1}", base.QuotedFieldName(pi.Name), base.QuotedValueByType(pi.GetValue(row).ToString(), pi));
+                    else
+                        sbQry.AppendFormat(" and {0}={1}", base.QuotedFieldName(pi.Name), base.QuotedValueByType(pi.GetValue(row).ToString(), pi));
+                }
+                    
             }
 
             var tabname = row.GetType().GetTableName();
