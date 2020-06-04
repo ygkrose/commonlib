@@ -1,7 +1,9 @@
-using NewCity.DataAccess.Model;
 using System;
+using NewCity.DataAccess.Model;
 using System.ComponentModel.DataAnnotations;
 
+namespace NewCity.DataAccess.Model
+{
 /// <summary>
 /// 申請資料表
 /// </summary>
@@ -147,7 +149,7 @@ public class Apply : TableBase
     ///<summary>
     ///統一編號
     ///</summary>
-    public string TaxId { get; set; }
+public string GUINo { get; set; }
 
     ///<summary>
     ///法人代表人
@@ -195,7 +197,7 @@ public class Apply : TableBase
     public string AccountNo { get; set; }
 
     ///<summary>
-    ///存摺影本上傳後的檔案代碼
+	///影本上傳後的檔案代碼
     ///</summary>
     public Guid? UploadFile_Id { get; set; }
 
@@ -278,4 +280,5 @@ public class Apply : TableBase
     ///設備
     ///</summary>
     public string Facility { get; set; }
+}
 }

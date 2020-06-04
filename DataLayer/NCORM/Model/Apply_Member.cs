@@ -1,7 +1,9 @@
-using NewCity.DataAccess.Model;
 using System;
+using NewCity.DataAccess.Model;
 using System.ComponentModel.DataAnnotations;
 
+namespace NewCity.DataAccess.Model
+{
 /// <summary>
 /// 家庭成員身檔
 /// </summary>
@@ -80,4 +82,5 @@ public class Apply_Member : TableBase
     ///未同戶籍20歲以下子女(0:否,1:是)
     ///</summary>
     public UInt64 Under20 { get; set; }
+}
 }

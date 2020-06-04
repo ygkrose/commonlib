@@ -1,72 +1,70 @@
 using System;
+using NewCity.DataAccess.Model;
 using System.ComponentModel.DataAnnotations;
-using System.Runtime.Serialization;
 
 namespace NewCity.DataAccess.Model
 {
     /// <summary>
-    /// ÀÉ®×¶Ç¿é¸ê®ÆªíÃş§O
+///æª”æ¡ˆå‚³è¼¸è³‡æ–™è¡¨
     /// </summary>
     public class File : TableBase
     {
 
         ///<summary>
-        ///²£«~¦WºÙ
+        ///ç”¢å“åç¨±
         ///</summary>
         [Required]
         public string Prog_Code { get; set; }
 
         ///<summary>
-        ///ÀÉ®×¤W¶Ç¨Ï¥ÎªÌID
+        ///æª”æ¡ˆä¸Šå‚³ä½¿ç”¨è€…ID
         ///</summary>
         [Required]
         public Guid User_Id { get; set; }
 
         ///<summary>
-        ///¨Ï¥ÎªÌ¦WºÙ
-        ///</summary>
-        public string User_Code { get; set; }
-
-        ///<summary>
-        ///ÀÉ®×¸ô®|
+        ///æª”æ¡ˆè·¯å¾‘
         ///</summary>
         [Required]
         public string Path { get; set; }
 
         ///<summary>
-        ///ÀÉ®×¦WºÙ
+        ///æª”æ¡ˆåç¨±
         ///</summary>
         [Required]
         public string Name { get; set; }
 
         ///<summary>
-        ///«Ø¥ß¤é´Á
+        ///å»ºç«‹æ—¥æœŸ
         ///</summary>
         [Required]
         public DateTime CreateDate { get; set; }
 
         ///<summary>
-        ///ÀÉ®×Åv­­ O:Open,D:Delete,L:Limit,A:Auth
+        ///æª”æ¡ˆæ¬Šé™ O:Open,D:Delete,L:Limit,A:Auth
         ///</summary>
         [Required]
         public string Privilege { get; set; }
 
         ///<summary>
-        ///§ó·s¤H­ûID
+        ///æ›´æ–°äººå“¡ID
         ///</summary>
-        public Guid? updateUser_Id { get; set; }
+public Guid? UpdateUser_Id { get; set; }
 
         ///<summary>
-        ///§ó·s¤é´Á
+        ///æ›´æ–°æ—¥æœŸ
         ///</summary>
         public DateTime? UpdateDate { get; set; }
 
         ///<summary>
-        ///±M®×¦WºÙ
+        ///å°ˆæ¡ˆåç¨±
         ///</summary>
         public string ProjectCode { get; set; }
 
-
+///<summary>
+///ä½¿ç”¨è€…åç¨±
+///</summary>
+public string User_Code { get; set; }
     }
 
 

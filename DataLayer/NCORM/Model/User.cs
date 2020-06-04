@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
+using NewCity.DataAccess.Model;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace NewCity.DataAccess.Model
 {
     /// <summary>
-    /// 使用者資料表類別
+///使用者帳號基本資料
     /// </summary>
     public class User : TableBase
     {

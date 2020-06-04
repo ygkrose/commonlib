@@ -1,15 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
+using NewCity.DataAccess.Model;
 using System.ComponentModel.DataAnnotations;
-using System.Runtime.Serialization;
-using System.Text;
 
 namespace NewCity.DataAccess.Model
 {
+/// <summary>
+///帳號綁定
+/// </summary>
     public class User_Binding : TableBase
     {
         /// <summary>
-        /// User Table的 Id
+///帳號Id
         /// </summary>
         [Required]
         public Guid User_Id { get; set; }
@@ -19,10 +20,19 @@ namespace NewCity.DataAccess.Model
         ///</summary>
         public string BindingCode { get; set; }
 
+///<summary>
+///資料
+///</summary>
         public string Data { get; set; }
 
+///<summary>
+///綁定的APP
+///</summary>
         public string BindingAppId { get; set; }
 
+///<summary>
+///預設
+///</summary>
         public UInt64 IsDefault { get; set; }
     }
 }

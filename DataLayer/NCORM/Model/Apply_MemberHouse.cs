@@ -1,6 +1,9 @@
 using System;
-using System.ComponentModel.DataAnnotations;
 using NewCity.DataAccess.Model;
+using System.ComponentModel.DataAnnotations;
+
+namespace NewCity.DataAccess.Model
+{
 /// <summary>
 /// 家庭成員房產身檔
 /// </summary>
@@ -78,4 +81,5 @@ public class Apply_MemberHouse : TableBase
     ///設籍否(0:否,1:是)
     ///</summary>
     public UInt64 Registered { get; set; }
+}
 }

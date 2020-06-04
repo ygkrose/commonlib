@@ -1,6 +1,9 @@
 using System;
-using System.ComponentModel.DataAnnotations;
 using NewCity.DataAccess.Model;
+using System.ComponentModel.DataAnnotations;
+
+namespace NewCity.DataAccess.Model
+{
 /// <summary>
 /// 申請人身檔_代理人
 /// </summary>
@@ -47,4 +50,5 @@ public class Apply_Representative : TableBase
     ///身分證影像檔上傳編號
     ///</summary>
     public Guid? IdCardImgFile_Id { get; set; }
+}
 }

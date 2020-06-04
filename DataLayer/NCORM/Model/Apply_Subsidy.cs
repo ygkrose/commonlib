@@ -1,8 +1,9 @@
-using NewCity.DataAccess.Model;
 using System;
+using NewCity.DataAccess.Model;
 using System.ComponentModel.DataAnnotations;
 
-
+namespace NewCity.DataAccess.Model
+{
 /// <summary>
 /// 已申請租金補貼項目
 /// </summary>
@@ -29,4 +30,5 @@ public class Apply_Subsidy : TableBase
     ///補貼項目名稱
     ///</summary>
     public string SubsidyItem { get; set; }
+}
 }

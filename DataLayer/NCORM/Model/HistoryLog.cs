@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
+using NewCity.DataAccess.Model;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
-using System.Text;
 
 namespace NewCity.DataAccess.Model
 {
     /// <summary>
-    /// 歷程檔資料表類別
+///程式存取紀錄檔
     /// </summary>
     public class HistoryLog : TableBase
     {
