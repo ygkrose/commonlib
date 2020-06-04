@@ -61,7 +61,7 @@ namespace NewCity.DataAccess
         /// <param name="spname">程序名</param>
         /// <param name="param">參數</param>
         /// <returns>查詢的動態類別</returns>
-        public async Task<dynamic> GetSPResult(string spname, object[] param)
+        public async Task<dynamic> GetSPResult(string spname, object param)
         {
             try
             {
