@@ -19,6 +19,9 @@ namespace NewCity.DataAccess
     /// <typeparam name="T">資料表類別</typeparam>
     public class TableEntity<T> where T : TableBase
     {
+        public DBEntity dbEntity;
+        public IDbTransaction globalTrans { get; set; } = null;
+
         private int _cmdTimeout = 0;
         private string _connstr;
         private DBType _dBType;
@@ -30,11 +33,11 @@ namespace NewCity.DataAccess
         /// <param name="connstr">連線字串</param>
         /// <param name="cmdtimeout">逾時設定</param>
         public TableEntity(DBType dbtyp,string connstr, int cmdtimeout = 30)
-        //:base(dbtyp, connstr, cmdtimeout)
         {
             _cmdTimeout = cmdtimeout;
             _connstr = connstr;
             _dBType = dbtyp;
+            dbEntity = new DBEntity(dbtyp, connstr, cmdtimeout);
         }
 
         /// <summary>
@@ -46,28 +49,29 @@ namespace NewCity.DataAccess
             _cmdTimeout = dbe.DBTimeout;
             _connstr = dbe.DBConnStr;
             _dBType = dbe.DBType;
+            dbEntity = dbe;
         }
 
         public List<T> Select(T rowdata)
         {
-            SelectCmd<T> cmd = new SelectCmd<T>(_dBType, _connstr, _cmdTimeout);
-            var trans = cmd.Connection.BeginTransaction(IsolationLevel.ReadUncommitted);
+            SelectCmd<T> cmd = new SelectCmd<T>(dbEntity);
+            var aloneconn = dbEntity.db.CreateConnection();
+            var trans = aloneconn.BeginTransaction(IsolationLevel.ReadUncommitted);
             string sql = cmd.GetSelectCmd(rowdata);
             try
             {
-                var rtn = cmd.Connection.Query<T>(sql, transaction: trans);
+                var rtn = aloneconn.Query<T>(sql, transaction: trans);
                 trans.Commit();
                 return rtn.ToList();
             }
             catch (Exception err)
             {
-                //NCLog.ExceptionLog(err, $"select commands occur error.");
-                trans.Rollback();
+                ErrLog.ExceptionLog(err, $"select commands occur error.");
                 throw err;
             }
             finally
             {
-                cmd.Connection.Close();
+                aloneconn.Close();
             }
 
         }
@@ -84,7 +88,7 @@ namespace NewCity.DataAccess
         /// <returns></returns>
         public bool Delete(T rowdata)
         {
-            DeleteCmd<T> cmd = new DeleteCmd<T>(_dBType, _connstr, _cmdTimeout);
+            DeleteCmd<T> cmd = new DeleteCmd<T>(dbEntity);
             string sql = cmd.GetDeleteCmd(rowdata);
             if (string.IsNullOrEmpty(sql))
             {
@@ -92,18 +96,18 @@ namespace NewCity.DataAccess
             }
             try
             {
-                CommandDefinition cd = new CommandDefinition(commandText:sql, commandTimeout:_cmdTimeout);
+                CommandDefinition cd = new CommandDefinition(commandText:sql, commandTimeout:_cmdTimeout, transaction: globalTrans);
                 cmd.Connection.Execute(sql);
                 return true;
             }
             catch (Exception err)
             {
-                //NCLog.ExceptionLog(err, $"delete row from {rowdata.GetType().Name} occur error.");
+                ErrLog.ExceptionLog(err, $"delete row from {rowdata.GetType().Name} occur error.");
                 return false;
             }
             finally
             {
-                cmd.Connection.Close();
+                if (globalTrans == null) cmd.Connection.Close();
             }
             
         }
@@ -115,8 +119,8 @@ namespace NewCity.DataAccess
         /// <returns></returns>
         public bool Delete(List<T> rowdata)
         {
-            DeleteCmd<T> cmd = new DeleteCmd<T>(_dBType, _connstr, _cmdTimeout);
-            IDbTransaction trans = cmd.Connection.BeginTransaction();
+            DeleteCmd<T> cmd = new DeleteCmd<T>(dbEntity);
+            IDbTransaction trans = globalTrans?? cmd.Connection.BeginTransaction();
             StringBuilder sql = new StringBuilder();
             foreach (T row in rowdata)
             {
@@ -135,14 +139,17 @@ namespace NewCity.DataAccess
             }
             catch (Exception err)
             {
-                //NCLog.ExceptionLog(err, $"delete rows from {rowdata.GetType().Name} occur error.");
-                trans.Rollback();
+                ErrLog.ExceptionLog(err, $"delete rows from {rowdata.GetType().Name} occur error.");
+                if (globalTrans==null) trans.Rollback();
                 return false;
             }
             finally
             {
-                trans.Dispose();
-                cmd.Connection.Close();
+                if (globalTrans == null)
+                {
+                    trans.Dispose();
+                    cmd.Connection.Close();
+                }
             }
 
         }
@@ -154,9 +161,8 @@ namespace NewCity.DataAccess
         /// <returns></returns>
         public bool Insert(T rowdata)
         {
-            InsertCmd<T> cmd = new InsertCmd<T>(_dBType, _connstr, _cmdTimeout);
+            InsertCmd<T> cmd = new InsertCmd<T>(dbEntity);
 
-            IDbTransaction trans = cmd.Connection.BeginTransaction();
             try
             {
                 
@@ -167,21 +173,18 @@ namespace NewCity.DataAccess
                 }
                 try
                 {
-                    CommandDefinition cd = new CommandDefinition(commandText: str.ToString(),transaction:trans, commandTimeout: _cmdTimeout);
+                    CommandDefinition cd = new CommandDefinition(commandText: str.ToString(),transaction: globalTrans, commandTimeout: _cmdTimeout);
                     cmd.Connection.Execute(cd);
-                    trans.Commit();
                     return true;
                 }
                 catch (Exception err)
                 {
-                    //NCLog.ExceptionLog(err, $"insert row into {rowdata.GetType().Name} occur error.");
-                    trans.Rollback();
+                    ErrLog.ExceptionLog(err, $"insert row into {rowdata.GetType().Name} occur error.");
                     throw err;
                 }
                 finally
                 {
-                    trans.Dispose();
-                    cmd.Connection.Close();
+                    if (globalTrans == null)  cmd.Connection.Close();
                 }
             }
             catch (Exception err)
@@ -197,9 +200,9 @@ namespace NewCity.DataAccess
         /// <returns></returns>
         public bool Insert(List<T> rowdata)
         {
-            InsertCmd<T> cmd = new InsertCmd<T>(_dBType, _connstr, _cmdTimeout);
+            InsertCmd<T> cmd = new InsertCmd<T>(dbEntity);
 
-            IDbTransaction trans = cmd.Connection.BeginTransaction();
+            IDbTransaction trans = globalTrans?? cmd.Connection.BeginTransaction();
             try
             {
                 string str = "";
@@ -215,24 +218,27 @@ namespace NewCity.DataAccess
                 {
                     CommandDefinition cd = new CommandDefinition(commandText: str.ToString(), transaction: trans, commandTimeout: _cmdTimeout);
                     cmd.Connection.Execute(cd);
-                    trans.Commit();
+                    if (globalTrans == null) trans.Commit();
                     return true;
                 }
                 catch (Exception err)
                 {
-                    //NCLog.ExceptionLog(err, $"insert rows to table {rowdata.GetType().Name} occur error.");
-                    trans.Rollback();
+                    ErrLog.ExceptionLog(err, $"insert rows to table {rowdata.GetType().Name} occur error.");
+                    if (globalTrans == null) trans.Rollback();
                     throw err;
                 }
                 finally
                 {
-                    trans.Dispose();
-                    cmd.Connection.Close();
+                    if (globalTrans == null)
+                    {
+                        trans.Dispose();
+                        cmd.Connection.Close();
+                    }
                 }
             }
             catch (Exception err)
             {
-                //NCLog.ExceptionLog(err, $"insert commands occur error.");
+                ErrLog.ExceptionLog(err, $"insert commands occur error.");
                 throw err;
             }
         }
@@ -244,8 +250,7 @@ namespace NewCity.DataAccess
         /// <returns></returns>
         public int Update(T rowdata)
         {
-            UpdateCmd<T> cmd = new UpdateCmd<T>(_dBType, _connstr, _cmdTimeout);
-            IDbTransaction trans = cmd.Connection.BeginTransaction();
+            UpdateCmd<T> cmd = new UpdateCmd<T>(dbEntity);
             try
             {
                 var str = cmd.GetUpdateCmd(rowdata);
@@ -255,26 +260,23 @@ namespace NewCity.DataAccess
                 }
                 try
                 {
-                    CommandDefinition cd = new CommandDefinition(commandText: str.ToString(), transaction: trans, commandTimeout: _cmdTimeout);
+                    CommandDefinition cd = new CommandDefinition(commandText: str.ToString(), transaction: globalTrans, commandTimeout: _cmdTimeout);
                     var row = cmd.Connection.Execute(cd);
-                    trans.Commit();
                     return row;
                 }
                 catch (Exception err)
                 {
-                    //NCLog.ExceptionLog(err, $"update table {rowdata.GetType().Name} occur error.");
-                    trans.Rollback();
+                    ErrLog.ExceptionLog(err, $"update table {rowdata.GetType().Name} occur error.");
                     throw err;
                 }
                 finally
                 {
-                    trans.Dispose();
-                    cmd.Connection.Close();
+                    if (globalTrans == null) cmd.Connection.Close();
                 }
             }
             catch (Exception err)
             {
-                //NCLog.ExceptionLog(err, $"update command occur error.");
+                ErrLog.ExceptionLog(err, $"update command occur error.");
                 throw err;
             }
         }
@@ -286,8 +288,8 @@ namespace NewCity.DataAccess
         /// <returns></returns>
         public bool Update(List<T> rowdata)
         {
-            UpdateCmd<T> cmd = new UpdateCmd<T>(_dBType, _connstr, _cmdTimeout);
-            IDbTransaction trans = cmd.Connection.BeginTransaction();
+            UpdateCmd<T> cmd = new UpdateCmd<T>(dbEntity);
+            IDbTransaction trans = globalTrans?? cmd.Connection.BeginTransaction();
             try
             {
                 string str = "";
@@ -303,24 +305,28 @@ namespace NewCity.DataAccess
                 {
                     CommandDefinition cd = new CommandDefinition(commandText: str.ToString(), transaction: trans, commandTimeout: _cmdTimeout);
                     cmd.Connection.Execute(cd);
-                    trans.Commit();
+                    if (globalTrans == null) trans.Commit();
                     return true;
                 }
                 catch (Exception err)
                 {
-                    //NCLog.ExceptionLog(err, $"update rows to table {rowdata.GetType().Name} occur error.");
-                    trans.Rollback();
+                    ErrLog.ExceptionLog(err, $"update rows to table {rowdata.GetType().Name} occur error.");
+                    if (globalTrans == null) trans.Rollback();
                     throw err;
                 }
                 finally
                 {
-                    trans.Dispose();
-                    cmd.Connection.Close();
+                    if (globalTrans == null)
+                    {
+                        trans.Dispose();
+                        cmd.Connection.Close();
+                    }
+                    
                 }
             }
             catch (Exception err)
             {
-                //NCLog.ExceptionLog(err, $"update commands occur error.");
+                ErrLog.ExceptionLog(err, $"update commands occur error.");
                 throw err;
             }
         }

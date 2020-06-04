@@ -3,15 +3,20 @@ using NewCity.DataAccess.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data;
 using System.Linq;
 using System.Text;
 
 namespace NewCity.DataAccess
 {
-    internal class InsertCmd<T> : DB where T : TableBase
+    internal class InsertCmd<T>  where T : TableBase
     {
-        public InsertCmd(DBType dbtype, string connstr, int cmdtimeout = 30) : base(dbtype, connstr, cmdtimeout)
+        private DBEntity _dbe;
+
+        public IDbConnection Connection => _dbe.DBConnection;
+        public InsertCmd(DBEntity dBE)
         {
+            _dbe = dBE;
         }
 
         public string GetInsertCmd(T row)
@@ -43,15 +48,15 @@ namespace NewCity.DataAccess
                     var tabname = type.GetTableName();
                     //var tabname = type.GetCustomAttributes(typeof(TableAttribute), false);
                     sbQry.AppendFormat("INSERT INTO {0} ({1}",
-                       base.QuotedFieldName(tabname), base.QuotedFieldName(pi.Name));
+                       _dbe.db.QuotedFieldName(tabname), _dbe.db.QuotedFieldName(pi.Name));
                 }
                 else
                 {
-                    sbQry.AppendFormat(", {0}", base.QuotedFieldName(pi.Name));
+                    sbQry.AppendFormat(", {0}", _dbe.db.QuotedFieldName(pi.Name));
                     sb.Append(",");
                 }
 
-                sb.Append(base.QuotedValueByType(pi.GetValue(row).ToString(), pi));
+                sb.Append(_dbe.db.QuotedValueByType(pi.GetValue(row).ToString(), pi));
             }
 
             if (sbQry.ToString() != string.Empty)

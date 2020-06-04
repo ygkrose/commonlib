@@ -2,18 +2,23 @@
 using NewCity.DataAccess.Tools;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
 namespace NewCity.DataAccess
 {
-    internal class UpdateCmd<T> : DB where T : TableBase
+    internal class UpdateCmd<T> where T : TableBase
     {
-        public UpdateCmd(DBType dbtype, string connstr, int cmdtimeout = 30) : base(dbtype, connstr, cmdtimeout)
+        private DBEntity _dbe;
+
+        public IDbConnection Connection => _dbe.DBConnection;
+        public UpdateCmd(DBEntity dBE)
         {
+            _dbe = dBE;
         }
 
-        public string GetUpdateCmd(T row)
+    public string GetUpdateCmd(T row)
         {
             int ctr = 0;
             Type type = row.GetType();
@@ -45,10 +50,10 @@ namespace NewCity.DataAccess
                 {
                     var tabname = type.GetTableName();
                     sbQry.AppendFormat("Update {0} Set {1}={2}",
-                             base.QuotedFieldName(tabname), base.QuotedFieldName(pi.Name), base.QuotedValueByType(_value.ToString(), pi));
+                             _dbe.db.QuotedFieldName(tabname), _dbe.db.QuotedFieldName(pi.Name), _dbe.db.QuotedValueByType(_value.ToString(), pi));
                 }
                 else
-                    sbQry.AppendFormat(", {0}={1}", base.QuotedFieldName(pi.Name), base.QuotedValueByType(_value.ToString(), pi));
+                    sbQry.AppendFormat(", {0}={1}", _dbe.db.QuotedFieldName(pi.Name), _dbe.db.QuotedValueByType(_value.ToString(), pi));
 
                 ctr++;
             }

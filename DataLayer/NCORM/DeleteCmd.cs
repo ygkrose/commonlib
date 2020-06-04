@@ -3,19 +3,25 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using NewCity.DataAccess.Tools;
+using System.Data;
 
 namespace NewCity.DataAccess
 {
-    internal class DeleteCmd<T> : DB where T : TableBase
+    internal class DeleteCmd<T> where T : TableBase
     {
-        public DeleteCmd(DBType dbtype, string connstr, int cmdtimeout = 30) : base(dbtype, connstr, cmdtimeout)
+        private DBEntity _dbe;
+
+        public IDbConnection Connection => _dbe.DBConnection;
+
+        public DeleteCmd(DBEntity dBE)
         {
+            _dbe = dBE;
         }
 
         public string GetDeleteCmd(T row)
         {
             var tabname = row.GetType().GetTableName();
-            string sql = $"Delete from {base.QuotedFieldName(tabname)} where Id={base.QuotedValue(row.Id.ToString())};";
+            string sql = $"Delete from {_dbe.db.QuotedFieldName(tabname)} where Id={_dbe.db.QuotedValue(row.Id.ToString())};";
             return sql;
         }
     }

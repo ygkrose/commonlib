@@ -31,26 +31,26 @@ namespace NewCity.DataAccess
         /// <summary>
         /// Connection Object
         /// </summary>
-        public IDbConnection Connection
-        {
+        public IDbConnection Connection { get; set; }
+        //{
             
-            get
-            {
-                if (_dbType == DBType.MsSql)
-                {
-                    if (_msConnection == null) _msConnection = new SqlConnection(_ConnectionString);
-                    if (_msConnection.State == ConnectionState.Closed) _msConnection.Open();
-                    return _msConnection;
-                }
-                else
-                {
-                    if (_myConnection == null) _myConnection = new MySqlConnection(_ConnectionString);
-                    if (_myConnection.State == ConnectionState.Closed) _myConnection.Open();
-                    return _myConnection;
-                }
+        //    get
+        //    {
+        //        if (_dbType == DBType.MsSql)
+        //        {
+        //            if (_msConnection == null) _msConnection = new SqlConnection(_ConnectionString);
+        //            if (_msConnection.State == ConnectionState.Closed) _msConnection.Open();
+        //            return _msConnection;
+        //        }
+        //        else
+        //        {
+        //            if (_myConnection == null) _myConnection = new MySqlConnection(_ConnectionString);
+        //            if (_myConnection.State == ConnectionState.Closed) _myConnection.Open();
+        //            return _myConnection;
+        //        }
 
-            }
-        }
+        //    }
+        //}
 
 
 
@@ -79,6 +79,7 @@ namespace NewCity.DataAccess
                 throw ex;
                 //NCLog.ExceptionLog(ex, _ConnectionString);
             }
+            this.Connection = _conn;
             return _conn;
         }
 

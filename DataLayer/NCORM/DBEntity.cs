@@ -1,4 +1,5 @@
-﻿using NewCity.DataAccess.Model;
+﻿using Google.Protobuf.WellKnownTypes;
+using NewCity.DataAccess.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,8 +20,20 @@ namespace NewCity.DataAccess
 
         public int DBTimeout { get; set; }
 
-        public IDbConnection DBConnection { get; set; }
-        private DB db;
+        IDbConnection _conn;
+        public IDbConnection DBConnection
+        {
+            get 
+            {
+                if (_conn.State != ConnectionState.Open)
+                    _conn.Open();
+                return _conn;
+            }
+            set { _conn = value; }
+        }
+
+        internal DB db;
+
         /// <summary>
         /// 建構子
         /// </summary>
@@ -33,7 +46,7 @@ namespace NewCity.DataAccess
             DBTimeout = cmdtimeout;
             DBType = dbtyp;
             db = new DB(dbtyp, connstr, cmdtimeout);
-            DBConnection = db.Connection;
+            _conn = db.CreateConnection();
         }
 
         /// <summary>

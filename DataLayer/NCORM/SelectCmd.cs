@@ -2,14 +2,27 @@
 using NewCity.DataAccess.Tools;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace NewCity.DataAccess
 {
-    internal class SelectCmd<T> : DB where T : TableBase
+    internal class SelectCmd<T> where T : TableBase
     {
-        public SelectCmd(DBType dbtype, string connstr, int cmdtimeout = 30) : base(dbtype, connstr, cmdtimeout)
+        private DBEntity _dbe;
+
+        public IDbConnection Connection 
+        { 
+            get
+            {
+                if (_dbe.DBConnection.State == ConnectionState.Closed)
+                    _dbe.DBConnection.Open();
+                return _dbe.DBConnection;
+            }       
+        }
+        public SelectCmd(DBEntity dBE) 
         {
+            _dbe = dBE;
         }
 
 
@@ -36,16 +49,16 @@ namespace NewCity.DataAccess
                 if (sbQry.ToString() == string.Empty)
                 {
                     if (pi.GetValue(row).ToString().StartsWith("%") || pi.GetValue(row).ToString().EndsWith("%"))
-                        sbQry.AppendFormat("{0} like {1}", base.QuotedFieldName(pi.Name), base.QuotedValueByType(pi.GetValue(row).ToString(), pi));
+                        sbQry.AppendFormat("{0} like {1}", _dbe.db.QuotedFieldName(pi.Name), _dbe.db.QuotedValueByType(pi.GetValue(row).ToString(), pi));
                     else
-                        sbQry.AppendFormat("{0}={1}", base.QuotedFieldName(pi.Name), base.QuotedValueByType(pi.GetValue(row).ToString(), pi));
+                        sbQry.AppendFormat("{0}={1}", _dbe.db.QuotedFieldName(pi.Name), _dbe.db.QuotedValueByType(pi.GetValue(row).ToString(), pi));
                 }
                 else
                 {
                     if (pi.GetValue(row).ToString().StartsWith("%") || pi.GetValue(row).ToString().EndsWith("%"))
-                        sbQry.AppendFormat("and {0} like {1}", base.QuotedFieldName(pi.Name), base.QuotedValueByType(pi.GetValue(row).ToString(), pi));
+                        sbQry.AppendFormat("and {0} like {1}", _dbe.db.QuotedFieldName(pi.Name), _dbe.db.QuotedValueByType(pi.GetValue(row).ToString(), pi));
                     else
-                        sbQry.AppendFormat(" and {0}={1}", base.QuotedFieldName(pi.Name), base.QuotedValueByType(pi.GetValue(row).ToString(), pi));
+                        sbQry.AppendFormat(" and {0}={1}", _dbe.db.QuotedFieldName(pi.Name), _dbe.db.QuotedValueByType(pi.GetValue(row).ToString(), pi));
                 }
                     
             }
