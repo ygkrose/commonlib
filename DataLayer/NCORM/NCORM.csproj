@@ -9,7 +9,8 @@
     <Company>NewCity</Company>
     <Product>NewCity</Product>
     <Description>新都興資料庫元件</Description>
-    <Version>1.0.5</Version>
+    <Version>1.0.7</Version>
+    <AssemblyVersion>1.0.7.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
