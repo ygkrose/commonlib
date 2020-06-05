@@ -1,6 +1,8 @@
 ﻿using Dapper;
+using NewCity.DataAccess.Tools;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +13,12 @@ namespace NewCity.DataAccess
     /// </summary>
     public class QueryCmd 
     {
+        public IDbTransaction globalTrans { get; set; } = null;
+
         private DB _DB;
+        private DBEntity _dbe;
+
+
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +27,8 @@ namespace NewCity.DataAccess
         /// <param name="cmdtimeout">逾時設定</param>
         public QueryCmd(DBType dBType,string conn,int cmdtimeout=30)
         {
-            _DB = new DB(dBType, conn, cmdtimeout);
+            //_DB = new DB(dBType, conn, cmdtimeout);
+            _dbe = new DBEntity(dBType, conn, cmdtimeout);
         }
 
         /// <summary>
@@ -29,7 +37,8 @@ namespace NewCity.DataAccess
         /// <param name="dbe">DB Entity</param>
         public QueryCmd(DBEntity dbe)
         {
-            _DB = new DB(dbe.DBType, dbe.DBConnStr, dbe.DBTimeout);
+            //_DB = new DB(dbe.DBType, dbe.DBConnStr, dbe.DBTimeout);
+            _dbe = dbe;
         }
 
         /// <summary>
@@ -41,17 +50,19 @@ namespace NewCity.DataAccess
         {
             try
             {
-                var rst = await _DB.Connection.QueryAsync(sqlstr, commandType: System.Data.CommandType.Text);
+                var rst = await _dbe.DBConnection.QueryAsync(sqlstr, commandType: System.Data.CommandType.Text, transaction:globalTrans);
+                if (globalTrans == null) globalTrans.Commit();
                 return rst.AsList();
             }
             catch (Exception err)
             {
-                //NCLog.ExceptionLog(err, $"query: {sqlstr} occur error.");
-                throw err;
+                ErrLog.ExceptionLog(err, $"query: {sqlstr} occur error.");
+                if (globalTrans == null) globalTrans.Rollback();
+                return null;
             }
             finally
             {
-                _DB.Connection.Close();
+                if (globalTrans == null) _dbe.DBConnection.Close();
             }
         }
 
@@ -65,17 +76,19 @@ namespace NewCity.DataAccess
         {
             try
             {
-                var rst = await _DB.Connection.QueryAsync(spname, param, commandType: System.Data.CommandType.StoredProcedure);
+                var rst = await _dbe.DBConnection.QueryAsync(spname, param, commandType: System.Data.CommandType.StoredProcedure, transaction: globalTrans);
+                if (globalTrans == null) globalTrans.Commit();
                 return rst.AsList();
             }
             catch (Exception err)
             {
-                //NCLog.ExceptionLog(err, $"exec sp:{spname} occur error.");
-                throw err;
+                ErrLog.ExceptionLog(err, $"exec sp:{spname} occur error.");
+                if (globalTrans == null) globalTrans.Rollback();
+                return null;
             }
             finally
             {
-                _DB.Connection.Close();
+                if (globalTrans == null) _dbe.DBConnection.Close();
             }
 
         }
