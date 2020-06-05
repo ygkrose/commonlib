@@ -74,7 +74,12 @@ namespace NewCity.DataAccess
             {
                 aloneconn.Close();
             }
+        }
 
+        public bool Exist(T rowdata)
+        {
+            var rtnRow = Select(rowdata);
+            return (rtnRow.Count > 0);
         }
 
         public static explicit operator TableEntity<T>(TableEntity<TableBase> v)

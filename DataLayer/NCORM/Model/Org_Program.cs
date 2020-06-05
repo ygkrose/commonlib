@@ -11,14 +11,17 @@ public class Org_Program : TableBase
 {
 
 
+
 ///<summary>
 ///組織Id
+///[char(36), nullable(False)]
 ///</summary>
 [Required]
 public Guid Organization_Id { get; set; }
 
 ///<summary>
 ///程式Id
+///[char(36), nullable(False)]
 ///</summary>
 [Required]
 public Guid Program_Id { get; set; }

@@ -13,18 +13,21 @@ public class User_Organization : TableBase
 
 ///<summary>
 ///使用者Id
+///[char(36), nullable(False)]
 ///</summary>
 [Required]
 public Guid USer_Id { get; set; }
 
 ///<summary>
 ///組織Id
+///[char(36), nullable(False)]
 ///</summary>
 [Required]
 public Guid Organization_Id { get; set; }
 
 ///<summary>
 ///是否預設(0:否 1:是)
+///[bit(1), nullable(False)]
 ///</summary>
 [Required]
 public UInt64 IsDefault { get; set; }

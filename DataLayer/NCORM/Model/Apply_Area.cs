@@ -12,16 +12,19 @@ public class Apply_Area : TableBase
 
     ///<summary>
     ///頭檔Id
+///[char(36), nullable(True)]
     ///</summary>
     public Guid? Apply_Id { get; set; }
 
     ///<summary>
     ///區域碼
+///[char(36), nullable(True)]
     ///</summary>
 	public Guid? Region_Id { get; set; }
 
     ///<summary>
     ///街道名
+///[varchar(50), nullable(True)]
     ///</summary>
     public string Street { get; set; }
 }

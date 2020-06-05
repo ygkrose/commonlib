@@ -12,17 +12,20 @@ public class Announce_Org : TableBase
 
 ///<summary>
 ///區域ID
+///[char(36), nullable(False)]
 ///</summary>
 [Required]
 public Guid Region_Id { get; set; }
 
 ///<summary>
 ///組織ID
+///[char(36), nullable(True)]
 ///</summary>
 public Guid? Organization_Id { get; set; }
 
 ///<summary>
 ///公告ID
+///[char(36), nullable(True)]
 ///</summary>
 public Guid? Announce_Id { get; set; }
 }

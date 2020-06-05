@@ -10,29 +10,35 @@ namespace NewCity.DataAccess.Model
 public class SysCode : TableBase
 {
 
+
 ///<summary>
 ///代碼
+///[varchar(20), nullable(False)]
 ///</summary>
 [Required]
 public string Code { get; set; }
 
 ///<summary>
 ///上階
+///[char(36), nullable(True)]
 ///</summary>
 public Guid? PId { get; set; }
 
 ///<summary>
 ///描述
+///[varchar(100), nullable(True)]
 ///</summary>
 public string Name { get; set; }
 
 ///<summary>
 ///預設(0:否，1:是)
+///[bit(1), nullable(True)]
 ///</summary>
 public UInt64 Default { get; set; }
 
 ///<summary>
 ///排序
+///[tinyint(4), nullable(True)]
 ///</summary>
 public SByte Ord { get; set; }
 }
