@@ -44,12 +44,13 @@ namespace NewCity.DataAccess
         /// 建構子
         /// </summary>
         /// <param name="dbe">資料庫實體</param>
-        public TableEntity(DBEntity dbe)
+        public TableEntity(DBEntity dbe, IDbTransaction transaction=null)
         {
             _cmdTimeout = dbe.DBTimeout;
             _connstr = dbe.DBConnStr;
             _dBType = dbe.DBType;
             dbEntity = dbe;
+            this.globalTrans = transaction;
         }
 
         public List<T> Select(T rowdata)

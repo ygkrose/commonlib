@@ -35,10 +35,11 @@ namespace NewCity.DataAccess
         ///
         /// </summary>
         /// <param name="dbe">DB Entity</param>
-        public QueryCmd(DBEntity dbe)
+        public QueryCmd(DBEntity dbe, IDbTransaction transaction = null)
         {
             //_DB = new DB(dbe.DBType, dbe.DBConnStr, dbe.DBTimeout);
             _dbe = dbe;
+            this.globalTrans = transaction;
         }
 
         /// <summary>
