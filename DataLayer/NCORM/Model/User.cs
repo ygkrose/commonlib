@@ -34,7 +34,7 @@ namespace NewCity.DataAccess.Model
         ///大頭照
         ///[char(36), nullable(True)]
         ///</summary>
-        public Guid? HeadshotFile_Id { get; set; }
+public Guid? headshotFile_Id { get; set; }
 
         ///<summary>
         ///更新權杖

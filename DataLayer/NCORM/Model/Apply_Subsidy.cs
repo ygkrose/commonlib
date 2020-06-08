@@ -18,10 +18,10 @@ public class Apply_Subsidy : TableBase
     public Guid Apply_Id { get; set; }
 
     ///<summary>
-    ///項次
-///[int(11), nullable(True)]
+///項次排序
+///[varchar(4), nullable(True)]
     ///</summary>
-    public Int32 Sort { get; set; }
+public string Ord { get; set; }
 
     ///<summary>
     ///年度

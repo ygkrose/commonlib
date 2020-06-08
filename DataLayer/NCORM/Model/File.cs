@@ -56,7 +56,7 @@ namespace NewCity.DataAccess.Model
         ///更新人員ID
 ///[char(36), nullable(True)]
         ///</summary>
-public Guid? UpdateUser_Id { get; set; }
+public Guid? updateUser_Id { get; set; }
 
         ///<summary>
         ///更新日期

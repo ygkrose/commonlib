@@ -7,7 +7,7 @@ namespace NewCity.DataAccess.Model
 /// <summary>
 ///組織架構檔
 /// </summary>
-public class Organization : TableBase
+public class Org : TableBase
 {
 
 

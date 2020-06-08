@@ -20,10 +20,10 @@ public Guid Building_Id { get; set; }
 
 ///<summary>
 ///排序
-///[tinyint(4), nullable(False)]
+///[varchar(4), nullable(False)]
 ///</summary>
 [Required]
-public SByte Sort { get; set; }
+public string Ord { get; set; }
 
 ///<summary>
 ///簡介說明
@@ -35,7 +35,7 @@ public string Description { get; set; }
 ///圖片上傳的對應Id
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? UploadFile_Id { get; set; }
+public Guid? uploadFile_Id { get; set; }
 
 ///<summary>
 ///網站連結
@@ -44,9 +44,9 @@ public Guid? UploadFile_Id { get; set; }
 public string Link { get; set; }
 
 ///<summary>
-///360簡介
-///[text, nullable(True)]
+///360簡介檔上傳的對應Id
+///[char(36), nullable(True)]
 ///</summary>
-public string Img360 { get; set; }
+public Guid? img360File_Id { get; set; }
 }
 }
