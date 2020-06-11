@@ -49,7 +49,7 @@ namespace ConsoleTest
             doQuery();
             
             Console.Read();
-
+            
             
         }
 
