@@ -24,21 +24,21 @@ public Guid User_Id { get; set; }
 ///[datetime, nullable(False)]
 ///</summary>
 [Required]
-public DateTime StartDate { get; set; }
+public DateTime? StartDate { get; set; }
 
 ///<summary>
 ///帳號有效訖日
 ///[datetime, nullable(False)]
 ///</summary>
 [Required]
-public DateTime EndDate { get; set; }
+public DateTime? EndDate { get; set; }
 
 ///<summary>
 ///資料使用同意日
 ///[date, nullable(False)]
 ///</summary>
 [Required]
-public DateTime DataConsentDate { get; set; }
+public DateTime? DataConsentDate { get; set; }
 
 ///<summary>
 ///Email
