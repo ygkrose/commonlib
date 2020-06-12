@@ -52,13 +52,11 @@ namespace NewCity.DataAccess
             try
             {
                 var rst = await _dbe.DBConnection.QueryAsync(sqlstr, commandType: System.Data.CommandType.Text, transaction:globalTrans);
-                if (globalTrans == null) globalTrans.Commit();
-                return rst.AsList();
+                return rst;
             }
             catch (Exception err)
             {
                 ErrLog.ExceptionLog(err, $"query: {sqlstr} occur error.");
-                if (globalTrans == null) globalTrans.Rollback();
                 return null;
             }
             finally

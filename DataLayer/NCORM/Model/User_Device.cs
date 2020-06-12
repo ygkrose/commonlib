@@ -25,11 +25,17 @@ public Guid User_Id { get; set; }
 ///</summary>
 public string OS { get; set; }
 
-///<summary>
-///行動裝置設備ID，若非行動裝置紀錄瀏覽器版本
-///[varchar(300), nullable(True)]
-///</summary>
-public string DeviceId { get; set; }
+        ///<summary>
+        ///Desktop/Mobile
+        ///[varchar(10), nullable(True)]
+        ///</summary>
+        public string DeviceType { get; set; }
+
+        ///<summary>
+        ///行動裝置設備ID，若非行動裝置紀錄瀏覽器版本
+        ///[varchar(300), nullable(True)]
+        ///</summary>
+        public string DeviceId { get; set; }
 
 ///<summary>
 ///更新權杖
