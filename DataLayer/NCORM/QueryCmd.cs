@@ -76,13 +76,11 @@ namespace NewCity.DataAccess
             try
             {
                 var rst = await _dbe.DBConnection.QueryAsync(spname, param, commandType: System.Data.CommandType.StoredProcedure, transaction: globalTrans);
-                if (globalTrans == null) globalTrans.Commit();
                 return rst.AsList();
             }
             catch (Exception err)
             {
                 ErrLog.ExceptionLog(err, $"exec sp:{spname} occur error.");
-                if (globalTrans == null) globalTrans.Rollback();
                 return null;
             }
             finally
