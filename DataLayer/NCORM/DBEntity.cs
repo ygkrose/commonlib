@@ -1,5 +1,6 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using NewCity.DataAccess.Model;
+using NewCity.DataAccess.Tools;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -45,10 +46,14 @@ namespace NewCity.DataAccess
             DBConnStr = connstr;
             DBTimeout = cmdtimeout;
             DBType = dbtyp;
-            db = new DB(dbtyp, connstr, cmdtimeout);
+            if (connstr.ToLower().StartsWith("server="))
+                db = new DB(dbtyp, connstr, cmdtimeout);
+            else
+                db = new DB(dbtyp, ConnSecure.Decrypt(connstr), cmdtimeout);
             _conn = db.CreateConnection();
         }
 
+      
         /// <summary>
         /// 紀錄歷程
         /// </summary>
