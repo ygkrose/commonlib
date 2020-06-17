@@ -21,30 +21,21 @@ public Guid User_Id { get; set; }
 
 ///<summary>
 ///帳號有效起日
-///[datetime, nullable(False)]
+///[datetime, nullable(True)]
 ///</summary>
-[Required]
 public DateTime? StartDate { get; set; }
 
 ///<summary>
 ///帳號有效訖日
-///[datetime, nullable(False)]
+///[datetime, nullable(True)]
 ///</summary>
-[Required]
 public DateTime? EndDate { get; set; }
 
 ///<summary>
 ///資料使用同意日
-///[date, nullable(False)]
+///[date, nullable(True)]
 ///</summary>
-[Required]
 public DateTime? DataConsentDate { get; set; }
-
-///<summary>
-///Email
-///[varchar(100), nullable(True)]
-///</summary>
-public string Email { get; set; }
 
 ///<summary>
 ///資料新增人員

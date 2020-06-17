@@ -20,7 +20,7 @@ public class User_Device : TableBase
 public Guid User_Id { get; set; }
 
 ///<summary>
-///作業系統(Window10, MacOS, IOS, Android, Linux....)
+///作業系統(Window, MacOS, IOS, Android, Linux....)
 ///[varchar(20), nullable(True)]
 ///</summary>
 public string OS { get; set; }

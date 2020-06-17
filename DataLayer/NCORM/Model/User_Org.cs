@@ -17,7 +17,7 @@ public class User_Org : TableBase
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid USer_Id { get; set; }
+public Guid User_Id { get; set; }
 
 ///<summary>
 ///組織Id

@@ -19,22 +19,10 @@ public class House : TableBase
 public Guid? Pid { get; set; }
 
 ///<summary>
-///棟別ID
+///對應組織ID
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? Building_Id { get; set; }
-
-///<summary>
-///戶號
-///[varchar(20), nullable(True)]
-///</summary>
-public string Code { get; set; }
-
-///<summary>
-///戶號名稱
-///[varchar(30), nullable(True)]
-///</summary>
-public string Name { get; set; }
+public Guid? Org_Id { get; set; }
 
 ///<summary>
 ///房屋類型

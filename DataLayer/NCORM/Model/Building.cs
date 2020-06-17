@@ -13,24 +13,11 @@ public class Building : TableBase
 
 
 ///<summary>
-///公司ID
+///對應組織ID
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid Company_Id { get; set; }
-
-///<summary>
-///棟別代號
-///[varchar(50), nullable(False)]
-///</summary>
-[Required]
-public string Code { get; set; }
-
-///<summary>
-///棟別名稱
-///[varchar(100), nullable(True)]
-///</summary>
-public string Name { get; set; }
+public Guid Org_Id { get; set; }
 
 ///<summary>
 ///門牌

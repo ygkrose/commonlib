@@ -13,24 +13,11 @@ public class Company : TableBase
 
 
 ///<summary>
-///編號
-///[varchar(50), nullable(False)]
+///對應組織ID
+///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public string Code { get; set; }
-
-///<summary>
-///簡稱
-///[varchar(20), nullable(False)]
-///</summary>
-[Required]
-public string BriefName { get; set; }
-
-///<summary>
-///全銜
-///[varchar(100), nullable(True)]
-///</summary>
-public string FullName { get; set; }
+public Guid Org_id { get; set; }
 
 ///<summary>
 ///統一編號
