@@ -5,36 +5,38 @@ using System.ComponentModel.DataAnnotations;
 namespace NewCity.DataAccess.Model
 {
 /// <summary>
-///指定公告組織
+///戶號屬性管理
 /// </summary>
-public class Announce_Org : TableBase
+public class House_Property : TableBase
 {
 
 
 
 ///<summary>
-///區域ID
+///戶號ID
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid Region_Id { get; set; }
+public Guid House_Id { get; set; }
 
 ///<summary>
-///組織ID
-///[char(36), nullable(True)]
+///屬性代碼
+///[varchar(25), nullable(False)]
 ///</summary>
-public Guid? Org_Id { get; set; }
+[Required]
+public string Code { get; set; }
 
 ///<summary>
-///公告ID
-///[char(36), nullable(True)]
+///屬性名稱
+///[varchar(80), nullable(False)]
 ///</summary>
-public Guid? Announce_Id { get; set; }
+[Required]
+public string Name { get; set; }
 
 ///<summary>
-///組織層級
+///屬性值
 ///[smallint(6), nullable(True)]
 ///</summary>
-public Int16 Org_Rank { get; set; }
+public Int16 PropertyValue { get; set; }
 }
 }

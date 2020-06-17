@@ -45,15 +45,15 @@ public Double MaxPercent2 { get; set; }
 
 ///<summary>
 ///次數上限
-///[tinyint(1), nullable(True)]
+///[smallint(6), nullable(True)]
 ///</summary>
-public Boolean MaxTime { get; set; }
+public Int16 MaxTime { get; set; }
 
 ///<summary>
 ///年數上限
-///[tinyint(1), nullable(True)]
+///[smallint(6), nullable(True)]
 ///</summary>
-public Boolean MaxYear { get; set; }
+public Int16 MaxYear { get; set; }
 
 ///<summary>
 ///最小金額1

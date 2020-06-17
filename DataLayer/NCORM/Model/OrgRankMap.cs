@@ -12,10 +12,10 @@ public class OrgRankMap : TableBase
 
 ///<summary>
 ///階層
-///[tinyint(3), nullable(False)]
+///[smallint(6), nullable(False)]
 ///</summary>
 [Required]
-public SByte Rank { get; set; }
+public Int16 Rank { get; set; }
 
 ///<summary>
 ///代碼

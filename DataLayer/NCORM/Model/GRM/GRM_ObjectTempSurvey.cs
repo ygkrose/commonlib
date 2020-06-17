@@ -106,9 +106,9 @@ public UInt64 IsCommittee { get; set; }
 
 ///<summary>
 ///管理費每坪單價
-///[tinyint(4), nullable(True)]
+///[smallint(6), nullable(True)]
 ///</summary>
-public SByte MgtFeePerPing { get; set; }
+public Int16 MgtFeePerPing { get; set; }
 
 ///<summary>
 ///住戶規約(0:無1:有)

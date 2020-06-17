@@ -28,10 +28,10 @@ public string Name { get; set; }
 
 ///<summary>
 ///專案期數
-///[tinyint(1), nullable(False)]
+///[smallint(6), nullable(False)]
 ///</summary>
 [Required]
-public Boolean PeriodId { get; set; }
+public Int16 PeriodId { get; set; }
 
 ///<summary>
 ///單位名稱

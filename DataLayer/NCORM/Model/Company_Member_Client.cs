@@ -7,7 +7,7 @@ namespace NewCity.DataAccess.Model
 /// <summary>
 ///大樓委員明細
 /// </summary>
-public class CompanyMember_Client : TableBase
+public class Company_Member_Client : TableBase
 {
 
 
@@ -17,7 +17,7 @@ public class CompanyMember_Client : TableBase
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid CompanyMember_Id { get; set; }
+public Guid Company_Member_Id { get; set; }
 
 ///<summary>
 ///職務

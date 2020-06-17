@@ -33,9 +33,9 @@ public string Facility { get; set; }
 
 ///<summary>
 ///數量
-///[tinyint(2), nullable(True)]
+///[smallint(6), nullable(True)]
 ///</summary>
-public SByte Qty { get; set; }
+public Int16 Qty { get; set; }
 
 ///<summary>
 ///廠牌型號

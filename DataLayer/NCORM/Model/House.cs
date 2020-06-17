@@ -32,9 +32,9 @@ public string HouseType { get; set; }
 
 ///<summary>
 ///樓層
-///[tinyint(4), nullable(True)]
+///[smallint(6), nullable(True)]
 ///</summary>
-public SByte Floor { get; set; }
+public Int16 Floor { get; set; }
 
 ///<summary>
 ///地址
@@ -47,5 +47,11 @@ public string Addr { get; set; }
 ///[varchar(100), nullable(True)]
 ///</summary>
 public string UsingStatus { get; set; }
+
+///<summary>
+///房屋代理人
+///[char(36), nullable(True)]
+///</summary>
+public Guid? agentClient_Id { get; set; }
 }
 }

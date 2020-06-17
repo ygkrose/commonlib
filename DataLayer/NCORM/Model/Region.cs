@@ -38,9 +38,9 @@ public string ShortName { get; set; }
 
 ///<summary>
 ///排序
-///[tinyint(3) unsigned, nullable(True)]
+///[smallint(5) unsigned, nullable(True)]
 ///</summary>
-public Byte? Rank { get; set; }
+public UInt16 Rank { get; set; }
 
 public string Ord { get; set; }
 }

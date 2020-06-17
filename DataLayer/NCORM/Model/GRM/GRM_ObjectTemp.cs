@@ -110,15 +110,15 @@ public DateTime? BuildingDate { get; set; }
 
 ///<summary>
 ///座落樓層
-///[tinyint(1), nullable(True)]
+///[smallint(6), nullable(True)]
 ///</summary>
-public Boolean Floor { get; set; }
+public Int16 Floor { get; set; }
 
 ///<summary>
 ///總樓層
-///[tinyint(1), nullable(True)]
+///[smallint(6), nullable(True)]
 ///</summary>
-public Boolean TotalFloor { get; set; }
+public Int16 TotalFloor { get; set; }
 
 ///<summary>
 ///格局
@@ -128,21 +128,21 @@ public string Pattern { get; set; }
 
 ///<summary>
 ///隔間_房
-///[tinyint(1), nullable(True)]
+///[smallint(6), nullable(True)]
 ///</summary>
-public Boolean Bedroom { get; set; }
+public Int16 Bedroom { get; set; }
 
 ///<summary>
 ///隔間_廳
-///[tinyint(1), nullable(True)]
+///[smallint(6), nullable(True)]
 ///</summary>
-public Boolean LivingRoom { get; set; }
+public Int16 LivingRoom { get; set; }
 
 ///<summary>
 ///隔間_衛
-///[tinyint(1), nullable(True)]
+///[smallint(6), nullable(True)]
 ///</summary>
-public Boolean Bathroom { get; set; }
+public Int16 Bathroom { get; set; }
 
 ///<summary>
 ///隔間材質
@@ -272,9 +272,9 @@ public Int32 RentB { get; set; }
 
 ///<summary>
 ///保證金月數
-///[tinyint(1), nullable(True)]
+///[smallint(6), nullable(True)]
 ///</summary>
-public Boolean DepositMonth { get; set; }
+public Int16 DepositMonth { get; set; }
 
 ///<summary>
 ///保證金金額

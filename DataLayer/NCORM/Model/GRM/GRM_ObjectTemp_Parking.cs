@@ -33,9 +33,9 @@ public string ParkingNo { get; set; }
 
 ///<summary>
 ///車位樓層(-1 , -2 ..)
-///[tinyint(1), nullable(True)]
+///[smallint(6), nullable(True)]
 ///</summary>
-public Boolean Floor { get; set; }
+public Int16 Floor { get; set; }
 
 ///<summary>
 ///每月清潔費

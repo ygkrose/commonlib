@@ -38,9 +38,9 @@ public UInt64 Default { get; set; }
 
 ///<summary>
 ///排序
-///[tinyint(4), nullable(True)]
+///[smallint(6), nullable(True)]
 ///</summary>
-public SByte Ord { get; set; }
+public Int16 Ord { get; set; }
 
 ///<summary>
 ///公司Id

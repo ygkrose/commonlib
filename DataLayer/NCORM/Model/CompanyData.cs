@@ -48,23 +48,5 @@ public string MediaNo { get; set; }
 ///[varchar(15), nullable(True)]
 ///</summary>
 public string HouseTaxIdNo { get; set; }
-
-///<summary>
-///服務電話
-///[varchar(20), nullable(True)]
-///</summary>
-public string CSTel { get; set; }
-
-///<summary>
-///服務地址
-///[varchar(200), nullable(True)]
-///</summary>
-public string CSAddr { get; set; }
-
-///<summary>
-///服務email
-///[varchar(100), nullable(True)]
-///</summary>
-public string CSEmail { get; set; }
 }
 }

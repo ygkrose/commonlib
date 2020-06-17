@@ -7,7 +7,7 @@ namespace NewCity.DataAccess.Model
 /// <summary>
 ///規約辦法文件管理(規約辦法、住戶手冊、操作手冊)
 /// </summary>
-public class CompanyTerms : TableBase
+public class Company_Terms : TableBase
 {
 
 
