@@ -51,6 +51,8 @@ namespace NewCity.DataAccess
         {
             try
             {
+                if (_dbe.DBType == DBType.MySql)
+                    sqlstr = sqlstr.Replace("[", "`").Replace("]","`");
                 var rst = await _dbe.DBConnection.QueryAsync(sqlstr, commandType: System.Data.CommandType.Text, transaction:globalTrans);
                 return rst;
             }
