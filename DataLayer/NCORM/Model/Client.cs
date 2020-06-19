@@ -26,12 +26,6 @@ public string Code { get; set; }
 public string ClientType { get; set; }
 
 ///<summary>
-///申請方案
-///[varchar(100), nullable(True)]
-///</summary>
-public string Plan { get; set; }
-
-///<summary>
 ///自然人/法人
 ///[varchar(10), nullable(True)]
 ///</summary>

@@ -9,9 +9,9 @@
     <Company>NewCity</Company>
     <Product>NewCity</Product>
     <Description>新都興資料庫元件</Description>
-    <Version>1.1.2.5</Version>
-    <AssemblyVersion>1.1.2.5</AssemblyVersion>
-    <FileVersion>1.1.2.5</FileVersion>
+    <Version>1.1.2.7</Version>
+    <AssemblyVersion>1.1.2.7</AssemblyVersion>
+    <FileVersion>1.1.2.7</FileVersion>
     <PackageReleaseNotes>加入交易機制</PackageReleaseNotes>
   </PropertyGroup>
 
