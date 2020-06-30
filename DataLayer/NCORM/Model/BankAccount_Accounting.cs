@@ -24,7 +24,7 @@ public Guid BankAccount_Id { get; set; }
 ///[varchar(20), nullable(False)]
 ///</summary>
 [Required]
-public string AccountingType { get; set; }
+public string Code_Accounting { get; set; }
 
 ///<summary>
 ///會計科目

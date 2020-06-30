@@ -53,7 +53,7 @@ public string OtherAppellation { get; set; }
 ///性別(男:M，女:F)
 ///[char(1), nullable(True)]
 ///</summary>
-public string Sex { get; set; }
+public string Gender { get; set; }
 
 ///<summary>
 ///出生年月日
@@ -69,9 +69,9 @@ public Guid? Identity_Id { get; set; }
 
 ///<summary>
 ///障礙類別，對應設定檔資料表
-///[char(36), nullable(True)]
+///[varchar(20), nullable(True)]
 ///</summary>
-public Guid? DisabledType_Id { get; set; }
+public string Code_Disabled { get; set; }
 
 ///<summary>
 ///障礙程度，對應設定檔資料表

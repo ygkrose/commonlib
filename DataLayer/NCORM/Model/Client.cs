@@ -20,12 +20,6 @@ public class Client : TableBase
 public string Code { get; set; }
 
 ///<summary>
-///對象類別
-///[varchar(100), nullable(True)]
-///</summary>
-public string ClientType { get; set; }
-
-///<summary>
 ///自然人/法人
 ///[varchar(10), nullable(True)]
 ///</summary>
@@ -35,7 +29,7 @@ public string Person { get; set; }
 ///簡稱
 ///[varchar(20), nullable(True)]
 ///</summary>
-public string BriefName { get; set; }
+public string ShortName { get; set; }
 
 ///<summary>
 ///全銜
@@ -48,11 +42,5 @@ public string FullName { get; set; }
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? Company_Id { get; set; }
-
-///<summary>
-///討論區暱稱
-///[varchar(50), nullable(True)]
-///</summary>
-public string Nickname { get; set; }
 }
 }

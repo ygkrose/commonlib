@@ -21,9 +21,9 @@ public Guid ObjectTemp_Id { get; set; }
 
 ///<summary>
 ///類別(選項：設備、家電、家具)
-///[varchar(10), nullable(True)]
+///[varchar(20), nullable(True)]
 ///</summary>
-public string FacilityType { get; set; }
+public string Code_Facility { get; set; }
 
 ///<summary>
 ///品項(電視、冰箱、冷氣、熱水器、洗衣機、瓦斯、第四台、網路、床、衣櫃、桌、椅、沙發、其他)

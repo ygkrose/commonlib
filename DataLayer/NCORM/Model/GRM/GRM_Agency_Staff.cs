@@ -37,13 +37,13 @@ public string Name { get; set; }
 ///類別(經紀人、租賃專員、估價師)
 ///[varchar(20), nullable(True)]
 ///</summary>
-public string StaffType { get; set; }
+public string Code_Staff { get; set; }
 
 ///<summary>
 ///性別(男:M，女:F)
 ///[char(1), nullable(True)]
 ///</summary>
-public string Sex { get; set; }
+public string Gender { get; set; }
 
 ///<summary>
 ///出生年月日

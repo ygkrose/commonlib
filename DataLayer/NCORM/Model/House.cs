@@ -28,7 +28,7 @@ public Guid? Org_Id { get; set; }
 ///房屋類型
 ///[varchar(20), nullable(True)]
 ///</summary>
-public string HouseType { get; set; }
+public string Code_House { get; set; }
 
 ///<summary>
 ///樓層

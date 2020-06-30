@@ -68,8 +68,8 @@ public Double MaxRent { get; set; }
 
 ///<summary>
 ///租金評定計算方式
-///[varchar(50), nullable(True)]
+///[varchar(20), nullable(True)]
 ///</summary>
-public string EvaluateType { get; set; }
+public string Code_Evaluate { get; set; }
 }
 }

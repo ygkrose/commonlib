@@ -21,9 +21,9 @@ public DateTime ApplyDate { get; set; }
 
 ///<summary>
 ///申請人類別(出租人、承租人、雙重身份)
-///[varchar(15), nullable(True)]
+///[varchar(20), nullable(True)]
 ///</summary>
-public string ApplyType { get; set; }
+public string Code_Apply { get; set; }
 
 ///<summary>
 ///申請方案(選項：a包租包管、b代租代管)
@@ -71,7 +71,7 @@ public string GRM_Agency_Code { get; set; }
 ///性別(男:M，女:F)
 ///[char(1), nullable(True)]
 ///</summary>
-public string Sex { get; set; }
+public string Gender { get; set; }
 
 ///<summary>
 ///出生年月日
@@ -281,7 +281,7 @@ public string Pattern { get; set; }
 ///房屋類型
 ///[varchar(20), nullable(True)]
 ///</summary>
-public string BuildingType { get; set; }
+public string Code_Building { get; set; }
 
 ///<summary>
 ///實際使用面積

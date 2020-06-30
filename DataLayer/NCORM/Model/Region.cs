@@ -37,11 +37,15 @@ public string FullName { get; set; }
 public string ShortName { get; set; }
 
 ///<summary>
-///排序
+///層級
 ///[smallint(5) unsigned, nullable(True)]
 ///</summary>
 public UInt16 Rank { get; set; }
 
+///<summary>
+///排序
+///[varchar(4), nullable(True)]
+///</summary>
 public string Ord { get; set; }
 }
 }

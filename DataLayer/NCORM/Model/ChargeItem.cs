@@ -28,9 +28,9 @@ public string Name { get; set; }
 
 ///<summary>
 ///特定項目(房屋租金、公證費、保證金)
-///[varchar(50), nullable(True)]
+///[varchar(20), nullable(True)]
 ///</summary>
-public string ItemType { get; set; }
+public string Code_Item { get; set; }
 
 ///<summary>
 ///是否補助(0:否1:是)

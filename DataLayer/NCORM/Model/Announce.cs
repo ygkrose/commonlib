@@ -20,11 +20,11 @@ public class Announce : TableBase
 public string TitleDesc { get; set; }
 
 ///<summary>
-///張貼人Id
-///[char(36), nullable(False)]
+///張貼人名稱
+///[varchar(20), nullable(False)]
 ///</summary>
 [Required]
-public Guid AnnouncerUser_Id { get; set; }
+public string AnnouncerUser { get; set; }
 
 ///<summary>
 ///公告起日
@@ -40,9 +40,9 @@ public DateTime? EndDate { get; set; }
 
 ///<summary>
 ///發佈類型
-///[char(36), nullable(True)]
+///[varchar(20), nullable(True)]
 ///</summary>
-public Guid? AnnounceType { get; set; }
+public string Code_Announce { get; set; }
 
 ///<summary>
 ///置頂(0:否, 1:是)
@@ -82,15 +82,15 @@ public Guid? targetRegion_Id { get; set; }
 
 ///<summary>
 ///公告大類
-///[varchar(50), nullable(True)]
+///[varchar(20), nullable(True)]
 ///</summary>
-public string MainType { get; set; }
+public string Code_Main { get; set; }
 
 ///<summary>
 ///公告小類
-///[varchar(50), nullable(True)]
+///[varchar(20), nullable(True)]
 ///</summary>
-public string SubType { get; set; }
+public string Code_Sub { get; set; }
 
 ///<summary>
 ///承辦人
@@ -127,5 +127,29 @@ public DateTime? PushDate { get; set; }
 ///[text, nullable(True)]
 ///</summary>
 public string HtmlContent { get; set; }
+
+///<summary>
+///新增人員
+///[char(36), nullable(True)]
+///</summary>
+public Guid? addUser_Id { get; set; }
+
+///<summary>
+///新增日期時間
+///[datetime, nullable(True)]
+///</summary>
+public DateTime? AddDate { get; set; }
+
+///<summary>
+///修改人員
+///[char(36), nullable(True)]
+///</summary>
+public Guid? modUser_Id { get; set; }
+
+///<summary>
+///修改日期時間
+///[datetime, nullable(True)]
+///</summary>
+public DateTime? ModDate { get; set; }
 }
 }

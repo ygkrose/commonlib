@@ -21,9 +21,9 @@ public Guid ObjectTemp_Id { get; set; }
 
 ///<summary>
 ///車位類型
-///[varchar(10), nullable(True)]
+///[varchar(20), nullable(True)]
 ///</summary>
-public string ParkingType { get; set; }
+public string Code_Parking { get; set; }
 
 ///<summary>
 ///車位編號

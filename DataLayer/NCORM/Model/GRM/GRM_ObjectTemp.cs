@@ -94,7 +94,7 @@ public string LandTaxIdNo { get; set; }
 ///建物型態
 ///[varchar(20), nullable(True)]
 ///</summary>
-public string BuildingType { get; set; }
+public string Code_Building { get; set; }
 
 ///<summary>
 ///其他建物型態
@@ -232,7 +232,7 @@ public DateTime? RentEndDate { get; set; }
 ///租金計算方式(依評定表計算、手動輸入市場租金)
 ///[varchar(20), nullable(True)]
 ///</summary>
-public string EvaluateType { get; set; }
+public string Code_Evaluate { get; set; }
 
 ///<summary>
 ///市場租金

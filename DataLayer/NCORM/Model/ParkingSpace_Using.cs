@@ -57,9 +57,9 @@ public string RemoteControlNo { get; set; }
 
 ///<summary>
 ///車型
-///[varchar(10), nullable(True)]
+///[varchar(20), nullable(True)]
 ///</summary>
-public string CarTerm { get; set; }
+public string Code_Car { get; set; }
 
 ///<summary>
 ///顏色

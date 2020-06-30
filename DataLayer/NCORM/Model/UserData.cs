@@ -60,5 +60,11 @@ public Guid? modUser_Id { get; set; }
 ///[datetime, nullable(True)]
 ///</summary>
 public DateTime? ModDate { get; set; }
+
+///<summary>
+///討論區暱稱
+///[varchar(50), nullable(True)]
+///</summary>
+public string Nickname { get; set; }
 }
 }

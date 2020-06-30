@@ -40,6 +40,6 @@ public string Content { get; set; }
 ///片語類別(訊息通知、通知單、收據備註.....)
 ///[varchar(20), nullable(True)]
 ///</summary>
-public string PhraseType { get; set; }
+public string Code_Phrase { get; set; }
 }
 }

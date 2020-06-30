@@ -27,9 +27,9 @@ public Guid? Client_Id { get; set; }
 
 ///<summary>
 ///住戶身份(所有權人、所有權人成員、承租人、承租人成員)
-///[varchar(50), nullable(True)]
+///[varchar(20), nullable(True)]
 ///</summary>
-public string ResidentTerm { get; set; }
+public string Code_Resident { get; set; }
 
 ///<summary>
 ///起日

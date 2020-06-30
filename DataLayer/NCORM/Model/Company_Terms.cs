@@ -23,7 +23,7 @@ public Guid Company_Id { get; set; }
 ///類別
 ///[varchar(20), nullable(True)]
 ///</summary>
-public string LawTerm { get; set; }
+public string Code_Law { get; set; }
 
 ///<summary>
 ///標題
@@ -89,6 +89,6 @@ public string HtmlContent { get; set; }
 ///程式類別
 ///[varchar(20), nullable(True)]
 ///</summary>
-public string ProgType { get; set; }
+public string Code_Prog { get; set; }
 }
 }

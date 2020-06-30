@@ -28,9 +28,9 @@ public Int16 Floor { get; set; }
 
 ///<summary>
 ///車位類型(平面車位、機械上層、機械下層、機車位)
-///[varchar(30), nullable(True)]
+///[varchar(20), nullable(True)]
 ///</summary>
-public string Term { get; set; }
+public string Code_Type { get; set; }
 
 ///<summary>
 ///產權性質(公有、私有)
