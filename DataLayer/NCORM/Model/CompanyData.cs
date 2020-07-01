@@ -13,13 +13,6 @@ public class CompanyData : TableBase
 
 
 ///<summary>
-///公司ID
-///[char(36), nullable(False)]
-///</summary>
-[Required]
-public Guid Company_Id { get; set; }
-
-///<summary>
 ///勞工保險證號
 ///[varchar(20), nullable(True)]
 ///</summary>

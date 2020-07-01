@@ -7,7 +7,7 @@ namespace NewCity.DataAccess.Model
 /// <summary>
 ///檢查文件設定身檔
 /// </summary>
-public class CheckSettingItem : TableBase
+public class CheckSetting_Item : TableBase
 {
 
 

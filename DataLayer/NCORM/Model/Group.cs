@@ -13,13 +13,6 @@ public class Group : TableBase
 
 
 ///<summary>
-///組織表裡對應的Id
-///[char(36), nullable(False)]
-///</summary>
-[Required]
-public Guid Org_Id { get; set; }
-
-///<summary>
 ///統一編號
 ///[varchar(12), nullable(True)]
 ///</summary>

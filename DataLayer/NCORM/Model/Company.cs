@@ -13,13 +13,6 @@ public class Company : TableBase
 
 
 ///<summary>
-///對應組織ID
-///[char(36), nullable(False)]
-///</summary>
-[Required]
-public Guid Org_id { get; set; }
-
-///<summary>
 ///統一編號
 ///[varchar(12), nullable(True)]
 ///</summary>

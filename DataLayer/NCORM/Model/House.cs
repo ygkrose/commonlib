@@ -19,12 +19,6 @@ public class House : TableBase
 public Guid? Pid { get; set; }
 
 ///<summary>
-///對應組織ID
-///[char(36), nullable(True)]
-///</summary>
-public Guid? Org_Id { get; set; }
-
-///<summary>
 ///房屋類型
 ///[varchar(20), nullable(True)]
 ///</summary>

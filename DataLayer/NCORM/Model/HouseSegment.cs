@@ -13,13 +13,6 @@ public class HouseSegment : TableBase
 
 
 ///<summary>
-///戶號ID
-///[char(36), nullable(False)]
-///</summary>
-[Required]
-public Guid House_Id { get; set; }
-
-///<summary>
 ///起日
 ///[date, nullable(False)]
 ///</summary>

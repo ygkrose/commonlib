@@ -7,7 +7,7 @@ namespace NewCity.DataAccess.Model
 /// <summary>
 ///大樓委員明細
 /// </summary>
-public class Company_Member : TableBase
+public class Company_OwnerAssociation : TableBase
 {
 
 
@@ -53,7 +53,7 @@ public string Name { get; set; }
 
 ///<summary>
 ///住戶身份(所有權人、承租人)
-///[varchar(10), nullable(True)]
+///[varchar(20), nullable(True)]
 ///</summary>
 public string Code_Resident { get; set; }
 

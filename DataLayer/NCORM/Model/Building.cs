@@ -13,13 +13,6 @@ public class Building : TableBase
 
 
 ///<summary>
-///對應組織ID
-///[char(36), nullable(False)]
-///</summary>
-[Required]
-public Guid Org_Id { get; set; }
-
-///<summary>
 ///門牌
 ///[varchar(200), nullable(True)]
 ///</summary>

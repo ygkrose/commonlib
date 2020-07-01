@@ -38,9 +38,9 @@ public UInt64 Default { get; set; }
 
 ///<summary>
 ///排序
-///[smallint(6), nullable(True)]
+///[varchar(4), nullable(True)]
 ///</summary>
-public Int16 Ord { get; set; }
+public string Ord { get; set; }
 
 ///<summary>
 ///公司Id

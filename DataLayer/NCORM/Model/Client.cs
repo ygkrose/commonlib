@@ -38,7 +38,7 @@ public string ShortName { get; set; }
 public string FullName { get; set; }
 
 ///<summary>
-///公司ID
+///所屬公司ID，用於篩選
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? Company_Id { get; set; }

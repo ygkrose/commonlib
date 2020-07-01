@@ -64,7 +64,7 @@ public UInt64 IsSys { get; set; }
 ///參數類別
 ///[varchar(20), nullable(True)]
 ///</summary>
-public string Code_Param { get; set; }
+public string ParamType { get; set; }
 
 ///<summary>
 ///備註

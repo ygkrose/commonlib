@@ -13,13 +13,6 @@ public class HouseArea : TableBase
 
 
 ///<summary>
-///戶號ID
-///[char(36), nullable(False)]
-///</summary>
-[Required]
-public Guid House_Id { get; set; }
-
-///<summary>
 ///總地m2
 ///[double, nullable(True)]
 ///</summary>
