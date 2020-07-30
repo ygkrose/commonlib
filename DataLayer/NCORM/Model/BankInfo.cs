@@ -43,5 +43,12 @@ public string Addr { get; set; }
 ///[varchar(20), nullable(True)]
 ///</summary>
 public string Tel { get; set; }
+
+///<summary>
+///是否啟用(0:否1:是)
+///[bit(1), nullable(False)]
+///</summary>
+[Required]
+public UInt64 Enable { get; set; }
 }
 }

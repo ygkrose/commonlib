@@ -53,7 +53,7 @@ public string ParkingLicenseNo { get; set; }
 ///遙控器號碼
 ///[varchar(20), nullable(True)]
 ///</summary>
-public string RemoteControlNo { get; set; }
+public string RemoteCtrlCard_Id { get; set; }
 
 ///<summary>
 ///車型
@@ -69,7 +69,7 @@ public string CarColor { get; set; }
 
 ///<summary>
 ///廠牌
-///[varchar(20), nullable(True)]
+///[varchar(30), nullable(True)]
 ///</summary>
 public string CarBrand { get; set; }
 

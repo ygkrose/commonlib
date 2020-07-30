@@ -13,11 +13,11 @@ public class WEB_Company_Intro : TableBase
 
 
 ///<summary>
-///公司ID
+///組織ID
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid Company_Id { get; set; }
+public Guid Org_Id { get; set; }
 
 ///<summary>
 ///排序

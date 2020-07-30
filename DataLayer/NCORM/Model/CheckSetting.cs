@@ -23,5 +23,7 @@ public string Code { get; set; }
 ///[varchar(30), nullable(True)]
 ///</summary>
 public string Name { get; set; }
+
+public Guid? Org_Id { get; set; }
 }
 }

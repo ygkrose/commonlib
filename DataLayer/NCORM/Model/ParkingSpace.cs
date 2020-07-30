@@ -79,5 +79,11 @@ public Guid? modUser_Id { get; set; }
 ///[datetime, nullable(True)]
 ///</summary>
 public DateTime? ModDate { get; set; }
+
+///<summary>
+///收費對象
+///[char(36), nullable(True)]
+///</summary>
+public Guid? billClient_Id { get; set; }
 }
 }

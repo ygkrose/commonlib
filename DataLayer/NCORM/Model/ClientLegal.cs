@@ -28,7 +28,7 @@ public string Representative { get; set; }
 ///登記縣市行政區
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? Region_Id { get; set; }
+public Guid? registeredRegion_Id { get; set; }
 
 ///<summary>
 ///登記地址

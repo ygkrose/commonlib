@@ -24,6 +24,6 @@ public Guid Org_Id { get; set; }
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid Program_Id { get; set; }
+public Guid Program_AvaliableAction_Id { get; set; }
 }
 }

@@ -17,8 +17,12 @@ public class BankAccount : TableBase
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid SourceTable_Id { get; set; }
+public Guid SourceId { get; set; }
 
+///<summary>
+///來源資料表名
+///[varchar(100), nullable(False)]
+///</summary>
 [Required]
 public string SourceTable { get; set; }
 
@@ -33,6 +37,12 @@ public string AccountName { get; set; }
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? BankInfo_Id { get; set; }
+
+///<summary>
+///銀行轉帳扣款(0:否1:是)
+///[bit(1), nullable(True)]
+///</summary>
+public UInt64 IsAch { get; set; }
 
 ///<summary>
 ///帳號
@@ -69,5 +79,23 @@ public UInt64 IsAchApproval { get; set; }
 ///[bit(1), nullable(True)]
 ///</summary>
 public UInt64 IsDefault { get; set; }
+
+///<summary>
+///交易對象ID
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Client_Id { get; set; }
+
+///<summary>
+///識別名稱
+///[varchar(20), nullable(True)]
+///</summary>
+public string ShortName { get; set; }
+
+///<summary>
+///銀行企業編號(虛擬帳號的前幾碼)
+///[varchar(10), nullable(True)]
+///</summary>
+public string BankCode { get; set; }
 }
 }

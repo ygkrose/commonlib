@@ -51,12 +51,6 @@ public string Code_Announce { get; set; }
 public UInt64 OnTop { get; set; }
 
 ///<summary>
-///必讀(0:否, 1:是)
-///[bit(1), nullable(True)]
-///</summary>
-public UInt64 MustRead { get; set; }
-
-///<summary>
 ///發佈於登入頁面(0:否, 1:是)
 ///[bit(1), nullable(True)]
 ///</summary>
@@ -151,5 +145,11 @@ public Guid? modUser_Id { get; set; }
 ///[datetime, nullable(True)]
 ///</summary>
 public DateTime? ModDate { get; set; }
+
+///<summary>
+///組織ID
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Org_Id { get; set; }
 }
 }

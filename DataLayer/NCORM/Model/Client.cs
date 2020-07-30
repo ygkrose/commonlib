@@ -42,5 +42,47 @@ public string FullName { get; set; }
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? Company_Id { get; set; }
+
+///<summary>
+///是否住戶(0:否1:是)
+///[bit(1), nullable(True)]
+///</summary>
+public UInt64 IsResident { get; set; }
+
+///<summary>
+///電話1
+///[varchar(20), nullable(True)]
+///</summary>
+public string Tel1 { get; set; }
+
+///<summary>
+///電話2
+///[varchar(20), nullable(True)]
+///</summary>
+public string Tel2 { get; set; }
+
+///<summary>
+///手機
+///[varchar(20), nullable(True)]
+///</summary>
+public string Mobile { get; set; }
+
+///<summary>
+///聯絡人
+///[varchar(20), nullable(True)]
+///</summary>
+public string ContactPerson { get; set; }
+
+///<summary>
+///傳真
+///[varchar(20), nullable(True)]
+///</summary>
+public string Fax { get; set; }
+
+///<summary>
+///備註
+///[varchar(100), nullable(True)]
+///</summary>
+public string Memo { get; set; }
 }
 }

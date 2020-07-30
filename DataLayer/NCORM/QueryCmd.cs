@@ -3,6 +3,7 @@ using NewCity.DataAccess.Tools;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -65,6 +66,38 @@ namespace NewCity.DataAccess
             {
                 if (globalTrans == null) _dbe.DBConnection.Close();
             }
+        }
+
+        /// <summary>
+        /// 取得多查詢的動態類別
+        /// </summary>
+        /// <param name="sqlstr"></param>
+        /// <returns></returns>
+        public async IAsyncEnumerable<dynamic> GetManyQueryResult(IEnumerable<string> sqlstr)
+        {
+            SqlMapper.GridReader rst;
+            try
+            {
+                string combinesql = "";
+                if (_dbe.DBType == DBType.MySql)
+                {
+                    foreach (var s in sqlstr)
+                        combinesql += s.Replace("[", "`").Replace("]", "`") + (s.EndsWith(";")?"":";");
+                }
+                    
+                rst = await _dbe.DBConnection.QueryMultipleAsync(combinesql, commandType: System.Data.CommandType.Text, transaction: globalTrans);
+            }
+            catch (Exception err)
+            {
+                ErrLog.ExceptionLog(err, $"query: {sqlstr} occur error.");
+                yield break;
+            }
+
+            for (int i = 0; i < sqlstr.Count(); i++)
+            {
+                yield return rst.Read();
+            }
+            if (globalTrans == null) _dbe.DBConnection.Close();
         }
 
         /// <summary>

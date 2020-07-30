@@ -7,7 +7,7 @@ namespace NewCity.DataAccess.Model
 /// <summary>
 ///會計科目管理
 /// </summary>
-public class Accounting : TableBase
+public class AccountingItem : TableBase
 {
 
 
@@ -60,5 +60,17 @@ public string DC { get; set; }
 ///</summary>
 [Required]
 public UInt64 IsStop { get; set; }
+
+///<summary>
+///立沖否(Y/N)
+///[char(1), nullable(True)]
+///</summary>
+public string Offset { get; set; }
+
+///<summary>
+///會計科目類別
+///[char(36), nullable(True)]
+///</summary>
+public Guid? AccountingTerm_Id { get; set; }
 }
 }

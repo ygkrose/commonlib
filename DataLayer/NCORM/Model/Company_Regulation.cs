@@ -90,5 +90,11 @@ public string HtmlContent { get; set; }
 ///[varchar(20), nullable(True)]
 ///</summary>
 public string Code_Prog { get; set; }
+
+///<summary>
+///排序
+///[varchar(5), nullable(True)]
+///</summary>
+public string Ord { get; set; }
 }
 }

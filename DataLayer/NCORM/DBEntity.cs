@@ -53,23 +53,26 @@ namespace NewCity.DataAccess
             _conn = db.CreateConnection();
         }
 
-      
+
         /// <summary>
         /// 紀錄歷程
         /// </summary>
         /// <param name="servicename">服務功能名稱</param>
         /// <param name="projectcode">專案名稱</param>
         /// <param name="userid">使用者Id</param>
-        public async void logHistory(string servicename, string projectcode, Guid userid)
+        /// <param name="param"></param>
+        public async void logHistory(string servicename, string projectcode, Guid userid, string param="")
         {
             await Task.Run(() =>
             {
                 HistoryLog hl = new HistoryLog()
                 {
+                    Id = Guid.NewGuid(),
                     ServiceName = servicename,
                     ProjectCode = projectcode,
                     User_Id = userid,
-                    ActionTime = DateTime.Now
+                    ActionTime = DateTime.Now,
+                    Params = param
                 };
                 TableEntity<HistoryLog> historyEntity = new TableEntity<HistoryLog>(DBType, DBConnStr, DBTimeout);
                 historyEntity.Insert(hl);

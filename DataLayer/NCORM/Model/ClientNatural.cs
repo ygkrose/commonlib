@@ -31,69 +31,33 @@ public string Gender { get; set; }
 public DateTime? BDay { get; set; }
 
 ///<summary>
-///戶口名簿戶號
-///[varchar(8), nullable(True)]
-///</summary>
-public string HouseholdNo { get; set; }
-
-///<summary>
-///連絡電話
-///[varchar(20), nullable(True)]
-///</summary>
-public string Tel { get; set; }
-
-///<summary>
-///手機
-///[varchar(10), nullable(True)]
-///</summary>
-public string Mobile { get; set; }
-
-///<summary>
-///電子郵件
-///[varchar(100), nullable(True)]
-///</summary>
-public string Email { get; set; }
-
-///<summary>
-///通訊縣市行政區
+///戶籍縣市行政區
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? Region_Id { get; set; }
+public Guid? householdRegion_Id { get; set; }
 
 ///<summary>
-///通訊地址
+///戶籍地址
 ///[varchar(200), nullable(True)]
 ///</summary>
-public string Addr { get; set; }
-
-///<summary>
-///緊急聯絡人
-///[varchar(10), nullable(True)]
-///</summary>
-public string EmerContact { get; set; }
-
-///<summary>
-///緊急聯絡人電話
-///[varchar(10), nullable(True)]
-///</summary>
-public string EmerTel { get; set; }
-
-///<summary>
-///緊急聯絡人手機
-///[varchar(10), nullable(True)]
-///</summary>
-public string EmerMobile { get; set; }
-
-///<summary>
-///職業
-///[varchar(20), nullable(True)]
-///</summary>
-public string Job { get; set; }
+public string HouseholdAddr { get; set; }
 
 ///<summary>
 ///國籍
 ///[varchar(10), nullable(True)]
 ///</summary>
 public string Nationality { get; set; }
+
+///<summary>
+///通訊縣市行政區
+///[char(36), nullable(True)]
+///</summary>
+public Guid? mailingRegion_Id { get; set; }
+
+///<summary>
+///通訊地址
+///[varchar(200), nullable(True)]
+///</summary>
+public string MailingAddr { get; set; }
 }
 }

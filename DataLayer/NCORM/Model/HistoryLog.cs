@@ -36,5 +36,11 @@ public Guid? User_Id { get; set; }
 ///[datetime, nullable(True)]
 ///</summary>
 public DateTime? ActionTime { get; set; }
+
+///<summary>
+///執行參數
+///[longtext, nullable(True)]
+///</summary>
+public string Params { get; set; }
 }
 }

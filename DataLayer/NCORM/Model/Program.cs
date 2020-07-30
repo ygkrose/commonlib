@@ -42,5 +42,11 @@ public string Url { get; set; }
 ///[varchar(200), nullable(True)]
 ///</summary>
 public string UrlHelp { get; set; }
+
+///<summary>
+///適用平台(Web,APP)
+///[varchar(10), nullable(True)]
+///</summary>
+public string Platform { get; set; }
 }
 }

@@ -29,29 +29,5 @@ public string Gender { get; set; }
 ///[bit(1), nullable(True)]
 ///</summary>
 public UInt64 IsNoInsuranceFee { get; set; }
-
-///<summary>
-///新增人員
-///[char(36), nullable(True)]
-///</summary>
-public Guid? addUser_Id { get; set; }
-
-///<summary>
-///新增日期時間
-///[datetime, nullable(True)]
-///</summary>
-public DateTime? AddDate { get; set; }
-
-///<summary>
-///修改人員
-///[char(36), nullable(True)]
-///</summary>
-public Guid? modUser_Id { get; set; }
-
-///<summary>
-///修改日期時間
-///[datetime, nullable(True)]
-///</summary>
-public DateTime? ModDate { get; set; }
 }
 }

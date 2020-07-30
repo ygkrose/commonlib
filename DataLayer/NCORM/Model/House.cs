@@ -47,5 +47,11 @@ public string UsingStatus { get; set; }
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? agentClient_Id { get; set; }
+
+///<summary>
+///收費對象
+///[char(36), nullable(True)]
+///</summary>
+public Guid? billClient_Id { get; set; }
 }
 }

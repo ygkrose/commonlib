@@ -28,9 +28,9 @@ public DateTime EndDate { get; set; }
 
 ///<summary>
 ///面積
-///[date, nullable(False)]
+///[double, nullable(False)]
 ///</summary>
 [Required]
-public DateTime BuildingAreaPing { get; set; }
+public Double BuildingAreaPing { get; set; }
 }
 }

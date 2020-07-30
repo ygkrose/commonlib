@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using MySqlX.XDevAPI.Relational;
 using NewCity.Common;
 using NewCity.DataAccess;
@@ -19,6 +20,10 @@ namespace ConsoleTest
             
             //宣告DB實體
             DBEntity dBEntity = new DBEntity(DBType.MySql, "server=192.168.1.226;database=PMERP;Persist Security Info=False;uid=itlife;pwd=1qaz@WSX");
+            //Task.Run(()=> dBEntity.logHistory("a", "b", Guid.NewGuid()));
+
+            
+
             //宣告欲查詢資料表類
             User u = new User()
             {
@@ -34,7 +39,7 @@ namespace ConsoleTest
                 //do job
                 
             }
-            var cnt = 1900000;
+            var cnt = 190;
             List<string> ht = new List<string>();
             Hashtable same = new Hashtable();
             while (cnt > 0)
@@ -70,7 +75,7 @@ namespace ConsoleTest
            // userTable.Delete(result);
            
             //自訂查詢;
-            //doQuery();
+            doQuery();
             
             Console.Read();
             
@@ -79,11 +84,18 @@ namespace ConsoleTest
 
         private static async void doQuery()
         {
-            QueryCmd qc = new QueryCmd(DBType.MySql, "server=192.168.1.226;database=PMERP;Persist Security Info=False;uid=root;pwd=23101680");
-            var result = await qc.GetQueryResult("select Id,Path,Name from File");
-            foreach (var r in result)
+            QueryCmd qc = new QueryCmd(DBType.MySql, "server=192.168.1.226;database=PMERP;Persist Security Info=False;uid=itlife;pwd=1qaz@WSX");
+            List<string> qry = new List<string>();
+            qry.Add("select Id,Path,Name from [File]");
+            qry.Add("select * from [User]");
+            qry.Add("select * from [Group]");
+            string s = "select Id, Path, Name from [File];select * from [User]";
+            
+            var result = qc.GetManyQueryResult(s.Split(new char[] { ';' }));
+            await foreach (var f in result)
             {
-                Console.WriteLine($"Id={r.Id}, Path={r.Path}, Name={r.Name}");
+                foreach (var r in f)
+                    Console.WriteLine($"Id={r.Id}, Path={r.Path}, Name={r.Name}");
             }
         }
 

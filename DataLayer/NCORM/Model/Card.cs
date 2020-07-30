@@ -96,5 +96,11 @@ public Guid? modUser_Id { get; set; }
 ///[date, nullable(True)]
 ///</summary>
 public DateTime? ModDate { get; set; }
+
+///<summary>
+///組織ID
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Org_Id { get; set; }
 }
 }
