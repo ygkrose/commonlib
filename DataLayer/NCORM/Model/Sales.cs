@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations;
 namespace NewCity.DataAccess.Model
 {
 /// <summary>
-///傳票頭檔
+///銷貨單
 /// </summary>
-public class Voucher : TableBase
+public class Sales : TableBase
 {
 
 
@@ -19,43 +19,41 @@ public class Voucher : TableBase
 public Guid? Company_Id { get; set; }
 
 ///<summary>
-///傳票日期
+///日期時間(使用者輸入的日期不需時間)
 ///[date, nullable(False)]
 ///</summary>
 [Required]
-public DateTime VoucherDate { get; set; }
+public DateTime Date { get; set; }
 
 ///<summary>
-///傳票類別(現金、轉帳、調整)
-///[varchar(20), nullable(True)]
+///戶號
+///[char(36), nullable(True)]
 ///</summary>
-public string VoucherTerm { get; set; }
+public Guid? House_Id { get; set; }
 
 ///<summary>
-///傳票編號
-///[varchar(20), nullable(False)]
+///住戶
+///[char(36), nullable(True)]
 ///</summary>
-[Required]
-public string VoucherNo { get; set; }
+public Guid? Client_Id { get; set; }
 
 ///<summary>
-///總金額
-///[int(11), nullable(False)]
+///合約編號
+///[char(36), nullable(True)]
 ///</summary>
-[Required]
-public Int32? Amount { get; set; }
+public Guid? Contract_Id { get; set; }
 
 ///<summary>
-///備註
-///[varchar(200), nullable(True)]
+///銷貨備註
+///[varchar(150), nullable(True)]
 ///</summary>
 public string Memo { get; set; }
 
 ///<summary>
 ///來源類別
-///[varchar(50), nullable(True)]
+///[varchar(30), nullable(True)]
 ///</summary>
-public string SourceTable { get; set; }
+public string SourceTerm { get; set; }
 
 ///<summary>
 ///來源ID
@@ -64,25 +62,13 @@ public string SourceTable { get; set; }
 public Guid? SourceId { get; set; }
 
 ///<summary>
-///核示人員
-///[char(36), nullable(True)]
-///</summary>
-public Guid? reviewUser_Id { get; set; }
-
-///<summary>
-///核示日期時間
-///[datetime, nullable(True)]
-///</summary>
-public DateTime? ReviewDate { get; set; }
-
-///<summary>
-///資料新增人員
+///新增人員
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? addUser_Id { get; set; }
 
 ///<summary>
-///新增日期
+///新增日期時間
 ///[datetime, nullable(True)]
 ///</summary>
 public DateTime? AddDate { get; set; }
@@ -94,7 +80,7 @@ public DateTime? AddDate { get; set; }
 public Guid? modUser_Id { get; set; }
 
 ///<summary>
-///修改日期
+///修改日期時間
 ///[datetime, nullable(True)]
 ///</summary>
 public DateTime? ModDate { get; set; }

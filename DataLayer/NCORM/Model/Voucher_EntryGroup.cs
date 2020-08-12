@@ -34,13 +34,13 @@ public Guid? Accounting_Id { get; set; }
 ///借方金額
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 DAmount { get; set; }
+public Int32? DAmount { get; set; }
 
 ///<summary>
 ///貸方金額
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 CAmount { get; set; }
+public Int32? CAmount { get; set; }
 
 ///<summary>
 ///摘要
@@ -53,12 +53,6 @@ public string Note { get; set; }
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? House_Id { get; set; }
-
-///<summary>
-///車位
-///[char(36), nullable(True)]
-///</summary>
-public Guid? ParkingSpace_Id { get; set; }
 
 ///<summary>
 ///住戶
@@ -77,23 +71,5 @@ public Guid? Supplier_Id { get; set; }
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? Contract_Id { get; set; }
-
-///<summary>
-///部門
-///[char(36), nullable(True)]
-///</summary>
-public Guid? Dept_Id { get; set; }
-
-///<summary>
-///服務據點
-///[char(36), nullable(True)]
-///</summary>
-public Guid? Station_Id { get; set; }
-
-///<summary>
-///印單備註
-///[varchar(100), nullable(True)]
-///</summary>
-public string SlipMemo { get; set; }
 }
 }

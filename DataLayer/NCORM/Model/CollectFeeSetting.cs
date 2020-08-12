@@ -41,19 +41,19 @@ public Guid? Company_Id { get; set; }
 ///手續費
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 Fee { get; set; }
+public Int32? Fee { get; set; }
 
 ///<summary>
 ///金額上限
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 AmountLimit { get; set; }
+public Int32? AmountLimit { get; set; }
 
 ///<summary>
 ///總金額含手續費
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 FeeInAmount { get; set; }
+public Int32? FeeInAmount { get; set; }
 
 ///<summary>
 ///超商手續費代號

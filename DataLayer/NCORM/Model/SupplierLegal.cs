@@ -48,12 +48,12 @@ public DateTime? OpeningDate { get; set; }
 ///資本額
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 Capital { get; set; }
+public Int32? Capital { get; set; }
 
 ///<summary>
 ///年營業額
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 AnnualTurnover { get; set; }
+public Int32? AnnualTurnover { get; set; }
 }
 }

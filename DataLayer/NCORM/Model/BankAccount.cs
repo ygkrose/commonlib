@@ -40,9 +40,9 @@ public Guid? BankInfo_Id { get; set; }
 
 ///<summary>
 ///銀行轉帳扣款(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 IsAch { get; set; }
+public string IsAch { get; set; }
 
 ///<summary>
 ///帳號
@@ -70,15 +70,15 @@ public Guid? ModForm_Id { get; set; }
 
 ///<summary>
 ///銀行審核通過(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 IsAchApproval { get; set; }
+public string IsAchApproval { get; set; }
 
 ///<summary>
 ///是否預設帳戶(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 IsDefault { get; set; }
+public string IsDefault { get; set; }
 
 ///<summary>
 ///交易對象ID

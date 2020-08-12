@@ -38,28 +38,10 @@ public Guid? ParkingSpace_Id { get; set; }
 public Guid? Client_Id { get; set; }
 
 ///<summary>
-///銷貨項目
-///[char(36), nullable(True)]
-///</summary>
-public Guid? ChargeItem_Id { get; set; }
-
-///<summary>
 ///金額
 ///[double, nullable(True)]
 ///</summary>
-public Double Amount { get; set; }
-
-///<summary>
-///收費月份
-///[smallint(1), nullable(True)]
-///</summary>
-public Int16 ChargeMonth { get; set; }
-
-///<summary>
-///收款區間(單位月)
-///[smallint(1), nullable(True)]
-///</summary>
-public Int16 Period { get; set; }
+public Double? Amount { get; set; }
 
 ///<summary>
 ///備註

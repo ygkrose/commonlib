@@ -30,13 +30,7 @@ public string Name { get; set; }
 ///項目類別
 ///[varchar(20), nullable(True)]
 ///</summary>
-public string Code_Item { get; set; }
-
-///<summary>
-///是否補助(0:否1:是)
-///[bit(1), nullable(True)]
-///</summary>
-public UInt64 Subsidy { get; set; }
+public string Code_ChargeItem { get; set; }
 
 ///<summary>
 ///停用日期
@@ -54,13 +48,13 @@ public string Code_SpecialItem { get; set; }
 ///代扣稅率
 ///[float, nullable(True)]
 ///</summary>
-public Single WithholdTaxRate { get; set; }
+public Single? WithholdTaxRate { get; set; }
 
 ///<summary>
 ///稅率
 ///[float, nullable(True)]
 ///</summary>
-public Single TaxRate { get; set; }
+public Single? TaxRate { get; set; }
 
 ///<summary>
 ///課稅別

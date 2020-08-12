@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using MySqlX.XDevAPI.Relational;
 using NewCity.Common;
 using NewCity.DataAccess;
 using NewCity.DataAccess.Model;
 using NewCity.DataAccess.Tools;
+using NCModel = NewCity.DataAccess.Model;
 
 namespace ConsoleTest
 {
@@ -22,7 +24,10 @@ namespace ConsoleTest
             DBEntity dBEntity = new DBEntity(DBType.MySql, "server=192.168.1.226;database=PMERP;Persist Security Info=False;uid=itlife;pwd=1qaz@WSX");
             //Task.Run(()=> dBEntity.logHistory("a", "b", Guid.NewGuid()));
 
-            
+            TableEntity<NCModel.Org> userOrgTable = new TableEntity<NCModel.Org>(dBEntity);
+            User_Org userOrgx = new User_Org { User_Id = Guid.Parse("1a7e021d-09ed-4d8c-adc7-39c5be0befd5") };
+            var userOrgs = userOrgTable.Select(new NCModel.Org());
+            //var userOrgs = userOrgTable.Select(new NCModel.Org { Code = "%0%"});
 
             //宣告欲查詢資料表類
             User u = new User()
@@ -33,7 +38,7 @@ namespace ConsoleTest
             //宣告資料表操作類
             TableEntity<User> userTable = new TableEntity<User>(dBEntity);
             //查詢
-            List<User> result = userTable.Select(u);
+            List<User> result = userTable.Select(new User { Code = "%%"});
             foreach (User _user in result)
             {
                 //do job
@@ -85,17 +90,22 @@ namespace ConsoleTest
         private static async void doQuery()
         {
             QueryCmd qc = new QueryCmd(DBType.MySql, "server=192.168.1.226;database=PMERP;Persist Security Info=False;uid=itlife;pwd=1qaz@WSX");
+            var userRoles =await qc.GetQueryResult<Role>($"SELECT r.* FROM PMERP.User_Role ur JOIN PMERP.Role r ON r.Id = ur.Role_Id WHERE ur.User_Id = '1a7e021d-09ed-4d8c-adc7-39c5be0befd5';");
             List<string> qry = new List<string>();
             qry.Add("select Id,Path,Name from [File]");
             qry.Add("select * from [User]");
             qry.Add("select * from [Group]");
-            string s = "select Id, Path, Name from [File];select * from [User]";
+            string s = "select * from [User];";
             
-            var result = qc.GetManyQueryResult(s.Split(new char[] { ';' }));
-            await foreach (var f in result)
+            var _user = qc.GetQueryResult<User>(s);
+            var result = qc.GetManyQueryResult(qry);
+            IEnumerable<object> _file = result.ToList()[0];
+            var r = _file.Cast<File>().Where(p => p.Privilege == "O");
+            var _User = result.ToList()[1] as IEnumerable<User>;
+            foreach (var f in result)
             {
-                foreach (var r in f)
-                    Console.WriteLine($"Id={r.Id}, Path={r.Path}, Name={r.Name}");
+                //foreach (var r in f)
+                //    Console.WriteLine($"Id={r.Id}, Path={r.Path}, Name={r.Name}");
             }
         }
 

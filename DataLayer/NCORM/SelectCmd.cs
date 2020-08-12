@@ -65,7 +65,7 @@ namespace NewCity.DataAccess
                 }
 
                 var tabname = row.GetType().GetTableName();
-                var sql = $"select * from {tabname} where {sbQry};";
+                var sql = $"select * from {tabname} {(sbQry.Length==0?"": $"where { sbQry }")};";
                return sql;
             }
             catch (Exception err)

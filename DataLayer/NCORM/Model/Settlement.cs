@@ -46,43 +46,43 @@ public DateTime? RemitDate { get; set; }
 ///代收金額
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 CollectAmount { get; set; }
+public Int32? CollectAmount { get; set; }
 
 ///<summary>
 ///代收筆數
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 CollectQty { get; set; }
+public Int32? CollectQty { get; set; }
 
 ///<summary>
 ///社區總數
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 CompanyQty { get; set; }
+public Int32? CompanyQty { get; set; }
 
 ///<summary>
 ///社區負擔交易手續費
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 ComanyTransFee { get; set; }
+public Int32? ComanyTransFee { get; set; }
 
 ///<summary>
 ///平台負擔交易手續費
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 NcTransFee { get; set; }
+public Int32? NcTransFee { get; set; }
 
 ///<summary>
 ///平台撥款手續費
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 NcRemitFee { get; set; }
+public Int32? NcRemitFee { get; set; }
 
 ///<summary>
 ///撥款金額
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 RemitAmount { get; set; }
+public Int32? RemitAmount { get; set; }
 
 ///<summary>
 ///網銀案件編號

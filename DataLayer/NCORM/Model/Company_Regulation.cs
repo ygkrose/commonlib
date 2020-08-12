@@ -69,9 +69,9 @@ public string Url { get; set; }
 
 ///<summary>
 ///不顯示(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 IsHidden { get; set; }
+public string IsHidden { get; set; }
 
 ///<summary>
 ///公佈日期

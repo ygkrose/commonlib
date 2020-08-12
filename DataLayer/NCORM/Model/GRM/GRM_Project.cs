@@ -31,7 +31,7 @@ public string Name { get; set; }
 ///[smallint(6), nullable(False)]
 ///</summary>
 [Required]
-public Int16 PeriodId { get; set; }
+public Int16? PeriodId { get; set; }
 
 ///<summary>
 ///單位名稱
@@ -55,13 +55,13 @@ public DateTime? EndDate { get; set; }
 ///本期總經費
 ///[double, nullable(True)]
 ///</summary>
-public Double Budget { get; set; }
+public Double? Budget { get; set; }
 
 ///<summary>
 ///計劃總戶數
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 ExpectedQty { get; set; }
+public Int32? ExpectedQty { get; set; }
 
 ///<summary>
 ///奉行政院核定日期

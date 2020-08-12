@@ -13,7 +13,7 @@ public class ChargeSetting : TableBase
 
 
 ///<summary>
-///收款批次名稱
+///收款設定名稱
 ///[varchar(30), nullable(False)]
 ///</summary>
 [Required]
@@ -37,5 +37,23 @@ public DateTime? StartDate { get; set; }
 ///[date, nullable(True)]
 ///</summary>
 public DateTime? EndDate { get; set; }
+
+///<summary>
+///收費月份
+///[smallint(1), nullable(True)]
+///</summary>
+public Int16? ChargeMonth { get; set; }
+
+///<summary>
+///收款週期(單位月)
+///[smallint(1), nullable(True)]
+///</summary>
+public Int16? Period { get; set; }
+
+///<summary>
+///銷貨項目
+///[char(36), nullable(True)]
+///</summary>
+public Guid? ChargeItem_Id { get; set; }
 }
 }

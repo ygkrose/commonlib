@@ -40,7 +40,7 @@ public string ShortName { get; set; }
 ///層級
 ///[smallint(5) unsigned, nullable(True)]
 ///</summary>
-public UInt16 Rank { get; set; }
+public UInt16? Rank { get; set; }
 
 ///<summary>
 ///排序

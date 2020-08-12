@@ -42,10 +42,10 @@ public Guid Pid { get; set; }
 
 ///<summary>
 ///彙總科目(0:否1:是)
-///[bit(1), nullable(False)]
+///[char(1), nullable(False)]
 ///</summary>
 [Required]
-public UInt64 IsSum { get; set; }
+public string IsSum { get; set; }
 
 ///<summary>
 ///借貸別(D:Debit C:Credit)
@@ -56,10 +56,10 @@ public string DC { get; set; }
 
 ///<summary>
 ///停用(0:否1:是)
-///[bit(1), nullable(False)]
+///[char(1), nullable(False)]
 ///</summary>
 [Required]
-public UInt64 IsStop { get; set; }
+public string IsStop { get; set; }
 
 ///<summary>
 ///立沖否(Y/N)

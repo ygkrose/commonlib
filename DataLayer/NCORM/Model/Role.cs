@@ -36,21 +36,21 @@ public string Description { get; set; }
 ///[smallint(6), nullable(False)]
 ///</summary>
 [Required]
-public Int16 ProgRank { get; set; }
+public Int16? ProgRank { get; set; }
 
 ///<summary>
 ///資料等級
 ///[smallint(6), nullable(False)]
 ///</summary>
 [Required]
-public Int16 DataRank { get; set; }
+public Int16? DataRank { get; set; }
 
 ///<summary>
 ///欄位等級
 ///[smallint(6), nullable(False)]
 ///</summary>
 [Required]
-public Int16 FieldRank { get; set; }
+public Int16? FieldRank { get; set; }
 
 ///<summary>
 ///所屬組織頂層(top of same rank)

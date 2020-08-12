@@ -16,7 +16,7 @@ public class PaymentRecord : TableBase
 ///繳費金額
 ///[double, nullable(True)]
 ///</summary>
-public Double TransAmount { get; set; }
+public Double? TransAmount { get; set; }
 
 ///<summary>
 ///繳款編號
@@ -28,7 +28,7 @@ public string PaymentNo { get; set; }
 ///實際交易手續費
 ///[double, nullable(True)]
 ///</summary>
-public Double ActualFee { get; set; }
+public Double? ActualFee { get; set; }
 
 ///<summary>
 ///交易手續費負擔方
@@ -40,7 +40,7 @@ public string FeePayer { get; set; }
 ///應入帳金額
 ///[double, nullable(True)]
 ///</summary>
-public Double ExpectedAmount { get; set; }
+public Double? ExpectedAmount { get; set; }
 
 ///<summary>
 ///預計入帳日
@@ -52,7 +52,7 @@ public DateTime? ExpectedDate { get; set; }
 ///平台負擔手續費
 ///[double, nullable(True)]
 ///</summary>
-public Double NcFee { get; set; }
+public Double? NcFee { get; set; }
 
 ///<summary>
 ///銷帳說明
@@ -71,6 +71,12 @@ public DateTime? AccountDate { get; set; }
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? Company_Id { get; set; }
+
+///<summary>
+///合約編號
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Contract_Id { get; set; }
 
 ///<summary>
 ///核示人
@@ -118,13 +124,13 @@ public string Code_CollectType { get; set; }
 ///交易手續費
 ///[double, nullable(True)]
 ///</summary>
-public Double SlipFee { get; set; }
+public Double? SlipFee { get; set; }
 
 ///<summary>
 ///社區入帳金額
 ///[double, nullable(True)]
 ///</summary>
-public Double AccountAmount { get; set; }
+public Double? AccountAmount { get; set; }
 
 ///<summary>
 ///單據日期

@@ -33,9 +33,9 @@ public string IdCardNo { get; set; }
 
 ///<summary>
 ///外籍人仕(0:否,1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 Forign { get; set; }
+public string Forign { get; set; }
 
 ///<summary>
 ///稱謂選項
@@ -89,12 +89,12 @@ public string Spouse { get; set; }
 ///最近年所得
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 LatestYearIncome { get; set; }
+public Int32? LatestYearIncome { get; set; }
 
 ///<summary>
 ///未同戶籍20歲以下子女(0:否,1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 Under20 { get; set; }
+public string Under20 { get; set; }
 }
 }

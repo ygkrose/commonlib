@@ -39,8 +39,8 @@ public string BindingAppId { get; set; }
 
 ///<summary>
 ///預設
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 IsDefault { get; set; }
+public string IsDefault { get; set; }
 }
 }

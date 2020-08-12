@@ -58,7 +58,7 @@ public Decimal Latitude { get; set; }
 ///建物縣市行政區
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 BuildingRegion_Id { get; set; }
+public Int32? BuildingRegion_Id { get; set; }
 
 ///<summary>
 ///地段
@@ -112,13 +112,13 @@ public DateTime? BuildingDate { get; set; }
 ///座落樓層
 ///[smallint(6), nullable(True)]
 ///</summary>
-public Int16 Floor { get; set; }
+public Int16? Floor { get; set; }
 
 ///<summary>
 ///總樓層
 ///[smallint(6), nullable(True)]
 ///</summary>
-public Int16 TotalFloor { get; set; }
+public Int16? TotalFloor { get; set; }
 
 ///<summary>
 ///格局
@@ -130,19 +130,19 @@ public string Pattern { get; set; }
 ///隔間_房
 ///[smallint(6), nullable(True)]
 ///</summary>
-public Int16 Bedroom { get; set; }
+public Int16? Bedroom { get; set; }
 
 ///<summary>
 ///隔間_廳
 ///[smallint(6), nullable(True)]
 ///</summary>
-public Int16 LivingRoom { get; set; }
+public Int16? LivingRoom { get; set; }
 
 ///<summary>
 ///隔間_衛
 ///[smallint(6), nullable(True)]
 ///</summary>
-public Int16 Bathroom { get; set; }
+public Int16? Bathroom { get; set; }
 
 ///<summary>
 ///隔間材質
@@ -154,25 +154,25 @@ public string CompartmentMaterial { get; set; }
 ///謄本面積m2
 ///[double, nullable(True)]
 ///</summary>
-public Double RegisteredArea { get; set; }
+public Double? RegisteredArea { get; set; }
 
 ///<summary>
 ///謄本面積坪
 ///[double, nullable(True)]
 ///</summary>
-public Double RegisteredAreaPing { get; set; }
+public Double? RegisteredAreaPing { get; set; }
 
 ///<summary>
 ///實際使用m2
 ///[double, nullable(True)]
 ///</summary>
-public Double UsingArea { get; set; }
+public Double? UsingArea { get; set; }
 
 ///<summary>
 ///實際使用坪
 ///[double, nullable(True)]
 ///</summary>
-public Double UsingAreaPing { get; set; }
+public Double? UsingAreaPing { get; set; }
 
 ///<summary>
 ///所屬大樓
@@ -206,9 +206,9 @@ public string Plan { get; set; }
 
 ///<summary>
 ///賦稅減免(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 IsTaxCutAgree { get; set; }
+public string IsTaxCutAgree { get; set; }
 
 ///<summary>
 ///1.自用 2.空屋 3.出租
@@ -238,127 +238,127 @@ public string Code_Evaluate { get; set; }
 ///市場租金
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 MarketRent { get; set; }
+public Int32? MarketRent { get; set; }
 
 ///<summary>
 ///所在地租金上限
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 MaxRent { get; set; }
+public Int32? MaxRent { get; set; }
 
 ///<summary>
 ///房東自願降價(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 IsReduceAgree { get; set; }
+public string IsReduceAgree { get; set; }
 
 ///<summary>
 ///待租租金
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 ExpectedRent { get; set; }
+public Int32? ExpectedRent { get; set; }
 
 ///<summary>
 ///包租包管簽約租金
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 RentA { get; set; }
+public Int32? RentA { get; set; }
 
 ///<summary>
 ///代租代管簽約租金
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 RentB { get; set; }
+public Int32? RentB { get; set; }
 
 ///<summary>
 ///保證金月數
 ///[smallint(6), nullable(True)]
 ///</summary>
-public Int16 DepositMonth { get; set; }
+public Int16? DepositMonth { get; set; }
 
 ///<summary>
 ///保證金金額
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 Deposit { get; set; }
+public Int32? Deposit { get; set; }
 
 ///<summary>
 ///每月管理費金額
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 MonthlyMgtFee { get; set; }
+public Int32? MonthlyMgtFee { get; set; }
 
 ///<summary>
 ///每坪管理費金額
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 MgtFeePerPing { get; set; }
+public Int32? MgtFeePerPing { get; set; }
 
 ///<summary>
 ///可否議價(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 IsBargainable { get; set; }
+public string IsBargainable { get; set; }
 
 ///<summary>
 ///含管理費(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 InclMgtFee { get; set; }
+public string InclMgtFee { get; set; }
 
 ///<summary>
 ///含電費(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 InclElectricityFee { get; set; }
+public string InclElectricityFee { get; set; }
 
 ///<summary>
 ///含水費(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 InclWaterFee { get; set; }
+public string InclWaterFee { get; set; }
 
 ///<summary>
 ///含瓦斯(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 InclGasFee { get; set; }
+public string InclGasFee { get; set; }
 
 ///<summary>
 ///含第四台(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 InclCatvFee { get; set; }
+public string InclCatvFee { get; set; }
 
 ///<summary>
 ///含網路(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 InclInternetFee { get; set; }
+public string InclInternetFee { get; set; }
 
 ///<summary>
 ///含車位(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 InclParkingFee { get; set; }
+public string InclParkingFee { get; set; }
 
 ///<summary>
 ///含清潔費(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 InclCleaningFee { get; set; }
+public string InclCleaningFee { get; set; }
 
 ///<summary>
 ///可否炊煮(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 IsCookAllowed { get; set; }
+public string IsCookAllowed { get; set; }
 
 ///<summary>
 ///有無障礙設施(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 IsBarrierFree { get; set; }
+public string IsBarrierFree { get; set; }
 
 ///<summary>
 ///門禁管理方式(管理員、刷卡門禁、其他)

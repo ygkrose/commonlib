@@ -48,7 +48,7 @@ public string Addr { get; set; }
 ///總戶數
 ///[smallint(5), nullable(True)]
 ///</summary>
-public Int16 Qty { get; set; }
+public Int16? Qty { get; set; }
 
 ///<summary>
 ///使照年月(紀錄年月，日統一帶01)
@@ -60,9 +60,9 @@ public string Lane { get; set; }
 
 ///<summary>
 ///是否成立管委會(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 IsCommittee { get; set; }
+public string IsCommittee { get; set; }
 
 ///<summary>
 ///對應的組織Id

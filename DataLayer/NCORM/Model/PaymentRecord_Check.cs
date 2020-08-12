@@ -17,7 +17,7 @@ public class PaymentRecord_Check : TableBase
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid ArWriteOff_Id { get; set; }
+public Guid PaymentRecord_Id { get; set; }
 
 ///<summary>
 ///支票號碼
@@ -38,7 +38,7 @@ public DateTime PayDate { get; set; }
 ///[int(11), nullable(False)]
 ///</summary>
 [Required]
-public Int32 Amount { get; set; }
+public Int32? Amount { get; set; }
 
 ///<summary>
 ///入帳帳號
@@ -61,15 +61,15 @@ public string CheckAccount { get; set; }
 
 ///<summary>
 ///是否客票(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 TransCheck { get; set; }
+public string TransCheck { get; set; }
 
 ///<summary>
 ///禁止背書轉讓(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 NonTransferable { get; set; }
+public string NonTransferable { get; set; }
 
 ///<summary>
 ///發票人

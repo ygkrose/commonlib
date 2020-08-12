@@ -28,6 +28,6 @@ public Guid? Announce_Id { get; set; }
 ///組織層級
 ///[smallint(6), nullable(True)]
 ///</summary>
-public Int16 Org_Rank { get; set; }
+public Int16? Org_Rank { get; set; }
 }
 }

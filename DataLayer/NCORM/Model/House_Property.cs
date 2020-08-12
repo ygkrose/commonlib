@@ -37,6 +37,6 @@ public string Name { get; set; }
 ///屬性值
 ///[smallint(6), nullable(True)]
 ///</summary>
-public Int16 PropertyValue { get; set; }
+public Int16? PropertyValue { get; set; }
 }
 }

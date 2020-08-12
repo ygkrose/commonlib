@@ -26,8 +26,8 @@ public string Gender { get; set; }
 
 ///<summary>
 ///免扣補充保費(0:否 1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 IsNoInsuranceFee { get; set; }
+public string IsNoInsuranceFee { get; set; }
 }
 }

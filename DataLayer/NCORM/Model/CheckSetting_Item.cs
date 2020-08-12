@@ -47,12 +47,12 @@ public string Memo { get; set; }
 ///數量
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 Qty { get; set; }
+public Int32? Qty { get; set; }
 
 ///<summary>
 ///是否必要(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 Must { get; set; }
+public string Must { get; set; }
 }
 }

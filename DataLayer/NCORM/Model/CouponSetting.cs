@@ -40,19 +40,19 @@ public Guid? Client_Id { get; set; }
 ///折扣金額
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 Discount { get; set; }
+public Int32? Discount { get; set; }
 
 ///<summary>
 ///優惠繳費%
 ///[float, nullable(True)]
 ///</summary>
-public Single PayRate { get; set; }
+public Single? PayRate { get; set; }
 
 ///<summary>
 ///繳費月數
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 MonthQty { get; set; }
+public Int32? MonthQty { get; set; }
 
 ///<summary>
 ///有效起日
@@ -70,9 +70,9 @@ public DateTime EndDate { get; set; }
 
 ///<summary>
 ///不與其他優惠券共用(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 IsUnique { get; set; }
+public string IsUnique { get; set; }
 
 ///<summary>
 ///新增日期

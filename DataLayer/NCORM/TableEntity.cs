@@ -140,7 +140,8 @@ namespace NewCity.DataAccess
             {
                 CommandDefinition cd = new CommandDefinition(commandText: sql.ToString(), transaction: trans, commandTimeout: _cmdTimeout);
                 cmd.Connection.Execute(cd);
-                trans.Commit();
+                if (globalTrans == null)
+                    trans.Commit();
                 return true;
             }
             catch (Exception err)

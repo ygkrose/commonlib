@@ -30,13 +30,13 @@ public Guid ChargeItem_Id { get; set; }
 ///應繳金額
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 Amount { get; set; }
+public Int32? Amount { get; set; }
 
 ///<summary>
 ///折扣後金額
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 DiscountAmount { get; set; }
+public Int32? DiscountAmount { get; set; }
 
 ///<summary>
 ///公司大樓

@@ -32,9 +32,9 @@ public string Name { get; set; }
 
 ///<summary>
 ///預設(0:否，1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 Default { get; set; }
+public string Default { get; set; }
 
 ///<summary>
 ///排序

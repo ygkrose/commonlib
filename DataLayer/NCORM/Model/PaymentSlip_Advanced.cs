@@ -28,7 +28,7 @@ public Guid? ChargeItem_Id { get; set; }
 ///每期金額
 ///[double, nullable(True)]
 ///</summary>
-public Double ChargeSettingAmount { get; set; }
+public Double? ChargeSettingAmount { get; set; }
 
 ///<summary>
 ///優惠方案
@@ -40,25 +40,25 @@ public Guid? CouponSetting_Id { get; set; }
 ///應收總金額
 ///[double, nullable(True)]
 ///</summary>
-public Double OriginalAmount { get; set; }
+public Double? OriginalAmount { get; set; }
 
 ///<summary>
 ///優惠繳費%
 ///[double, nullable(True)]
 ///</summary>
-public Double PayRate { get; set; }
+public Double? PayRate { get; set; }
 
 ///<summary>
 ///折扣總金額
 ///[double, nullable(True)]
 ///</summary>
-public Double DiscountAmount { get; set; }
+public Double? DiscountAmount { get; set; }
 
 ///<summary>
 ///優惠應收金額
 ///[double, nullable(True)]
 ///</summary>
-public Double Amount { get; set; }
+public Double? Amount { get; set; }
 
 ///<summary>
 ///優惠生效月份

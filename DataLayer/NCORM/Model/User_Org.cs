@@ -28,9 +28,9 @@ public Guid Org_Id { get; set; }
 
 ///<summary>
 ///是否預設(0:否 1:是)
-///[bit(1), nullable(False)]
+///[char(1), nullable(False)]
 ///</summary>
 [Required]
-public UInt64 IsDefault { get; set; }
+public string IsDefault { get; set; }
 }
 }

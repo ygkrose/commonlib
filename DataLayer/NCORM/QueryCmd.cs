@@ -48,7 +48,7 @@ namespace NewCity.DataAccess
         /// </summary>
         /// <param name="sqlstr">sql語法</param>
         /// <returns></returns>
-        public async Task<dynamic> GetQueryResult(string sqlstr)
+        public async Task<IEnumerable<dynamic>> GetQueryResult(string sqlstr)
         {
             try
             {
@@ -69,11 +69,37 @@ namespace NewCity.DataAccess
         }
 
         /// <summary>
+        /// 取得查詢的指定匿名型別
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sqlstr"></param>
+        /// <returns></returns>
+        public async Task<IEnumerable<T>> GetQueryResult<T>(string sqlstr)
+        {
+            try
+            {
+                if (_dbe.DBType == DBType.MySql)
+                    sqlstr = sqlstr.Replace("[", "`").Replace("]", "`");
+                var rst = await _dbe.DBConnection.QueryAsync<T>(sqlstr, commandType: System.Data.CommandType.Text, transaction: globalTrans);
+                return rst;
+            }
+            catch (Exception err)
+            {
+                ErrLog.ExceptionLog(err, $"query: {sqlstr} occur error.");
+                return null;
+            }
+            finally
+            {
+                if (globalTrans == null) _dbe.DBConnection.Close();
+            }
+        }
+
+        /// <summary>
         /// 取得多查詢的動態類別
         /// </summary>
         /// <param name="sqlstr"></param>
         /// <returns></returns>
-        public async IAsyncEnumerable<dynamic> GetManyQueryResult(IEnumerable<string> sqlstr)
+        public IEnumerable<dynamic> GetManyQueryResult(IEnumerable<string> sqlstr)
         {
             SqlMapper.GridReader rst;
             try
@@ -82,9 +108,41 @@ namespace NewCity.DataAccess
                 if (_dbe.DBType == DBType.MySql)
                 {
                     foreach (var s in sqlstr)
-                        combinesql += s.Replace("[", "`").Replace("]", "`") + (s.EndsWith(";")?"":";");
+                        combinesql += s.Replace("[", "`").Replace("]", "`") + (s.EndsWith(";") ? "" : ";");
                 }
-                    
+
+                rst = _dbe.DBConnection.QueryMultipleAsync(combinesql, commandType: System.Data.CommandType.Text, transaction: globalTrans).Result;
+            }
+            catch (Exception err)
+            {
+                ErrLog.ExceptionLog(err, $"query: {sqlstr} occur error.");
+                yield break;
+            }
+
+            for (int i = 0; i < sqlstr.Count(); i++)
+            {
+                yield return rst.Read();
+            }
+            if (globalTrans == null) _dbe.DBConnection.Close();
+        }
+
+        /// <summary>
+        /// 取得多查詢的動態類別
+        /// </summary>
+        /// <param name="sqlstr"></param>
+        /// <returns></returns>
+        public async IAsyncEnumerable<dynamic> GetManyQueryResultAsync(IEnumerable<string> sqlstr)
+        {
+            SqlMapper.GridReader rst;
+            try
+            {
+                string combinesql = "";
+                if (_dbe.DBType == DBType.MySql)
+                {
+                    foreach (var s in sqlstr)
+                        combinesql += s.Replace("[", "`").Replace("]", "`") + (s.EndsWith(";") ? "" : ";");
+                }
+
                 rst = await _dbe.DBConnection.QueryMultipleAsync(combinesql, commandType: System.Data.CommandType.Text, transaction: globalTrans);
             }
             catch (Exception err)

@@ -41,7 +41,7 @@ public Guid SourceId { get; set; }
 public Guid AccountingItem_Id { get; set; }
 
 ///<summary>
-///對應類別
+///對應類別(1-傳輸代號2-銀存.應收票.應付票.匯費3-立帳借方.立帳貸方.退回.作廢.預收款.立帳稅.營業稅.代扣稅.預收已開.認列(收入.費用))
 ///[varchar(20), nullable(True)]
 ///</summary>
 public string Term { get; set; }

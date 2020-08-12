@@ -46,9 +46,9 @@ public string Tel { get; set; }
 
 ///<summary>
 ///是否啟用(0:否1:是)
-///[bit(1), nullable(False)]
+///[char(1), nullable(False)]
 ///</summary>
 [Required]
-public UInt64 Enable { get; set; }
+public string Enable { get; set; }
 }
 }

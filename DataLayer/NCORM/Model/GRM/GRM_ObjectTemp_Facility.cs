@@ -35,7 +35,7 @@ public string Facility { get; set; }
 ///數量
 ///[smallint(6), nullable(True)]
 ///</summary>
-public Int16 Qty { get; set; }
+public Int16? Qty { get; set; }
 
 ///<summary>
 ///廠牌型號

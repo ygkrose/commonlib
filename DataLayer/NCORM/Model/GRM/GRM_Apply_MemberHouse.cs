@@ -59,25 +59,25 @@ public string BuildingNo { get; set; }
 ///總面積
 ///[double, nullable(True)]
 ///</summary>
-public Double TotalArea { get; set; }
+public Double? TotalArea { get; set; }
 
 ///<summary>
 ///持分分子
 ///[double, nullable(True)]
 ///</summary>
-public Double Numerator { get; set; }
+public Double? Numerator { get; set; }
 
 ///<summary>
 ///持分分母
 ///[double, nullable(True)]
 ///</summary>
-public Double Denominator { get; set; }
+public Double? Denominator { get; set; }
 
 ///<summary>
 ///持分面積
 ///[double, nullable(True)]
 ///</summary>
-public Double PossessArea { get; set; }
+public Double? PossessArea { get; set; }
 
 ///<summary>
 ///路街
@@ -93,8 +93,8 @@ public string Addr { get; set; }
 
 ///<summary>
 ///設籍否(0:否,1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 Registered { get; set; }
+public string Registered { get; set; }
 }
 }

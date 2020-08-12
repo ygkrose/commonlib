@@ -35,12 +35,12 @@ public string ParkingNo { get; set; }
 ///車位樓層(-1 , -2 ..)
 ///[smallint(6), nullable(True)]
 ///</summary>
-public Int16 Floor { get; set; }
+public Int16? Floor { get; set; }
 
 ///<summary>
 ///每月清潔費
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 CleaningFee { get; set; }
+public Int32? CleaningFee { get; set; }
 }
 }

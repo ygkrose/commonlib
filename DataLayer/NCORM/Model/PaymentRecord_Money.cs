@@ -17,7 +17,7 @@ public class PaymentRecord_Money : TableBase
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid ArWriteOff_Id { get; set; }
+public Guid PaymentRecord_Id { get; set; }
 
 ///<summary>
 ///金額來源/使用類別(A.現金.銀存.B.票據.取預收.取保證金.取暫收.管理費用.呆帳錯帳C.(沖帳金額).收預收款.收保證金.收暫收款)
@@ -38,14 +38,14 @@ public string VoucherTerm { get; set; }
 ///[int(11), nullable(False)]
 ///</summary>
 [Required]
-public Int32 DAmount { get; set; }
+public Int32? dAmount { get; set; }
 
 ///<summary>
 ///貸方金額
 ///[int(11), nullable(False)]
 ///</summary>
 [Required]
-public Int32 CAmount { get; set; }
+public Int32? cAmount { get; set; }
 
 ///<summary>
 ///往來帳戶

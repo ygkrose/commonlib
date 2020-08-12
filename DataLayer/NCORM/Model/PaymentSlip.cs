@@ -64,7 +64,7 @@ public Guid? Client_Id { get; set; }
 ///總金額
 ///[double, nullable(True)]
 ///</summary>
-public Double Amount { get; set; }
+public Double? Amount { get; set; }
 
 ///<summary>
 ///繳款編號
@@ -76,13 +76,13 @@ public string PaymentNo { get; set; }
 ///手續費
 ///[double, nullable(True)]
 ///</summary>
-public Double Fee { get; set; }
+public Double? Fee { get; set; }
 
 ///<summary>
 ///總金額含手續費
 ///[double, nullable(True)]
 ///</summary>
-public Double FeeInAmount { get; set; }
+public Double? FeeInAmount { get; set; }
 
 ///<summary>
 ///來源主機
@@ -110,8 +110,8 @@ public string BarCode3 { get; set; }
 
 ///<summary>
 ///預繳(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 IsAdvanced { get; set; }
+public string IsAdvanced { get; set; }
 }
 }

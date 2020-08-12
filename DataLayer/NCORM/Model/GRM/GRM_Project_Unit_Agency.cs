@@ -28,18 +28,18 @@ public Guid? Agency_Id { get; set; }
 ///核定戶數(包)
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 QtyA { get; set; }
+public Int32? QtyA { get; set; }
 
 ///<summary>
 ///核定戶數(代)
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 QtyB { get; set; }
+public Int32? QtyB { get; set; }
 
 ///<summary>
 ///核定總經費
 ///[double, nullable(True)]
 ///</summary>
-public Double Budget { get; set; }
+public Double? Budget { get; set; }
 }
 }

@@ -28,24 +28,24 @@ public Guid? Region_Id { get; set; }
 ///最低生活費
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 MinLivingExpenses { get; set; }
+public Int32? MinLivingExpenses { get; set; }
 
 ///<summary>
 ///家庭年所得上限
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 MaxFamilyYearIncome { get; set; }
+public Int32? MaxFamilyYearIncome { get; set; }
 
 ///<summary>
 ///家庭每人每月平均所得上限
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 MaxAvgMonthIncome { get; set; }
+public Int32? MaxAvgMonthIncome { get; set; }
 
 ///<summary>
 ///公證費每件每次補助上限
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 MaxNotaryfees { get; set; }
+public Int32? MaxNotaryfees { get; set; }
 }
 }

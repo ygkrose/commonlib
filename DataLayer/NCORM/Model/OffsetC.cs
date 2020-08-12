@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 namespace NewCity.DataAccess.Model
 {
 /// <summary>
-///貸方立帳單號表
+///貸方立帳單
 /// </summary>
 public class OffsetC : TableBase
 {
@@ -20,42 +20,78 @@ public class OffsetC : TableBase
 public string OffsetNo { get; set; }
 
 ///<summary>
-///會計科目
+///收費項目
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid Accounting_Id { get; set; }
+public Guid ChargeItem_Id { get; set; }
 
 ///<summary>
-///金額
+///課稅別
+///[varchar(10), nullable(False)]
+///</summary>
+[Required]
+public string TaxType { get; set; }
+
+///<summary>
+///稅率
 ///[double, nullable(False)]
 ///</summary>
 [Required]
-public Double Amount { get; set; }
+public Double? TaxRate { get; set; }
 
 ///<summary>
-///來源類別(沖帳,折讓,作廢)
-///[varchar(50), nullable(True)]
+///會計科目
+///[char(36), nullable(True)]
 ///</summary>
-public string SourceTerm { get; set; }
+public Guid? AccountingItem_Id { get; set; }
 
 ///<summary>
-///對應沖帳頭檔ID
+///金額
+///[double, nullable(True)]
+///</summary>
+public Double? Amount { get; set; }
+
+///<summary>
+///立帳類別(立應付.立預付.立存入保證金.立存出保證金.立應付票)
+///[varchar(20), nullable(True)]
+///</summary>
+public string OffsetTerm { get; set; }
+
+///<summary>
+///來源TABLE
+///[varchar(20), nullable(True)]
+///</summary>
+public string SourceTable { get; set; }
+
+///<summary>
+///來源ID
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? SourceId { get; set; }
 
 ///<summary>
-///新增日期時間
-///[datetime, nullable(False)]
-///</summary>
-[Required]
-public DateTime AddDate { get; set; }
-
-///<summary>
-///公司大樓
+///借方傳輸ID
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? Company_Id { get; set; }
+public Guid? dTransCode_Id { get; set; }
+
+///<summary>
+///貸方傳輸ID
+///[char(36), nullable(True)]
+///</summary>
+public Guid? cTransCode_Id { get; set; }
+
+///<summary>
+///稅傳輸ID
+///[char(36), nullable(True)]
+///</summary>
+public Guid? tTransCode_Id { get; set; }
+
+///<summary>
+///新增日期
+///[datetime, nullable(True)]
+///</summary>
+public DateTime? AddDate { get; set; }
 }
 }

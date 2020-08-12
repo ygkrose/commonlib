@@ -24,13 +24,13 @@ public string Code { get; set; }
 ///[smallint(6), nullable(False)]
 ///</summary>
 [Required]
-public Int16 Floor { get; set; }
+public Int16? Floor { get; set; }
 
 ///<summary>
 ///車位類型(平面車位、機械上層、機械下層、機車位)
 ///[varchar(20), nullable(True)]
 ///</summary>
-public string Code_Type { get; set; }
+public string Code_ParkingSpaceTerm { get; set; }
 
 ///<summary>
 ///產權性質(公有、私有)
@@ -46,15 +46,15 @@ public Guid? Org_Id { get; set; }
 
 ///<summary>
 ///自行增設(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 IsIncreased { get; set; }
+public string IsIncreased { get; set; }
 
 ///<summary>
 ///限停車位數
-///[bit(1), nullable(True)]
+///[int(1), nullable(True)]
 ///</summary>
-public UInt64 CarQty { get; set; }
+public Int32? CarQty { get; set; }
 
 ///<summary>
 ///新增人員
@@ -85,5 +85,11 @@ public DateTime? ModDate { get; set; }
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? billClient_Id { get; set; }
+
+///<summary>
+///住戶收費對象
+///[char(36), nullable(True)]
+///</summary>
+public Guid? billHouse_Id { get; set; }
 }
 }

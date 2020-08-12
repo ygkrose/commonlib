@@ -28,19 +28,19 @@ public Guid? Assn_Id { get; set; }
 ///行政經費配額
 ///[double, nullable(True)]
 ///</summary>
-public Double Budget1 { get; set; }
+public Double? Budget1 { get; set; }
 
 ///<summary>
 ///公會管轄縣市經費配額
 ///[double, nullable(True)]
 ///</summary>
-public Double Budget2 { get; set; }
+public Double? Budget2 { get; set; }
 
 ///<summary>
 ///核定總經費
 ///[double, nullable(True)]
 ///</summary>
-public Double TotalBudget { get; set; }
+public Double? TotalBudget { get; set; }
 
 ///<summary>
 ///經費啟用日
@@ -52,19 +52,19 @@ public DateTime? StartDate { get; set; }
 ///核定戶數(包)
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 QtyA { get; set; }
+public Int32? QtyA { get; set; }
 
 ///<summary>
 ///核定戶數(代)
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 QtyB { get; set; }
+public Int32? QtyB { get; set; }
 
 ///<summary>
 ///市場租金上限
 ///[double, nullable(True)]
 ///</summary>
-public Double MaxRent { get; set; }
+public Double? MaxRent { get; set; }
 
 ///<summary>
 ///租金評定計算方式

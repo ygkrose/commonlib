@@ -15,7 +15,7 @@ public class OrgRankMap : TableBase
 ///[smallint(6), nullable(False)]
 ///</summary>
 [Required]
-public Int16 Rank { get; set; }
+public Int16? Rank { get; set; }
 
 ///<summary>
 ///代碼

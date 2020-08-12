@@ -17,7 +17,7 @@ public class File : TableBase
 ///[varchar(20), nullable(False)]
 ///</summary>
 [Required]
-public string Prog_Code { get; set; }
+public string ProgCode { get; set; }
 
 ///<summary>
 ///檔案上傳使用者ID

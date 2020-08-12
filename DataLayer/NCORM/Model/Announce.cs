@@ -46,15 +46,15 @@ public string Code_Announce { get; set; }
 
 ///<summary>
 ///置頂(0:否, 1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 OnTop { get; set; }
+public string OnTop { get; set; }
 
 ///<summary>
 ///發佈於登入頁面(0:否, 1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 OnLogin { get; set; }
+public string OnLogin { get; set; }
 
 ///<summary>
 ///公告主文
@@ -100,9 +100,9 @@ public string Tel { get; set; }
 
 ///<summary>
 ///是否輪播(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 IsCarousel { get; set; }
+public string IsCarousel { get; set; }
 
 ///<summary>
 ///輪播檔案

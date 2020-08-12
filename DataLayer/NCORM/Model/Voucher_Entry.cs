@@ -42,13 +42,13 @@ public Guid? ChargeItem_Id { get; set; }
 ///借方金額
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 DAmount { get; set; }
+public Int32? DAmount { get; set; }
 
 ///<summary>
 ///貸方金額
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 CAmount { get; set; }
+public Int32? CAmount { get; set; }
 
 ///<summary>
 ///摘要

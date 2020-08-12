@@ -70,7 +70,7 @@ public string PlusMinus { get; set; }
 ///繳費金額
 ///[double, nullable(True)]
 ///</summary>
-public Double Amount { get; set; }
+public Double? Amount { get; set; }
 
 ///<summary>
 ///交易銀行代號
@@ -98,9 +98,9 @@ public string TransSeq { get; set; }
 
 ///<summary>
 ///取消(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 IsCancel { get; set; }
+public string IsCancel { get; set; }
 
 ///<summary>
 ///服務類別(凱基代收、介接的銀行代號)

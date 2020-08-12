@@ -43,7 +43,7 @@ public DateTime? BDay { get; set; }
 ///持有比例
 ///[float, nullable(True)]
 ///</summary>
-public Single Percentage { get; set; }
+public Single? Percentage { get; set; }
 
 ///<summary>
 ///電話

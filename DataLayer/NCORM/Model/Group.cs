@@ -82,6 +82,6 @@ public string UiStyle { get; set; }
 ///授權數量
 ///[smallint(6), nullable(True)]
 ///</summary>
-public Int16 AuthorizedQty { get; set; }
+public Int16? AuthorizedQty { get; set; }
 }
 }

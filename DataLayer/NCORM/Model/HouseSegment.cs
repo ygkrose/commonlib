@@ -31,6 +31,6 @@ public DateTime EndDate { get; set; }
 ///[double, nullable(False)]
 ///</summary>
 [Required]
-public Double BuildingAreaPing { get; set; }
+public Double? BuildingAreaPing { get; set; }
 }
 }

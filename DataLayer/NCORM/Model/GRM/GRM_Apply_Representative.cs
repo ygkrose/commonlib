@@ -21,9 +21,9 @@ public Guid Apply_Id { get; set; }
 
 ///<summary>
 ///法定代理人(0:否,1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 Legal { get; set; }
+public string Legal { get; set; }
 
 ///<summary>
 ///代理人姓名

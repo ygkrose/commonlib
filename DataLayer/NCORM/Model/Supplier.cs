@@ -50,9 +50,9 @@ public string Code_Supplier { get; set; }
 
 ///<summary>
 ///權限類別(1:財務用、0:櫃台用)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 IsFinancial { get; set; }
+public string IsFinancial { get; set; }
 
 ///<summary>
 ///行政區域

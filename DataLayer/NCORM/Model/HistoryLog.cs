@@ -39,7 +39,7 @@ public DateTime? ActionTime { get; set; }
 
 ///<summary>
 ///執行參數
-///[longtext, nullable(True)]
+///[text, nullable(True)]
 ///</summary>
 public string Params { get; set; }
 }

@@ -2,39 +2,39 @@ using System;
 using NewCity.DataAccess.Model;
 using System.ComponentModel.DataAnnotations;
 
-namespace NewCity.DataAccess.Model.GRM
+namespace NewCity.DataAccess.Model
 {
 /// <summary>
-///已申請租金補貼項目
+///銷貨商品明細
 /// </summary>
-public class GRM_Apply_Subsidy : TableBase
+public class Sales_Goods : TableBase
 {
 
 
 
 ///<summary>
-///頭檔Id
+///頭檔ID
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid Apply_Id { get; set; }
+public Guid Sales_Id { get; set; }
 
 ///<summary>
-///項次排序
+///排序
 ///[varchar(4), nullable(True)]
 ///</summary>
 public string Ord { get; set; }
 
 ///<summary>
-///年度
-///[int(11), nullable(True)]
+///備註
+///[varchar(150), nullable(True)]
 ///</summary>
-public Int32? Year { get; set; }
+public string Memo { get; set; }
 
 ///<summary>
-///補貼項目名稱
-///[varchar(50), nullable(True)]
+///庫存異動紀錄ID
+///[char(36), nullable(True)]
 ///</summary>
-public string SubsidyItem { get; set; }
+public Guid? Inventory_Id { get; set; }
 }
 }

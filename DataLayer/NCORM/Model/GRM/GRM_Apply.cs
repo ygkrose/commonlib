@@ -149,7 +149,7 @@ public string MailingAddr { get; set; }
 ///法定代理人人數
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 RepresentativeQty { get; set; }
+public Int32? RepresentativeQty { get; set; }
 
 ///<summary>
 ///緊急聯絡人
@@ -243,9 +243,9 @@ public Guid? uploadNCT_File_Id { get; set; }
 
 ///<summary>
 ///承租申請資格(選項：0一般戶、1第一類弱勢戶、2第二類弱勢戶、3其他)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 RentIdentity { get; set; }
+public string RentIdentity { get; set; }
 
 ///<summary>
 ///其他申請資格的描述
@@ -263,13 +263,13 @@ public string SpouseHouseholdNo { get; set; }
 ///家戶最近年所得合計
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 TotalIncome { get; set; }
+public Int32? TotalIncome { get; set; }
 
 ///<summary>
 ///平均每人每月所得
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 AvgIncome { get; set; }
+public Int32? AvgIncome { get; set; }
 
 ///<summary>
 ///格局
@@ -287,31 +287,31 @@ public string Code_Building { get; set; }
 ///實際使用面積
 ///[double, nullable(True)]
 ///</summary>
-public Double UsingArea { get; set; }
+public Double? UsingArea { get; set; }
 
 ///<summary>
 ///樓層
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 Floor { get; set; }
+public Int32? Floor { get; set; }
 
 ///<summary>
 ///隔間_房
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 BedRoom { get; set; }
+public Int32? BedRoom { get; set; }
 
 ///<summary>
 ///隔間_廳
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 LivingRoom { get; set; }
+public Int32? LivingRoom { get; set; }
 
 ///<summary>
 ///隔間_衛
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 BathRoom { get; set; }
+public Int32? BathRoom { get; set; }
 
 ///<summary>
 ///門禁需求
@@ -323,13 +323,13 @@ public string AccessControl { get; set; }
 ///最低租金
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 MinRent { get; set; }
+public Int32? MinRent { get; set; }
 
 ///<summary>
 ///最高租金
 ///[int(11), nullable(True)]
 ///</summary>
-public Int32 MaxRent { get; set; }
+public Int32? MaxRent { get; set; }
 
 ///<summary>
 ///設備

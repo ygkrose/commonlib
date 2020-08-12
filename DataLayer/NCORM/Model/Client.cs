@@ -44,12 +44,6 @@ public string FullName { get; set; }
 public Guid? Company_Id { get; set; }
 
 ///<summary>
-///是否住戶(0:否1:是)
-///[bit(1), nullable(True)]
-///</summary>
-public UInt64 IsResident { get; set; }
-
-///<summary>
 ///電話1
 ///[varchar(20), nullable(True)]
 ///</summary>

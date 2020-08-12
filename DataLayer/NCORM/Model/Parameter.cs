@@ -56,9 +56,9 @@ public string MaxValue { get; set; }
 
 ///<summary>
 ///系統用(0:否1:是)
-///[bit(1), nullable(True)]
+///[char(1), nullable(True)]
 ///</summary>
-public UInt64 IsSys { get; set; }
+public string IsSys { get; set; }
 
 ///<summary>
 ///參數類別
