@@ -35,17 +35,5 @@ public Guid? Supplier_Id { get; set; }
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? Contract_Id { get; set; }
-
-///<summary>
-///來源表(立帳單、沖帳單、收入認列、費用認列)
-///[varchar(20), nullable(True)]
-///</summary>
-public string SourceTable { get; set; }
-
-///<summary>
-///對應沖帳頭檔ID
-///[char(36), nullable(True)]
-///</summary>
-public Guid? SourceId { get; set; }
 }
 }

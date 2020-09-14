@@ -52,9 +52,14 @@ namespace NewCity.DataAccess.Model
         public List<Org> user_Org { get; set; }
 
         /// <summary>
+        /// 帳號所對應的住戶
+        /// </summary>
+        public List<User_Client> user_Clients { get; set; }
+
+        /// <summary>
         /// 使用者擁有的程式權限
         /// </summary>
-        public Dictionary<string,List<ProgramAction>> programs { get; set; }
+        public Dictionary<string, List<ProgramAction>> programs { get; set; }
     }
 
     /// <summary>

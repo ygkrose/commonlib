@@ -14,10 +14,9 @@ public class CollectFeeSetting : TableBase
 
 ///<summary>
 ///生效日
-///[date, nullable(False)]
+///[date, nullable(True)]
 ///</summary>
-[Required]
-public DateTime EffectiveDate { get; set; }
+public DateTime? EffectiveDate { get; set; }
 
 ///<summary>
 ///服務分類
@@ -60,17 +59,5 @@ public Int32? FeeInAmount { get; set; }
 ///[varchar(20), nullable(True)]
 ///</summary>
 public string RefCode { get; set; }
-
-///<summary>
-///來源Table
-///[varchar(50), nullable(True)]
-///</summary>
-public string SourceTable { get; set; }
-
-///<summary>
-///來源Id
-///[char(36), nullable(True)]
-///</summary>
-public Guid? SourceId { get; set; }
 }
 }

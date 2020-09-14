@@ -55,5 +55,11 @@ public Int16? Period { get; set; }
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? ChargeItem_Id { get; set; }
+
+///<summary>
+///產生此筆收費設定的參數
+///[text, nullable(True)]
+///</summary>
+public string Parameter { get; set; }
 }
 }

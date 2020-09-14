@@ -32,9 +32,9 @@ public Guid? SourceId { get; set; }
 
 ///<summary>
 ///金額
-///[char(36), nullable(True)]
+///[double, nullable(True)]
 ///</summary>
-public Guid? Amount { get; set; }
+public Double? Amount { get; set; }
 
 ///<summary>
 ///異動時間
@@ -43,21 +43,21 @@ public Guid? Amount { get; set; }
 public DateTime? AddDate { get; set; }
 
 ///<summary>
-///折扣金額
-///[double, nullable(True)]
-///</summary>
-public Double? couponAmount { get; set; }
-
-///<summary>
 ///優惠券ID
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? Coupon_Id { get; set; }
 
 ///<summary>
-///傳票別
+///傳票別(1現金收入2現金支出3轉帳)
 ///[varchar(20), nullable(True)]
 ///</summary>
 public string VoucherTerm { get; set; }
+
+///<summary>
+///備註
+///[varchar(120), nullable(True)]
+///</summary>
+public string Memo { get; set; }
 }
 }

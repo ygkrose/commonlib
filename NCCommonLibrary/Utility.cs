@@ -110,7 +110,13 @@ namespace NewCity.Common
             }
         }
 
-        // Verify a hash against a string.
+        /// <summary>
+        /// Verify a hash against a string. 
+        /// </summary>
+        /// <param name="md5Hash"></param>
+        /// <param name="input"></param>
+        /// <param name="hash"></param>
+        /// <returns></returns>
         public static bool VerifyMd5Hash(MD5 md5Hash, string input, string hash)
         {
             // Hash the input.
@@ -127,6 +133,29 @@ namespace NewCity.Common
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// 取得間格月份
+        /// </summary>
+        /// <param name="start">開始月份</param>
+        /// <param name="period">間隔月數</param>
+        /// <returns></returns>
+        public static List<short> AllowMonth(short start,short period)
+        {
+            List<short> allowMonth = new List<short>();
+            if (start > 0 && start <= 12)
+            {
+                allowMonth.Add(start);
+                var cnt = 12/period;
+                for (int i=1;i<cnt;i++)
+                {
+                    start += period;
+                    if (start > 12) start -= 12;
+                    allowMonth.Add(start);
+                }
+            }
+            return allowMonth;
         }
 
     }

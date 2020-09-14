@@ -7,11 +7,17 @@
     <Authors>NewCity</Authors>
     <Product>NewCity</Product>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
-    <Version>1.0.4</Version>
+    <AssemblyVersion>1.0.4.4</AssemblyVersion>
+    <FileVersion>1.0.4.4</FileVersion>
+    <Version>1.0.4.4</Version>
     <Description>新都興共用元件庫</Description>
     <RootNamespace>NewCity.Common</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\NCCommon.xml</DocumentationFile>
+    <OutputPath>bin\Debug\</OutputPath>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
 
 </Project>

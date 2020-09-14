@@ -159,7 +159,7 @@ namespace NewCity.DataAccess
         }
 
         /// <summary>
-        /// 呼叫與除程序方法
+        /// 呼叫預儲程序方法
         /// </summary>
         /// <param name="spname">程序名</param>
         /// <param name="param">參數</param>
@@ -170,6 +170,32 @@ namespace NewCity.DataAccess
             {
                 var rst = await _dbe.DBConnection.QueryAsync(spname, param, commandType: System.Data.CommandType.StoredProcedure, transaction: globalTrans);
                 return rst.AsList();
+            }
+            catch (Exception err)
+            {
+                ErrLog.ExceptionLog(err, $"exec sp:{spname} occur error.");
+                return null;
+            }
+            finally
+            {
+                if (globalTrans == null) _dbe.DBConnection.Close();
+            }
+
+        }
+
+        /// <summary>
+        /// 呼叫預儲程序方法
+        /// </summary>
+        /// <typeparam name="T">回傳型別</typeparam>
+        /// <param name="spname">程序名</param>
+        /// <param name="param">參數</param>
+        /// <returns></returns>
+        public async Task<IEnumerable<T>> GetSPResult<T>(string spname, object param)
+        {
+            try
+            {
+                var rst = await _dbe.DBConnection.QueryAsync<T>(spname, param, commandType: System.Data.CommandType.StoredProcedure, transaction: globalTrans);
+                return rst;
             }
             catch (Exception err)
             {

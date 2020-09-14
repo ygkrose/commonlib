@@ -20,7 +20,7 @@ public class PaymentRecord_Money : TableBase
 public Guid PaymentRecord_Id { get; set; }
 
 ///<summary>
-///金額來源/使用類別(A.現金.銀存.B.票據.取預收.取保證金.取暫收.管理費用.呆帳錯帳C.(沖帳金額).收預收款.收保證金.收暫收款)
+///金額類別(現金.銀存.管理費用.呆帳錯帳)
 ///[varchar(50), nullable(False)]
 ///</summary>
 [Required]
@@ -38,14 +38,7 @@ public string VoucherTerm { get; set; }
 ///[int(11), nullable(False)]
 ///</summary>
 [Required]
-public Int32? dAmount { get; set; }
-
-///<summary>
-///貸方金額
-///[int(11), nullable(False)]
-///</summary>
-[Required]
-public Int32? cAmount { get; set; }
+public Int32? Amount { get; set; }
 
 ///<summary>
 ///往來帳戶
@@ -54,6 +47,10 @@ public Int32? cAmount { get; set; }
 [Required]
 public Guid BankAccount_Id { get; set; }
 
+///<summary>
+///說明
+///[varchar(50), nullable(True)]
+///</summary>
 public string Memo { get; set; }
 }
 }

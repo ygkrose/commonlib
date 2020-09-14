@@ -9,7 +9,7 @@ using NewCity.DataAccess;
 using NewCity.DataAccess.Model;
 using NewCity.DataAccess.Tools;
 using NCModel = NewCity.DataAccess.Model;
-
+using NewCity.Common;
 namespace ConsoleTest
 {
     class Program
@@ -17,11 +17,11 @@ namespace ConsoleTest
         static void Main(string[] args)
         {
             DateTime dt = new DateTime();
-            
+            var acc = NCUtility.AllowMonth(3, 4);
             /////////單一資料表操作/////////
             
             //宣告DB實體
-            DBEntity dBEntity = new DBEntity(DBType.MySql, "server=192.168.1.226;database=PMERP;Persist Security Info=False;uid=itlife;pwd=1qaz@WSX");
+            DBEntity dBEntity = new DBEntity(DBType.MySql, "server=192.168.1.226;database=PMERP;Persist Security Info=False;uid=itlife;pwd=1qaz@WSX;ConnectionTimeout=300;DefaultCommandTimeout=300;Allow User Variables=True");
             //Task.Run(()=> dBEntity.logHistory("a", "b", Guid.NewGuid()));
 
             TableEntity<NCModel.Org> userOrgTable = new TableEntity<NCModel.Org>(dBEntity);

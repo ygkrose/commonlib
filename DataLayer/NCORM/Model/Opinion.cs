@@ -5,43 +5,54 @@ using System.ComponentModel.DataAnnotations;
 namespace NewCity.DataAccess.Model
 {
 /// <summary>
-///銷貨單
+///管委會意見箱
 /// </summary>
-public class Sales : TableBase
+public class Opinion : TableBase
 {
 
 
 
 ///<summary>
-///公司大樓
+///大樓
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? Company_Id { get; set; }
 
 ///<summary>
-///日期時間(使用者輸入的日期不需時間)
-///[date, nullable(False)]
+///日期
+///[datetime, nullable(True)]
 ///</summary>
-[Required]
-public DateTime Date { get; set; }
+public DateTime? Date { get; set; }
 
 ///<summary>
-///銷貨備註
-///[varchar(150), nullable(True)]
-///</summary>
-public string Memo { get; set; }
-
-///<summary>
-///來源類別
-///[varchar(30), nullable(True)]
-///</summary>
-public string SourceTerm { get; set; }
-
-///<summary>
-///來源ID
+///戶號
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? SourceId { get; set; }
+public Guid? House_Id { get; set; }
+
+///<summary>
+///住戶
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Client_Id { get; set; }
+
+///<summary>
+///意見類別
+///[varchar(30), nullable(True)]
+///</summary>
+public string OpinionTerm { get; set; }
+
+///<summary>
+///標題
+///[varchar(150), nullable(True)]
+///</summary>
+public string Subject { get; set; }
+
+///<summary>
+///內容
+///[varchar(350), nullable(True)]
+///</summary>
+public string Content { get; set; }
 
 ///<summary>
 ///新增人員
@@ -50,21 +61,15 @@ public Guid? SourceId { get; set; }
 public Guid? addUser_Id { get; set; }
 
 ///<summary>
-///新增日期時間
+///新增日期
 ///[datetime, nullable(True)]
 ///</summary>
 public DateTime? AddDate { get; set; }
 
 ///<summary>
-///修改人員
+///上傳檔案
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? modUser_Id { get; set; }
-
-///<summary>
-///修改日期時間
-///[datetime, nullable(True)]
-///</summary>
-public DateTime? ModDate { get; set; }
+public Guid? File_UploadMap_Id { get; set; }
 }
 }

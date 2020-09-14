@@ -13,7 +13,7 @@ public class CollectBankAccount : TableBase
 
 
 ///<summary>
-///大樓
+///公司Id
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
@@ -25,27 +25,6 @@ public Guid Company_Id { get; set; }
 ///</summary>
 [Required]
 public Guid BankAccount_Id { get; set; }
-
-///<summary>
-///開戶銀行
-///[char(36), nullable(False)]
-///</summary>
-[Required]
-public Guid BankInfo_Id { get; set; }
-
-///<summary>
-///戶名
-///[varchar(50), nullable(False)]
-///</summary>
-[Required]
-public string AccountName { get; set; }
-
-///<summary>
-///帳號
-///[varchar(50), nullable(False)]
-///</summary>
-[Required]
-public string AccountNo { get; set; }
 
 ///<summary>
 ///啟用日
@@ -60,14 +39,14 @@ public DateTime? StartDate { get; set; }
 public DateTime? EndDate { get; set; }
 
 ///<summary>
-///交易手續費負擔方
-///[varchar(50), nullable(True)]
+///交易手續費負擔方(住戶client,管委會company,平台nc)
+///[varchar(20), nullable(True)]
 ///</summary>
 public string TransFeePayer { get; set; }
 
 ///<summary>
 ///撥款手續費負擔方
-///[varchar(50), nullable(True)]
+///[varchar(20), nullable(True)]
 ///</summary>
 public string RemitFeePayer { get; set; }
 
@@ -96,7 +75,7 @@ public string ContactTel { get; set; }
 public string Email { get; set; }
 
 ///<summary>
-///服務分類
+///服務分類(凱基代收KGI或Bank)
 ///[varchar(20), nullable(True)]
 ///</summary>
 public string Chain { get; set; }

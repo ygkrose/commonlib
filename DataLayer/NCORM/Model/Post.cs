@@ -32,6 +32,12 @@ public string DaySeq { get; set; }
 public Guid? Company_Id { get; set; }
 
 ///<summary>
+///棟別Id
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Building_Id { get; set; }
+
+///<summary>
 ///戶號
 ///[char(36), nullable(False)]
 ///</summary>

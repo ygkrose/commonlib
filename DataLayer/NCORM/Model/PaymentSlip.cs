@@ -19,7 +19,7 @@ public class PaymentSlip : TableBase
 public string Chain { get; set; }
 
 ///<summary>
-///Api介面
+///Api介面(appcr-app信用卡,appstore-app超商,appatm-app ATM,appbank-app臨櫃,webcr-信用卡,webstore-超商印單,webmng-管理中心)
 ///[varchar(20), nullable(True)]
 ///</summary>
 public string ApiInterface { get; set; }
@@ -85,12 +85,6 @@ public Double? Fee { get; set; }
 public Double? FeeInAmount { get; set; }
 
 ///<summary>
-///來源主機
-///[varchar(50), nullable(True)]
-///</summary>
-public string SourceChain { get; set; }
-
-///<summary>
 ///條碼1
 ///[varchar(50), nullable(True)]
 ///</summary>
@@ -113,5 +107,11 @@ public string BarCode3 { get; set; }
 ///[char(1), nullable(True)]
 ///</summary>
 public string IsAdvanced { get; set; }
+
+///<summary>
+///繳款期限
+///[date, nullable(True)]
+///</summary>
+public DateTime? EffectiveDate { get; set; }
 }
 }

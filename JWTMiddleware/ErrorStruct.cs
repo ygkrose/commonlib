@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace JWTMiddleware
 {
    
-    public static class ErrorStruct
+    public static class JWTErrorStruct
     {
         /// <summary>
         /// API的服務ID，唯一值，公司統一分配
@@ -45,7 +45,7 @@ namespace JWTMiddleware
         /// <param name="value">錯誤列舉值</param>
         /// <param name="extramsg">額外訊息</param>
         /// <returns></returns>
-        public static dynamic GetErrReturn(this Enum value, string extramsg = "")
+        public static dynamic JWTGetErrReturn(this Enum value, string extramsg = "")
         {
             Type type = value.GetType();
             string name = Enum.GetName(type, value);

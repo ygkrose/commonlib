@@ -5,43 +5,38 @@ using System.ComponentModel.DataAnnotations;
 namespace NewCity.DataAccess.Model
 {
 /// <summary>
-///銷貨單
+///銷貨作廢
 /// </summary>
-public class Sales : TableBase
+public class SalesVoid : TableBase
 {
 
 
 
 ///<summary>
-///公司大樓
-///[char(36), nullable(True)]
-///</summary>
-public Guid? Company_Id { get; set; }
-
-///<summary>
-///日期時間(使用者輸入的日期不需時間)
-///[date, nullable(False)]
+///日期
+///[datetime, nullable(False)]
 ///</summary>
 [Required]
 public DateTime Date { get; set; }
 
 ///<summary>
-///銷貨備註
+///作廢單號
+///[char(36), nullable(False)]
+///</summary>
+[Required]
+public Guid Sales_ChargeItem_Id { get; set; }
+
+///<summary>
+///作廢原因
+///[varchar(20), nullable(True)]
+///</summary>
+public string Code_VoidReason { get; set; }
+
+///<summary>
+///備註
 ///[varchar(150), nullable(True)]
 ///</summary>
 public string Memo { get; set; }
-
-///<summary>
-///來源類別
-///[varchar(30), nullable(True)]
-///</summary>
-public string SourceTerm { get; set; }
-
-///<summary>
-///來源ID
-///[char(36), nullable(True)]
-///</summary>
-public Guid? SourceId { get; set; }
 
 ///<summary>
 ///新增人員
@@ -50,7 +45,7 @@ public Guid? SourceId { get; set; }
 public Guid? addUser_Id { get; set; }
 
 ///<summary>
-///新增日期時間
+///新增日期
 ///[datetime, nullable(True)]
 ///</summary>
 public DateTime? AddDate { get; set; }
@@ -62,7 +57,7 @@ public DateTime? AddDate { get; set; }
 public Guid? modUser_Id { get; set; }
 
 ///<summary>
-///修改日期時間
+///修改日期
 ///[datetime, nullable(True)]
 ///</summary>
 public DateTime? ModDate { get; set; }

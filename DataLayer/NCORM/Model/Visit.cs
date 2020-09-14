@@ -20,6 +20,13 @@ public class Visit : TableBase
 public DateTime VisitDate { get; set; }
 
 ///<summary>
+///社區ID
+///[char(36), nullable(False)]
+///</summary>
+[Required]
+public Guid Company_Id { get; set; }
+
+///<summary>
 ///拜訪戶號
 ///[char(36), nullable(True)]
 ///</summary>

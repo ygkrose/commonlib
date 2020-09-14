@@ -1801,7 +1801,7 @@
             檔案傳輸資料表
              </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.File.Prog_Code">
+        <member name="P:NewCity.DataAccess.Model.File.ProgCode">
             <summary>
             產品名稱
             [varchar(20), nullable(False)]
@@ -4151,7 +4151,7 @@
         <member name="P:NewCity.DataAccess.Model.HistoryLog.Params">
             <summary>
             執行參數
-            [longtext, nullable(True)]
+            [text, nullable(True)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.House">
@@ -4406,6 +4406,18 @@
             [char(36), nullable(True)]
             </summary>
         </member>
+        <member name="P:NewCity.DataAccess.Model.Inventory.UnitPrice">
+            <summary>
+            單價
+            [double, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Inventory.TotalPrice">
+            <summary>
+            小計
+            [double, nullable(True)]
+            </summary>
+        </member>
         <member name="P:NewCity.DataAccess.Model.Inventory.Qty">
             <summary>
             數量
@@ -4609,7 +4621,7 @@
         </member>
         <member name="P:NewCity.DataAccess.Model.OffsetD.OffsetTerm">
             <summary>
-            立帳類別(立應付.立預付.立存入保證金.立存出保證金.立應付票)
+            立帳類別(立應收.立預收.立存入保證金.立存出保證金.立應收票)
             [varchar(20), nullable(True)]
             </summary>
         </member>
@@ -4888,7 +4900,7 @@
             [smallint(6), nullable(False)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.ParkingSpace.Code_Type">
+        <member name="P:NewCity.DataAccess.Model.ParkingSpace.Code_ParkingSpaceTerm">
             <summary>
             車位類型(平面車位、機械上層、機械下層、機車位)
             [varchar(20), nullable(True)]
@@ -4945,6 +4957,12 @@
         <member name="P:NewCity.DataAccess.Model.ParkingSpace.billClient_Id">
             <summary>
             收費對象
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.ParkingSpace.billHouse_Id">
+            <summary>
+            住戶收費對象
             [char(36), nullable(True)]
             </summary>
         </member>
@@ -5102,6 +5120,12 @@
             [char(36), nullable(True)]
             </summary>
         </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecord.Contract_Id">
+            <summary>
+            合約編號
+            [char(36), nullable(True)]
+            </summary>
+        </member>
         <member name="P:NewCity.DataAccess.Model.PaymentRecord.reviewUser_Id">
             <summary>
             核示人
@@ -5197,21 +5221,9 @@
             [varchar(3), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Advance.ChargeItem_Id">
+        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Advance.PaymentSlip_Advanced_Id">
             <summary>
-            收費項目
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Advance.OriginalArAmount">
-            <summary>
-            原每期金額
-            [int(11), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Advance.CouponSetting_Id">
-            <summary>
-            優惠方案
+            預繳單ID
             [char(36), nullable(True)]
             </summary>
         </member>
@@ -5290,29 +5302,6 @@
             <summary>
             發票人
             [varchar(120), nullable(True)]
-            </summary>
-        </member>
-        <member name="T:NewCity.DataAccess.Model.PaymentRecord_Coupon">
-             <summary>
-            收款銷帳折扣檔
-             </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Coupon.PaymentRecord_Id">
-            <summary>
-            頭檔Id
-            [char(36), nullable(False)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Coupon.Coupon_Id">
-            <summary>
-            優惠券ID
-            [char(36), nullable(False)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Coupon.Discount">
-            <summary>
-            折扣金額
-            [double, nullable(False)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.PaymentRecord_Money">
@@ -5520,6 +5509,12 @@
             <summary>
             優惠生效月份
             [date, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentSlip_Advanced.Disable">
+            <summary>
+            失效(0:否1:是)
+            [char(1), nullable(True)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.PaymentSlip_Sales_ChargeItem">
@@ -5957,26 +5952,8 @@
         </member>
         <member name="P:NewCity.DataAccess.Model.Sales.Date">
             <summary>
-            日期時間
-            [datetime, nullable(False)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.Sales.House_Id">
-            <summary>
-            戶號
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.Sales.Client_Id">
-            <summary>
-            住戶
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.Sales.Contract_Id">
-            <summary>
-            合約編號
-            [char(36), nullable(True)]
+            日期時間(使用者輸入的日期不需時間)
+            [date, nullable(False)]
             </summary>
         </member>
         <member name="P:NewCity.DataAccess.Model.Sales.Memo">
@@ -6086,6 +6063,24 @@
             [char(36), nullable(True)]
             </summary>
         </member>
+        <member name="P:NewCity.DataAccess.Model.Sales_ChargeItem.House_Id">
+            <summary>
+            戶號
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Sales_ChargeItem.Client_Id">
+            <summary>
+            住戶
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Sales_ChargeItem.Contract_Id">
+            <summary>
+            合約編號
+            [char(36), nullable(True)]
+            </summary>
+        </member>
         <member name="T:NewCity.DataAccess.Model.Sales_ChargeItem_Track">
              <summary>
             銷貨收費項目異動紀錄
@@ -6121,6 +6116,24 @@
             [datetime, nullable(True)]
             </summary>
         </member>
+        <member name="P:NewCity.DataAccess.Model.Sales_ChargeItem_Track.couponAmount">
+            <summary>
+            折扣金額
+            [double, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Sales_ChargeItem_Track.Coupon_Id">
+            <summary>
+            優惠券ID
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Sales_ChargeItem_Track.VoucherTerm">
+            <summary>
+            傳票別
+            [varchar(20), nullable(True)]
+            </summary>
+        </member>
         <member name="T:NewCity.DataAccess.Model.Sales_Goods">
              <summary>
             銷貨商品明細
@@ -6138,34 +6151,16 @@
             [varchar(4), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.Sales_Goods.Goods_Id">
-            <summary>
-            商品Id
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.Sales_Goods.UnitPrice">
-            <summary>
-            單價
-            [double, nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.Sales_Goods.Qty">
-            <summary>
-            數量
-            [int(11), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.Sales_Goods.TotalPrice">
-            <summary>
-            小計
-            [double, nullable(True)]
-            </summary>
-        </member>
         <member name="P:NewCity.DataAccess.Model.Sales_Goods.Memo">
             <summary>
             備註
             [varchar(150), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Sales_Goods.Inventory_Id">
+            <summary>
+            庫存異動紀錄ID
+            [char(36), nullable(True)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.Settlement">

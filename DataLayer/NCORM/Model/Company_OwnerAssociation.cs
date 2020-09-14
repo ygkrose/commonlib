@@ -46,6 +46,12 @@ public Guid? Building_Id { get; set; }
 public Guid? House_Id { get; set; }
 
 ///<summary>
+///住戶Id
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Client_Id { get; set; }
+
+///<summary>
 ///委員姓名
 ///[varchar(10), nullable(True)]
 ///</summary>

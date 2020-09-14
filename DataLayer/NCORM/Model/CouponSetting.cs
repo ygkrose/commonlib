@@ -75,6 +75,12 @@ public DateTime EndDate { get; set; }
 public string IsUnique { get; set; }
 
 ///<summary>
+///早繳限定日
+///[smallint(6), nullable(True)]
+///</summary>
+public Int16? EarlyDay { get; set; }
+
+///<summary>
 ///新增日期
 ///[datetime, nullable(True)]
 ///</summary>

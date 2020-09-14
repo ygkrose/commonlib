@@ -81,12 +81,6 @@ public string IsAchApproval { get; set; }
 public string IsDefault { get; set; }
 
 ///<summary>
-///交易對象ID
-///[char(36), nullable(True)]
-///</summary>
-public Guid? Client_Id { get; set; }
-
-///<summary>
 ///識別名稱
 ///[varchar(20), nullable(True)]
 ///</summary>

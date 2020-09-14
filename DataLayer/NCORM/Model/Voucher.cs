@@ -32,13 +32,6 @@ public DateTime VoucherDate { get; set; }
 public string VoucherTerm { get; set; }
 
 ///<summary>
-///傳票編號
-///[varchar(20), nullable(False)]
-///</summary>
-[Required]
-public string VoucherNo { get; set; }
-
-///<summary>
 ///總金額
 ///[int(11), nullable(False)]
 ///</summary>
@@ -52,7 +45,7 @@ public Int32? Amount { get; set; }
 public string Memo { get; set; }
 
 ///<summary>
-///來源類別
+///來源TableName
 ///[varchar(50), nullable(True)]
 ///</summary>
 public string SourceTable { get; set; }

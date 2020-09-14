@@ -33,10 +33,9 @@ public Guid? uploadFile_Id { get; set; }
 
 ///<summary>
 ///簽名檔
-///[char(36), nullable(False)]
+///[char(36), nullable(True)]
 ///</summary>
-[Required]
-public Guid SignFile_Id { get; set; }
+public Guid? signFile_Id { get; set; }
 
 ///<summary>
 ///戶號
