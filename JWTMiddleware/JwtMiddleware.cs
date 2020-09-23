@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using NewCity.Common;
@@ -30,8 +31,12 @@ namespace JWTMiddleware
 
         public async Task Invoke(HttpContext context)
         {
+            var httpMethod = context.Request.Method;
+            var action = context.GetRouteValue("action");
+            var controller = context.GetRouteValue("controller");
+
             var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
-            var cid = context.Request.Headers["CompanyId"].FirstOrDefault()?.Split(" ").Last();
+            var companyId = context.Request.Headers["CompanyId"].FirstOrDefault()?.Split(" ").Last();
 
             if (string.IsNullOrEmpty(token))
             {
@@ -40,6 +45,7 @@ namespace JWTMiddleware
                 //context.Response.ContentType = "application/json";
                 //string response = JsonSerializer.Serialize(JWTErrorStruct.ErrorNum.token_invalid.JWTGetErrReturn());
                 //await context.Response.WriteAsync(response);
+                context.Items["TokenUserInfo"] = null;
                 //return;
             }
             else
@@ -55,7 +61,7 @@ namespace JWTMiddleware
                         ValidIssuer = _Issuer,
                         // 取消驗證 Audience
                         ValidateAudience = false,
-                         
+
                         // 驗證 Token 的有效期間
                         ValidateLifetime = true,
 
@@ -68,13 +74,28 @@ namespace JWTMiddleware
 
                     // Notde : Here can be validate user permission. If user has no permission then throws exception
                     // pass tokenUserInfo to next
-                    context.Items["TokenUserInfo"] = JsonSerializer.Deserialize<TokenUserInfo>(((JwtSecurityToken)securityToken).Payload["permissions"].ToString());
+                    var _userinfo = JsonSerializer.Deserialize<TokenUserInfo>(((JwtSecurityToken)securityToken).Payload["permissions"].ToString());
+                    _userinfo.CurrentCompanyId = Guid.Parse(companyId);
+                    bool allow = false;
+                    _userinfo.programs.ToList().ForEach(p =>
+                    {
+                        if (p.Value.Any(e =>
+                        {
+                            return (e.HttpMethod.ToLower() == httpMethod.ToLower() && e.ActionUrl.ToLower().Contains(action.ToString().ToLower())
+                            && e.ActionUrl.ToLower().Contains(controller.ToString().ToLower()));
+                        }))
+                        {
+                            allow = true;
+                        }
+                    });
+                    if (!allow) throw new Exception("request is not allow for this user");
+                    context.Items["TokenUserInfo"] = _userinfo;
                 }
                 catch (SecurityTokenExpiredException steex)
                 {
                     NCLog.ExceptionLog(steex, $"Token={token}");
 
-                    context.Response.StatusCode = 401;
+                    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                     context.Response.ContentType = "application/json";
 
                     string response = JsonSerializer.Serialize(JWTErrorStruct.ErrorNum.token_expired.JWTGetErrReturn(steex.Message));
@@ -86,7 +107,7 @@ namespace JWTMiddleware
                 {
                     NCLog.ExceptionLog(stvex, $"Token={token}");
 
-                    context.Response.StatusCode = 401;
+                    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                     context.Response.ContentType = "application/json";
 
                     string response = JsonSerializer.Serialize(JWTErrorStruct.ErrorNum.token_invalid.JWTGetErrReturn(stvex.Message));
@@ -98,7 +119,7 @@ namespace JWTMiddleware
                 {
                     NCLog.ExceptionLog(ex, $"Token={token}");
 
-                    context.Response.StatusCode = 401;
+                    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                     context.Response.ContentType = "application/json";
 
                     string response = JsonSerializer.Serialize(JWTErrorStruct.ErrorNum.error_undefined.JWTGetErrReturn(ex.Message));
