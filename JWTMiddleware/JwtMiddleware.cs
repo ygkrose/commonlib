@@ -31,16 +31,16 @@ namespace JWTMiddleware
         public async Task Invoke(HttpContext context)
         {
             var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+            var cid = context.Request.Headers["CompanyId"].FirstOrDefault()?.Split(" ").Last();
 
             if (string.IsNullOrEmpty(token))
             {
                 // Note : 不用 jwt 驗證時的寫法 (預留) 先不處理，之後加上 access token 的方式檢查
-                context.Response.StatusCode = 401;
-                context.Response.ContentType = "application/json";
-                string response = JsonSerializer.Serialize(JWTErrorStruct.ErrorNum.token_invalid.JWTGetErrReturn());
-                await context.Response.WriteAsync(response);
-
-                return;
+                //context.Response.StatusCode = 401;
+                //context.Response.ContentType = "application/json";
+                //string response = JsonSerializer.Serialize(JWTErrorStruct.ErrorNum.token_invalid.JWTGetErrReturn());
+                //await context.Response.WriteAsync(response);
+                //return;
             }
             else
             {
