@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using NewCity.Common;
@@ -30,7 +31,12 @@ namespace JWTMiddleware
 
         public async Task Invoke(HttpContext context)
         {
+            var httpMethod = context.Request.Method;
+            var action = context.GetRouteValue("action");
+            var controller = context.GetRouteValue("controller");
+
             var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+            var companyId = context.Request.Headers["CompanyId"].FirstOrDefault()?.Split(" ").Last();
 
             if (string.IsNullOrEmpty(token))
             {
@@ -55,7 +61,7 @@ namespace JWTMiddleware
                         ValidIssuer = _Issuer,
                         // 取消驗證 Audience
                         ValidateAudience = false,
-                         
+
                         // 驗證 Token 的有效期間
                         ValidateLifetime = true,
 
@@ -74,7 +80,7 @@ namespace JWTMiddleware
                 {
                     NCLog.ExceptionLog(steex, $"Token={token}");
 
-                    context.Response.StatusCode = 401;
+                    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                     context.Response.ContentType = "application/json";
 
                     string response = JsonSerializer.Serialize(JWTErrorStruct.ErrorNum.token_expired.JWTGetErrReturn(steex.Message));
@@ -86,7 +92,7 @@ namespace JWTMiddleware
                 {
                     NCLog.ExceptionLog(stvex, $"Token={token}");
 
-                    context.Response.StatusCode = 401;
+                    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                     context.Response.ContentType = "application/json";
 
                     string response = JsonSerializer.Serialize(JWTErrorStruct.ErrorNum.token_invalid.JWTGetErrReturn(stvex.Message));
@@ -98,7 +104,7 @@ namespace JWTMiddleware
                 {
                     NCLog.ExceptionLog(ex, $"Token={token}");
 
-                    context.Response.StatusCode = 401;
+                    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                     context.Response.ContentType = "application/json";
 
                     string response = JsonSerializer.Serialize(JWTErrorStruct.ErrorNum.error_undefined.JWTGetErrReturn(ex.Message));
