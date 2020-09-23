@@ -5,38 +5,38 @@ using System.ComponentModel.DataAnnotations;
 namespace NewCity.DataAccess.Model
 {
 /// <summary>
-///戶號屬性管理
+///桌號管理
 /// </summary>
-public class House_Property : TableBase
+public class BookingTableNo : TableBase
 {
 
 
 
 ///<summary>
-///戶號ID
+///公司大樓
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid House_Id { get; set; }
+public Guid Company_Id { get; set; }
 
 ///<summary>
-///屬性代碼
-///[varchar(25), nullable(False)]
+///代號
+///[varchar(20), nullable(False)]
 ///</summary>
 [Required]
 public string Code { get; set; }
 
 ///<summary>
-///屬性名稱
-///[varchar(80), nullable(False)]
+///名稱
+///[varchar(20), nullable(False)]
 ///</summary>
 [Required]
 public string Name { get; set; }
 
 ///<summary>
-///屬性值
-///[varchar(50), nullable(True)]
+///備註
+///[varchar(150), nullable(True)]
 ///</summary>
-public string PropertyValue { get; set; }
+public string Memo { get; set; }
 }
 }

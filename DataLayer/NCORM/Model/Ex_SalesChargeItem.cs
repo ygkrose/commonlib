@@ -61,12 +61,6 @@ public DateTime? StartDate { get; set; }
 public DateTime? EndDate { get; set; }
 
 ///<summary>
-///費用年月
-///[varchar(10), nullable(True)]
-///</summary>
-public string YearMonth { get; set; }
-
-///<summary>
 ///備註
 ///[varchar(50), nullable(True)]
 ///</summary>

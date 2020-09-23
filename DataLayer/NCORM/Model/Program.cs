@@ -44,9 +44,9 @@ public string Url { get; set; }
 public string UrlHelp { get; set; }
 
 ///<summary>
-///適用平台(Web,APP)
-///[varchar(10), nullable(True)]
+///適用平台，(Web,APP.....由低至高)
+///[int(11), nullable(True)]
 ///</summary>
-public string Platform { get; set; }
+public Int32? Platform { get; set; }
 }
 }

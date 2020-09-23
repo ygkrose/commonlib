@@ -55,7 +55,7 @@ namespace JWTMiddleware
                         ValidIssuer = _Issuer,
                         // 取消驗證 Audience
                         ValidateAudience = false,
-
+                         
                         // 驗證 Token 的有效期間
                         ValidateLifetime = true,
 

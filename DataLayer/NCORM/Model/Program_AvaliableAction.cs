@@ -24,13 +24,27 @@ public Guid Program_Id { get; set; }
 ///[varchar(30), nullable(False)]
 ///</summary>
 [Required]
-public string ActionCode { get; set; }
+public string FunctionCode { get; set; }
 
 ///<summary>
-///方法名稱
+///功能名稱
 ///[varchar(50), nullable(False)]
 ///</summary>
 [Required]
-public string ActionName { get; set; }
+public string FunctionName { get; set; }
+
+///<summary>
+///Http方法名
+///[varchar(10), nullable(False)]
+///</summary>
+[Required]
+public string HttpMethod { get; set; }
+
+///<summary>
+///ControllerName/ActionName
+///[varchar(50), nullable(False)]
+///</summary>
+[Required]
+public string ActionUrl { get; set; }
 }
 }

@@ -79,5 +79,18 @@ public string Email { get; set; }
 ///[varchar(20), nullable(True)]
 ///</summary>
 public string Chain { get; set; }
+
+///<summary>
+///限定全繳(0:否1:是)
+///[char(1), nullable(True)]
+///</summary>
+public string PayAll { get; set; }
+
+///<summary>
+///信用卡、超商、ATM、臨櫃
+///[varchar(30), nullable(False)]
+///</summary>
+[Required]
+public string PayMethod { get; set; }
 }
 }

@@ -35,5 +35,17 @@ public Guid? Supplier_Id { get; set; }
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? Contract_Id { get; set; }
+
+///<summary>
+///來源Table
+///[varchar(20), nullable(True)]
+///</summary>
+public string SourceTable { get; set; }
+
+///<summary>
+///來源ID
+///[char(36), nullable(True)]
+///</summary>
+public Guid? SourceId { get; set; }
 }
 }

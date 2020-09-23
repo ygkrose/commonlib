@@ -20,13 +20,13 @@ public Guid? Company_Id { get; set; }
 
 ///<summary>
 ///參數代號
-///[varchar(20), nullable(True)]
+///[varchar(50), nullable(True)]
 ///</summary>
 public string Code { get; set; }
 
 ///<summary>
 ///參數名稱
-///[varchar(30), nullable(True)]
+///[varchar(50), nullable(True)]
 ///</summary>
 public string Name { get; set; }
 

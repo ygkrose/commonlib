@@ -45,12 +45,6 @@ public Guid? DAccountingItem_Id { get; set; }
 public Guid? CAccountingItem_Id { get; set; }
 
 ///<summary>
-///須產生傳票(0:否1:是)
-///[char(1), nullable(True)]
-///</summary>
-public string AddVoucher { get; set; }
-
-///<summary>
 ///備註
 ///[varchar(50), nullable(True)]
 ///</summary>

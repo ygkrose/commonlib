@@ -28,9 +28,10 @@ public Guid Company_Id { get; set; }
 
 ///<summary>
 ///有效起日
-///[date, nullable(True)]
+///[date, nullable(False)]
 ///</summary>
-public DateTime? StartDate { get; set; }
+[Required]
+public DateTime StartDate { get; set; }
 
 ///<summary>
 ///有效訖日
@@ -40,14 +41,16 @@ public DateTime? EndDate { get; set; }
 
 ///<summary>
 ///收費月份
-///[smallint(1), nullable(True)]
+///[smallint(1), nullable(False)]
 ///</summary>
+[Required]
 public Int16? ChargeMonth { get; set; }
 
 ///<summary>
 ///收款週期(單位月)
-///[smallint(1), nullable(True)]
+///[smallint(1), nullable(False)]
 ///</summary>
+[Required]
 public Int16? Period { get; set; }
 
 ///<summary>
