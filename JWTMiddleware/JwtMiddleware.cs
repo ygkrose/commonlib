@@ -75,7 +75,8 @@ namespace JWTMiddleware
                     // Notde : Here can be validate user permission. If user has no permission then throws exception
                     // pass tokenUserInfo to next
                     var _userinfo = JsonSerializer.Deserialize<TokenUserInfo>(((JwtSecurityToken)securityToken).Payload["permissions"].ToString());
-                    _userinfo.CurrentCompanyId = Guid.Parse(companyId);
+                    if (companyId!=null)
+                        _userinfo.CurrentCompanyId = Guid.Parse(companyId);
                     bool allow = false;
                     _userinfo.programs.ToList().ForEach(p =>
                     {
@@ -88,7 +89,15 @@ namespace JWTMiddleware
                             allow = true;
                         }
                     });
-                    if (!allow) throw new Exception("request is not allow for this user");
+                    if (!allow) 
+                    { 
+                        //throw new Exception("request is not allow for this user");
+                        context.Response.StatusCode = StatusCodes.Status405MethodNotAllowed;
+                        context.Response.ContentType = "application/json";
+                        string response = JsonSerializer.Serialize(JWTErrorStruct.ErrorNum.token_expired.JWTGetErrReturn("request is not allow for this user"));
+                        await context.Response.WriteAsync(response);
+                        return;
+                    }
                     context.Items["TokenUserInfo"] = _userinfo;
                 }
                 catch (SecurityTokenExpiredException steex)
