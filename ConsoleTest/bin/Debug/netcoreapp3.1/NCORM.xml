@@ -195,6 +195,251 @@
             [char(1), nullable(True)]
             </summary>
         </member>
+        <member name="T:NewCity.DataAccess.Model.Amenity">
+             <summary>
+            公設項目
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity.Org_Id">
+            <summary>
+            大樓
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity.Name">
+            <summary>
+            項目名稱
+            [varchar(50), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity.HouseLimitedQty">
+            <summary>
+            每戶每日可預約數上限
+            [int(11), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity.Notice">
+            <summary>
+            使用須知
+            [varchar(100), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity.PreDay">
+            <summary>
+            可提前預約日數
+            [int(11), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity.CancelHour">
+            <summary>
+            可提前取消時數
+            [int(11), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity.Disable">
+            <summary>
+            停用(0:否1:是)
+            [char(1), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity.addUser_Id">
+            <summary>
+            新增人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity.AddDate">
+            <summary>
+            新增日期時間
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity.modUser_Id">
+            <summary>
+            修改人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity.ModDate">
+            <summary>
+            修改日期時間
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.Amenity_File">
+             <summary>
+            公設項目圖檔管理
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_File.Amenity_Id">
+            <summary>
+            頭檔ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_File.Ord">
+            <summary>
+            排序
+            [varchar(4), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_File.uploadFile_Id">
+            <summary>
+            圖檔上傳
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.Amenity_OpenDate">
+             <summary>
+            公設開放日期一日一筆
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_OpenDate.Amenity_Id">
+            <summary>
+            頭檔ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_OpenDate.Disable">
+            <summary>
+            取消開放(0:否1:是)
+            [char(1), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_OpenDate.Memo">
+            <summary>
+            取消說明
+            [varchar(20), nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.Amenity_OpenPeriod">
+             <summary>
+            公設項目開放日設定
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_OpenPeriod.Amenity_Id">
+            <summary>
+            頭檔ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_OpenPeriod.StartDate">
+            <summary>
+            起始日
+            [datetime, nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_OpenPeriod.EndDate">
+            <summary>
+            終止日
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_OpenPeriod.HolidayExcluded">
+            <summary>
+            排除國定假日(0:否)或(1:是)
+            [char(1), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_OpenPeriod.OpenWeekDay">
+            <summary>
+            記錄星期幾,用來描述設定區間內的開放星期
+            [varchar(40), nullable(False)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.Amenity_PointTerm">
+             <summary>
+            公設項目可用點數類別
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_PointTerm.Amenity_Id">
+            <summary>
+            頭檔ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_PointTerm.PointTerm">
+            <summary>
+            點數類別
+            [varchar(20), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_PointTerm.Ord">
+            <summary>
+            優先序
+            [varchar(4), nullable(False)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.Amenity_TimePhase">
+             <summary>
+            公設項目時段明細
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_TimePhase.Amenity_Id">
+            <summary>
+            頭檔ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_TimePhase.Name">
+            <summary>
+            時段名稱
+            [varchar(20), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_TimePhase.StartTime">
+            <summary>
+            時間起
+            [datetime, nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_TimePhase.EndTime">
+            <summary>
+            時間訖
+            [datetime, nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_TimePhase.LimitedQty">
+            <summary>
+            可預約數量
+            [int(11), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_TimePhase.Ord">
+            <summary>
+            排序
+            [varchar(4), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_TimePhase.Disable">
+            <summary>
+            停用(0:否1:是)
+            [char(1), nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.Amenity_TimePhase_PointTerm">
+             <summary>
+            預約項目可用點數類別
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_TimePhase_PointTerm.Amenity_TimePhase_Id">
+            <summary>
+            頭檔ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_TimePhase_PointTerm.PointTerm">
+            <summary>
+            點數類別,選單為Amenity_PointTerm的類別
+            [varchar(20), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Amenity_TimePhase_PointTerm.CostPoint">
+            <summary>
+            扣點點數
+            [int(11), nullable(False)]
+            </summary>
+        </member>
         <member name="T:NewCity.DataAccess.Model.Announce">
              <summary>
             系統公告
@@ -432,12 +677,6 @@
             [char(1), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.BankAccount.Client_Id">
-            <summary>
-            交易對象ID
-            [char(36), nullable(True)]
-            </summary>
-        </member>
         <member name="P:NewCity.DataAccess.Model.BankAccount.ShortName">
             <summary>
             識別名稱
@@ -596,6 +835,325 @@
             <summary>
             是否啟用(0:否1:是)
             [char(1), nullable(False)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.BatchPoint">
+             <summary>
+            點數贈送
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BatchPoint.Org_Id">
+            <summary>
+            大樓
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BatchPoint.Date">
+            <summary>
+            贈送日期
+            [datetime, nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BatchPoint.Code_FreePointReason">
+            <summary>
+            贈送原因
+            [varchar(20), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BatchPoint.StartDate">
+            <summary>
+            生效日
+            [date, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BatchPoint.EndDate">
+            <summary>
+            失效日
+            [date, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BatchPoint.SourceTable">
+            <summary>
+            來源TABLE
+            [varchar(30), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BatchPoint.SourceId">
+            <summary>
+            來源ID
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BatchPoint.addUser_Id">
+            <summary>
+            新增人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BatchPoint.AddDate">
+            <summary>
+            新增日期
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BatchPoint.voidUser_Id">
+            <summary>
+            取消人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BatchPoint.voidDate">
+            <summary>
+            取消日期
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.BatchPoint_House">
+             <summary>
+            點數贈送戶號明細
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BatchPoint_House.BatchPoint_Id">
+            <summary>
+            頭檔ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BatchPoint_House.House_Id">
+            <summary>
+            戶號ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BatchPoint_House.Client_Id">
+            <summary>
+            住戶ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BatchPoint_House.Point">
+            <summary>
+            點數
+            [int(11), nullable(False)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.BookingRecord">
+             <summary>
+            公設預約
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingRecord.Org_Id">
+            <summary>
+            大樓
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingRecord.House_Id">
+            <summary>
+            戶號
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingRecord.Client_Id">
+            <summary>
+            住戶
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingRecord.Tel">
+            <summary>
+            連絡電話
+            [varchar(15), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingRecord.Email">
+            <summary>
+            Email
+            [varchar(120), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingRecord.Amenity_Id">
+            <summary>
+            預約項目
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingRecord.Date">
+            <summary>
+            預約日期
+            [datetime, nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingRecord.Amenity_TimePhase_Id">
+            <summary>
+            時段
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingRecord.BookingQty">
+            <summary>
+            預約數量
+            [int(11), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingRecord.PersonQty">
+            <summary>
+            預計使用人數
+            [int(11), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingRecord.addUser_Id">
+            <summary>
+            新增人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingRecord.AddDate">
+            <summary>
+            新增日期
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingRecord.cancelUser_Id">
+            <summary>
+            取消人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingRecord.CancelDate">
+            <summary>
+            取消日期
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.BookingUse">
+             <summary>
+            公設使用
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse.Org_Id">
+            <summary>
+            大樓
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse.House_Id">
+            <summary>
+            戶號
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse.Client_Id">
+            <summary>
+            住戶
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse.Date">
+            <summary>
+            使用日期
+            [datetime, nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse.Amenity_Id">
+            <summary>
+            預約項目
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse.PersonQty">
+            <summary>
+            使用人數
+            [int(11), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse.cameraFile_Id">
+            <summary>
+            拍照上傳
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse.signatureFile_Id">
+            <summary>
+            簽名檔
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse.addUser_Id">
+            <summary>
+            新增人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse.AddDate">
+            <summary>
+            新增日期
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse.settleUser_Id">
+            <summary>
+            結帳人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse.SettleDate">
+            <summary>
+            結帳日期
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse.voidUser_Id">
+            <summary>
+            取消人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse.voidDate">
+            <summary>
+            取消日期
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.BookingUse_TimePhase">
+             <summary>
+            公設使用產品明細
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse_TimePhase.BookingUse_Id">
+            <summary>
+            頭檔ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse_TimePhase.BookingRecord_Id">
+            <summary>
+            預約ID
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse_TimePhase.Amenity_TimePhase_Id">
+            <summary>
+            產品
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse_TimePhase.PointTerm">
+            <summary>
+            點數類別
+            [varchar(20), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse_TimePhase.UnitPoint">
+            <summary>
+            單次點數
+            [int(11), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.BookingUse_TimePhase.UseQty">
+            <summary>
+            使用數量
+            [int(11), nullable(False)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.Building">
@@ -813,7 +1371,7 @@
         <member name="P:NewCity.DataAccess.Model.ChargeSetting.StartDate">
             <summary>
             有效起日
-            [date, nullable(True)]
+            [date, nullable(False)]
             </summary>
         </member>
         <member name="P:NewCity.DataAccess.Model.ChargeSetting.EndDate">
@@ -825,19 +1383,25 @@
         <member name="P:NewCity.DataAccess.Model.ChargeSetting.ChargeMonth">
             <summary>
             收費月份
-            [smallint(1), nullable(True)]
+            [smallint(1), nullable(False)]
             </summary>
         </member>
         <member name="P:NewCity.DataAccess.Model.ChargeSetting.Period">
             <summary>
             收款週期(單位月)
-            [smallint(1), nullable(True)]
+            [smallint(1), nullable(False)]
             </summary>
         </member>
         <member name="P:NewCity.DataAccess.Model.ChargeSetting.ChargeItem_Id">
             <summary>
             銷貨項目
             [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.ChargeSetting.Parameter">
+            <summary>
+            產生此筆收費設定的參數
+            [text, nullable(True)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.ChargeSetting_List">
@@ -1141,7 +1705,7 @@
         </member>
         <member name="P:NewCity.DataAccess.Model.CollectBankAccount.Company_Id">
             <summary>
-            大樓
+            公司Id
             [char(36), nullable(False)]
             </summary>
         </member>
@@ -1149,24 +1713,6 @@
             <summary>
             往來帳戶
             [char(36), nullable(False)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.CollectBankAccount.BankInfo_Id">
-            <summary>
-            開戶銀行
-            [char(36), nullable(False)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.CollectBankAccount.AccountName">
-            <summary>
-            戶名
-            [varchar(50), nullable(False)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.CollectBankAccount.AccountNo">
-            <summary>
-            帳號
-            [varchar(50), nullable(False)]
             </summary>
         </member>
         <member name="P:NewCity.DataAccess.Model.CollectBankAccount.StartDate">
@@ -1183,14 +1729,14 @@
         </member>
         <member name="P:NewCity.DataAccess.Model.CollectBankAccount.TransFeePayer">
             <summary>
-            交易手續費負擔方
-            [varchar(50), nullable(True)]
+            交易手續費負擔方(住戶client,管委會company,平台nc)
+            [varchar(20), nullable(True)]
             </summary>
         </member>
         <member name="P:NewCity.DataAccess.Model.CollectBankAccount.RemitFeePayer">
             <summary>
             撥款手續費負擔方
-            [varchar(50), nullable(True)]
+            [varchar(20), nullable(True)]
             </summary>
         </member>
         <member name="P:NewCity.DataAccess.Model.CollectBankAccount.GuiNo">
@@ -1219,8 +1765,20 @@
         </member>
         <member name="P:NewCity.DataAccess.Model.CollectBankAccount.Chain">
             <summary>
-            服務分類
+            服務分類(凱基代收KGI或Bank)
             [varchar(20), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.CollectBankAccount.PayAll">
+            <summary>
+            限定全繳(0:否1:是)
+            [char(1), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.CollectBankAccount.PayMethod">
+            <summary>
+            信用卡、超商、ATM、臨櫃
+            [varchar(30), nullable(False)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.CollectFeeSetting">
@@ -1231,7 +1789,7 @@
         <member name="P:NewCity.DataAccess.Model.CollectFeeSetting.EffectiveDate">
             <summary>
             生效日
-            [date, nullable(False)]
+            [date, nullable(True)]
             </summary>
         </member>
         <member name="P:NewCity.DataAccess.Model.CollectFeeSetting.Chain">
@@ -1274,18 +1832,6 @@
             <summary>
             超商手續費代號
             [varchar(20), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.CollectFeeSetting.SourceTable">
-            <summary>
-            來源Table
-            [varchar(50), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.CollectFeeSetting.SourceId">
-            <summary>
-            來源Id
-            [char(36), nullable(True)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.Company">
@@ -1432,6 +1978,12 @@
         <member name="P:NewCity.DataAccess.Model.Company_OwnerAssociation.House_Id">
             <summary>
             戶號
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Company_OwnerAssociation.Client_Id">
+            <summary>
+            住戶Id
             [char(36), nullable(True)]
             </summary>
         </member>
@@ -1619,30 +2171,6 @@
             優惠券歸屬紀錄
              </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.Coupon.CouponSetting_Id">
-            <summary>
-            優惠方案Id
-            [char(36), nullable(False)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.Coupon.ChargeItem_Id">
-            <summary>
-            使用的費用項目Id
-            [char(36), nullable(False)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.Coupon.Amount">
-            <summary>
-            應繳金額
-            [int(11), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.Coupon.DiscountAmount">
-            <summary>
-            折扣後金額
-            [int(11), nullable(True)]
-            </summary>
-        </member>
         <member name="P:NewCity.DataAccess.Model.Coupon.Company_Id">
             <summary>
             公司大樓
@@ -1661,16 +2189,40 @@
             [char(36), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.Coupon.addUser_Id">
+        <member name="P:NewCity.DataAccess.Model.Coupon.CouponSetting_Id">
             <summary>
-            新增人員
-            [char(36), nullable(True)]
+            優惠方案Id
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Coupon.Amount">
+            <summary>
+            金額
+            [int(11), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Coupon.StartDate">
+            <summary>
+            有效起日
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Coupon.EndDate">
+            <summary>
+            有效訖日
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Coupon.IsUnique">
+            <summary>
+            不與其他優惠券共用(1:是0:否)
+            [char(1), nullable(True)]
             </summary>
         </member>
         <member name="P:NewCity.DataAccess.Model.Coupon.AddDate">
             <summary>
             新增日期
-            [date, nullable(True)]
+            [datetime, nullable(True)]
             </summary>
         </member>
         <member name="P:NewCity.DataAccess.Model.Coupon.modUser_Id">
@@ -1682,7 +2234,13 @@
         <member name="P:NewCity.DataAccess.Model.Coupon.ModDate">
             <summary>
             修改日期
-            [date, nullable(True)]
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Coupon.IsAdvanced">
+            <summary>
+            預繳產生(1:是0:否)
+            [char(1), nullable(True)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.CouponSetting">
@@ -1750,6 +2308,12 @@
             [char(1), nullable(True)]
             </summary>
         </member>
+        <member name="P:NewCity.DataAccess.Model.CouponSetting.EarlyDay">
+            <summary>
+            早繳限定日
+            [smallint(6), nullable(True)]
+            </summary>
+        </member>
         <member name="P:NewCity.DataAccess.Model.CouponSetting.AddDate">
             <summary>
             新增日期
@@ -1791,9 +2355,191 @@
             [char(36), nullable(False)]
             </summary>
         </member>
+        <member name="T:NewCity.DataAccess.Model.CouponSetting_Client">
+             <summary>
+            優惠方案適用對象
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.CouponSetting_Client.CouponSetting_Id">
+            <summary>
+            頭檔ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.CouponSetting_Client.House_Id">
+            <summary>
+            戶號
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.CouponSetting_Client.Client_Id">
+            <summary>
+            住戶
+            [char(36), nullable(False)]
+            </summary>
+        </member>
         <member name="T:NewCity.DataAccess.Model.DBInfo">
             <summary>
             對應到app.config的ConnectionStrings
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.Ex">
+             <summary>
+            期初轉入資料
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex.Company_Id">
+            <summary>
+            公司大樓
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex.Date">
+            <summary>
+            轉入日期
+            [datetime, nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex.ExTerm">
+            <summary>
+            sales未收款項、advancein預收款、depositin保證金、tempin暫收款
+            [varchar(30), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex.DAccountingItem_Id">
+            <summary>
+            借方科目
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex.CAccountingItem_Id">
+            <summary>
+            貸方科目
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex.Memo">
+            <summary>
+            備註
+            [varchar(50), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex.addUser_Id">
+            <summary>
+            新增人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex.AddDate">
+            <summary>
+            新增日期
+            [date, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex.modUser_Id">
+            <summary>
+            修改人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex.ModDate">
+            <summary>
+            修改日期
+            [date, nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.Ex_Advanced">
+             <summary>
+            期初預收保證金轉入
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex_Advanced.Ex_Id">
+            <summary>
+            頭檔ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex_Advanced.House_Id">
+            <summary>
+            戶號
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex_Advanced.Client_Id">
+            <summary>
+            住戶
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex_Advanced.ChargeItem_Id">
+            <summary>
+            指定收費項目
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex_Advanced.Amount">
+            <summary>
+            金額
+            [double, nullable(False)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.Ex_SalesChargeItem">
+             <summary>
+            期初未繳明細
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex_SalesChargeItem.Ex_Id">
+            <summary>
+            頭檔ID
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex_SalesChargeItem.House_Id">
+            <summary>
+            戶號
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex_SalesChargeItem.Client_Id">
+            <summary>
+            住戶
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex_SalesChargeItem.ParkingSpace_Id">
+            <summary>
+            車位
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex_SalesChargeItem.ChargeItem_Id">
+            <summary>
+            收費項目
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex_SalesChargeItem.Amount">
+            <summary>
+            金額
+            [double, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex_SalesChargeItem.StartDate">
+            <summary>
+            費用起日
+            [date, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex_SalesChargeItem.EndDate">
+            <summary>
+            費用訖日
+            [date, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Ex_SalesChargeItem.Memo">
+            <summary>
+            備註
+            [varchar(50), nullable(True)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.File">
@@ -1888,6 +2634,47 @@
             <summary>
             檔案說明
             [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.FixedPaymentNo">
+             <summary>
+            固定繳款碼
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.FixedPaymentNo.Company_Id">
+            <summary>
+            公司大樓
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.FixedPaymentNo.Client_Id">
+            <summary>
+            住戶
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.FixedPaymentNo.PaymentNoTerm">
+            <summary>
+            類別(ATM、超商)
+            [varchar(20), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.FixedPaymentNo.PaymentNo">
+            <summary>
+            繳款碼
+            [varchar(20), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.FixedPaymentNo.AddDate">
+            <summary>
+            新增日期
+            [datetime, nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.FixedPaymentNo.Disable">
+            <summary>
+            註銷(0:否1:是)
+            [char(1), nullable(False)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.Goods">
@@ -4362,7 +5149,7 @@
         <member name="P:NewCity.DataAccess.Model.House_Property.PropertyValue">
             <summary>
             屬性值
-            [smallint(6), nullable(True)]
+            [varchar(50), nullable(True)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.Inventory">
@@ -4436,285 +5223,380 @@
             [datetime, nullable(True)]
             </summary>
         </member>
-        <member name="T:NewCity.DataAccess.Model.OffsetC">
+        <member name="T:NewCity.DataAccess.Model.Meeting">
              <summary>
-            貸方立帳單
+            會議管理
              </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC.OffsetNo">
+        <member name="P:NewCity.DataAccess.Model.Meeting.Company_Id">
             <summary>
-            立帳單號
-            [varchar(20), nullable(False)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC.ChargeItem_Id">
-            <summary>
-            收費項目
+            公司大樓
             [char(36), nullable(False)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC.TaxType">
+        <member name="P:NewCity.DataAccess.Model.Meeting.StartDate">
             <summary>
-            課稅別
-            [varchar(10), nullable(False)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC.TaxRate">
-            <summary>
-            稅率
-            [double, nullable(False)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC.AccountingItem_Id">
-            <summary>
-            會計科目
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC.Amount">
-            <summary>
-            金額
-            [double, nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC.OffsetTerm">
-            <summary>
-            立帳類別(立應付.立預付.立存入保證金.立存出保證金.立應付票)
-            [varchar(20), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC.SourceTable">
-            <summary>
-            來源TABLE
-            [varchar(20), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC.SourceId">
-            <summary>
-            來源ID
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC.dTransCode_Id">
-            <summary>
-            借方傳輸ID
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC.cTransCode_Id">
-            <summary>
-            貸方傳輸ID
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC.tTransCode_Id">
-            <summary>
-            稅傳輸ID
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC.AddDate">
-            <summary>
-            新增日期
+            會議日期時間起
             [datetime, nullable(True)]
             </summary>
         </member>
-        <member name="T:NewCity.DataAccess.Model.OffsetC_WriteOff">
-             <summary>
-            貸方沖帳單
-             </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC_WriteOff.OffsetC_Id">
+        <member name="P:NewCity.DataAccess.Model.Meeting.EndDate">
             <summary>
-            立帳單號ID
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC_WriteOff.WriteOffNo">
-            <summary>
-            沖帳單號
-            [varchar(20), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC_WriteOff.AccountingItem_Id">
-            <summary>
-            會計科目
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC_WriteOff.Amount">
-            <summary>
-            金額
-            [double, nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC_WriteOff.SourceTable">
-            <summary>
-            來源Table
-            [varchar(20), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC_WriteOff.SourceId">
-            <summary>
-            來源ID
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC_WriteOff.dTransCode_Id">
-            <summary>
-            借方傳輸ID
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC_WriteOff.cTransCode_Id">
-            <summary>
-            貸方傳輸ID
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetC_WriteOff.AddDate">
-            <summary>
-            新增日期
+            會議日期時間訖
             [datetime, nullable(True)]
             </summary>
         </member>
-        <member name="T:NewCity.DataAccess.Model.OffsetD">
-             <summary>
-            借方立帳單
-             </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD.OffsetNo">
+        <member name="P:NewCity.DataAccess.Model.Meeting.MeetingTerm">
             <summary>
-            立帳單號
-            [varchar(20), nullable(False)]
+            會議類別(區權會、管委會)
+            [varchar(20), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD.ChargeItem_Id">
+        <member name="P:NewCity.DataAccess.Model.Meeting.Place">
             <summary>
-            收費項目
+            會議地點
+            [varchar(30), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting.Title">
+            <summary>
+            會議名稱
+            [varchar(50), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting.Chief">
+            <summary>
+            會議主席
+            [varchar(20), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting.Contact">
+            <summary>
+            承辦人員
+            [varchar(20), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting.AttendQty">
+            <summary>
+            應出席人數
+            [int(11), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting.Subject">
+            <summary>
+            會議主旨
+            [varchar(150), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting.addUser_Id">
+            <summary>
+            新增人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting.AddDate">
+            <summary>
+            新增日期時間
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting.modUser_Id">
+            <summary>
+            修改人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting.ModDate">
+            <summary>
+            修改日期時間
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.Meeting_Attendance">
+             <summary>
+            區權會出席管理
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Attendance.Meeting_Id">
+            <summary>
+            會議管理ID
             [char(36), nullable(False)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD.TaxType">
+        <member name="P:NewCity.DataAccess.Model.Meeting_Attendance.Order">
             <summary>
-            課稅別
+            序號
+            [varchar(4), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Attendance.House_Id">
+            <summary>
+            戶號
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Attendance.Client_Id">
+            <summary>
+            所有權人
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Attendance.AttendTerm">
+            <summary>
+            本人/委託出席
             [varchar(10), nullable(False)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD.TaxRate">
+        <member name="P:NewCity.DataAccess.Model.Meeting_Attendance.Name">
             <summary>
-            稅率
-            [double, nullable(False)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD.AccountingItem_Id">
-            <summary>
-            會計科目
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD.Amount">
-            <summary>
-            金額
-            [double, nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD.OffsetTerm">
-            <summary>
-            立帳類別(立應收.立預收.立存入保證金.立存出保證金.立應收票)
+            出席人姓名
             [varchar(20), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD.SourceTable">
+        <member name="P:NewCity.DataAccess.Model.Meeting_Attendance.RepresentRelationship">
             <summary>
-            來源TABLE
+            委託關係
             [varchar(20), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD.SourceId">
+        <member name="P:NewCity.DataAccess.Model.Meeting_Attendance.representFile_Id">
             <summary>
-            來源ID
+            委託書上傳
             [char(36), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD.dTransCode_Id">
+        <member name="P:NewCity.DataAccess.Model.Meeting_Attendance.Memo">
             <summary>
-            借方傳輸ID
+            備註
+            [varchar(100), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Attendance.Numerator">
+            <summary>
+            區分比例分子
+            [int(11), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Attendance.Denominator">
+            <summary>
+            區分比例分母
+            [int(11), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Attendance.QRCode">
+            <summary>
+            通知單條碼
+            [varchar(50), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Attendance.addUser_Id">
+            <summary>
+            新增人員
             [char(36), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD.cTransCode_Id">
+        <member name="P:NewCity.DataAccess.Model.Meeting_Attendance.AddDate">
             <summary>
-            貸方傳輸ID
+            新增日期時間
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Attendance.modUser_Id">
+            <summary>
+            修改人員
             [char(36), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD.tTransCode_Id">
+        <member name="P:NewCity.DataAccess.Model.Meeting_Attendance.ModDate">
             <summary>
-            稅傳輸ID
+            修改日期時間
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.Meeting_Issue">
+             <summary>
+            會議議題
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Issue.Meeting_Id">
+            <summary>
+            頭檔ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Issue.Order">
+            <summary>
+            項次
+            [varchar(4), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Issue.IssueTerm">
+            <summary>
+            議題類別
+            [varchar(20), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Issue.Issue">
+            <summary>
+            議題
+            [varchar(150), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Issue.Memo">
+            <summary>
+            議題說明
+            [varchar(1550), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Issue.Resolution">
+            <summary>
+            決議
+            [varchar(600), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Issue.IsHold">
+            <summary>
+            暫緩處理(0:否1:是)
+            [char(1), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Issue.ExpectedDate">
+            <summary>
+            預計完成日
+            [date, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Issue.addUser_Id">
+            <summary>
+            新增人員
             [char(36), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD.AddDate">
+        <member name="P:NewCity.DataAccess.Model.Meeting_Issue.AddDate">
+            <summary>
+            新增日期時間
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Issue.modUser_Id">
+            <summary>
+            修改人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Meeting_Issue.ModDate">
+            <summary>
+            修改日期時間
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.Opinion">
+             <summary>
+            管委會意見箱
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Opinion.Company_Id">
+            <summary>
+            大樓
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Opinion.Date">
+            <summary>
+            日期
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Opinion.House_Id">
+            <summary>
+            戶號
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Opinion.Client_Id">
+            <summary>
+            住戶
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Opinion.OpinionTerm">
+            <summary>
+            意見類別
+            [varchar(30), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Opinion.Subject">
+            <summary>
+            標題
+            [varchar(150), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Opinion.Content">
+            <summary>
+            內容
+            [varchar(350), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Opinion.addUser_Id">
+            <summary>
+            新增人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Opinion.AddDate">
             <summary>
             新增日期
             [datetime, nullable(True)]
             </summary>
         </member>
-        <member name="T:NewCity.DataAccess.Model.OffsetD_WriteOff">
+        <member name="P:NewCity.DataAccess.Model.Opinion.File_UploadMap_Id">
+            <summary>
+            上傳檔案
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.Opinion_Respond">
              <summary>
-            借方沖帳單
+            管委會意見箱回覆明細
              </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD_WriteOff.OffsetD_Id">
+        <member name="P:NewCity.DataAccess.Model.Opinion_Respond.Opinion_Id">
             <summary>
-            立帳單號ID
-            [char(36), nullable(True)]
+            頭檔ID
+            [char(36), nullable(False)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD_WriteOff.WriteOffNo">
+        <member name="P:NewCity.DataAccess.Model.Opinion_Respond.Date">
             <summary>
-            沖帳單號
+            日期
+            [datetime, nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Opinion_Respond.Reply">
+            <summary>
+            回覆內容
+            [varchar(500), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Opinion_Respond.Code_RespondStatus">
+            <summary>
+            處理狀態
             [varchar(20), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD_WriteOff.AccountingItem_Id">
+        <member name="P:NewCity.DataAccess.Model.Opinion_Respond.uploadFile_Id">
             <summary>
-            會計科目
+            圖檔上傳
             [char(36), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD_WriteOff.Amount">
+        <member name="P:NewCity.DataAccess.Model.Opinion_Respond.addUser_Id">
             <summary>
-            金額
-            [double, nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD_WriteOff.SourceTable">
-            <summary>
-            來源Table(Sales_ChargeItem_Track, Voucher_Entry, 票據異動, 退款金額來源身檔)
-            [varchar(20), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD_WriteOff.SourceId">
-            <summary>
-            來源ID
+            新增人員
             [char(36), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD_WriteOff.dTransCode_Id">
-            <summary>
-            借方傳輸ID
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD_WriteOff.cTransCode_Id">
-            <summary>
-            貸方傳輸ID
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.OffsetD_WriteOff.AddDate">
+        <member name="P:NewCity.DataAccess.Model.Opinion_Respond.AddDate">
             <summary>
             新增日期
             [datetime, nullable(True)]
@@ -4784,6 +5666,53 @@
             [varchar(20), nullable(False)]
             </summary>
         </member>
+        <member name="T:NewCity.DataAccess.Model.Org_Menu">
+             <summary>
+            組織程式選單
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Org_Menu.Org_Id">
+            <summary>
+            組織ID
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Org_Menu.Code">
+            <summary>
+            選單編號
+            [varchar(30), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Org_Menu.Name">
+            <summary>
+            選單名稱
+            [varchar(50), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Org_Menu.Pid">
+            <summary>
+            父層Id
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Org_Menu.Program_Id">
+            <summary>
+            對應的Program_Id
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Org_Menu.Ord">
+            <summary>
+            排序
+            [varchar(4), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Org_Menu.Type">
+            <summary>
+            節點屬性(F:Folder, P:Program)
+            [char(1), nullable(False)]
+            </summary>
+        </member>
         <member name="T:NewCity.DataAccess.Model.Org_Program">
              <summary>
             組織對應可用的程式
@@ -4815,13 +5744,13 @@
         <member name="P:NewCity.DataAccess.Model.Parameter.Code">
             <summary>
             參數代號
-            [varchar(20), nullable(True)]
+            [varchar(50), nullable(True)]
             </summary>
         </member>
         <member name="P:NewCity.DataAccess.Model.Parameter.Name">
             <summary>
             參數名稱
-            [varchar(30), nullable(True)]
+            [varchar(50), nullable(True)]
             </summary>
         </member>
         <member name="P:NewCity.DataAccess.Model.Parameter.Property">
@@ -5055,58 +5984,45 @@
             [datetime, nullable(True)]
             </summary>
         </member>
-        <member name="T:NewCity.DataAccess.Model.PaymentRecord">
+        <member name="T:NewCity.DataAccess.Model.PaymentNoRecord">
              <summary>
-            沖消帳資料
+            代收Gateway上繳款碼申請紀錄表
              </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord.TransAmount">
+        <member name="P:NewCity.DataAccess.Model.PaymentNoRecord.ServerSetting_Id">
+            <summary>
+            來源主機
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentNoRecord.AddDate">
+            <summary>
+            寫入時間
+            [datetime, nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentNoRecord.PaymentNo">
+            <summary>
+            繳款碼
+            [varchar(20), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentNoRecord.TransAmount">
             <summary>
             繳費金額
             [double, nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord.PaymentNo">
+        <member name="P:NewCity.DataAccess.Model.PaymentNoRecord.TransDate">
             <summary>
-            繳款編號
-            [varchar(20), nullable(True)]
+            繳費日期
+            [datetime, nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord.ActualFee">
-            <summary>
-            實際交易手續費
-            [double, nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord.FeePayer">
-            <summary>
-            交易手續費負擔方
-            [varchar(20), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord.ExpectedAmount">
-            <summary>
-            應入帳金額
-            [double, nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord.ExpectedDate">
-            <summary>
-            預計入帳日
-            [date, nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord.NcFee">
-            <summary>
-            平台負擔手續費
-            [double, nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord.Memo">
-            <summary>
-            銷帳說明
-            [varchar(100), nullable(True)]
-            </summary>
+        <member name="T:NewCity.DataAccess.Model.PaymentRecord">
+             <summary>
+            沖消帳資料
+             </summary>
         </member>
         <member name="P:NewCity.DataAccess.Model.PaymentRecord.AccountDate">
             <summary>
@@ -5120,34 +6036,10 @@
             [char(36), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord.Contract_Id">
+        <member name="P:NewCity.DataAccess.Model.PaymentRecord.PaymentNo">
             <summary>
-            合約編號
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord.reviewUser_Id">
-            <summary>
-            核示人
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord.ReviewDate">
-            <summary>
-            核示日期時間
-            [datetime, nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord.BatchNo">
-            <summary>
-            批號
-            [varchar(10), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord.TransDate">
-            <summary>
-            繳費日期
-            [datetime, nullable(True)]
+            繳款編號
+            [varchar(20), nullable(True)]
             </summary>
         </member>
         <member name="P:NewCity.DataAccess.Model.PaymentRecord.House_Id">
@@ -5162,24 +6054,6 @@
             [char(36), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord.Code_CollectType">
-            <summary>
-            繳款通路
-            [varchar(10), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord.SlipFee">
-            <summary>
-            交易手續費
-            [double, nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord.AccountAmount">
-            <summary>
-            社區入帳金額
-            [double, nullable(True)]
-            </summary>
-        </member>
         <member name="P:NewCity.DataAccess.Model.PaymentRecord.ReceiptDate">
             <summary>
             單據日期
@@ -5190,6 +6064,12 @@
             <summary>
             單據號碼
             [varchar(20), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecord.Memo">
+            <summary>
+            銷帳說明
+            [varchar(100), nullable(True)]
             </summary>
         </member>
         <member name="P:NewCity.DataAccess.Model.PaymentRecord.voidUser_Id">
@@ -5204,39 +6084,152 @@
             [datetime, nullable(True)]
             </summary>
         </member>
-        <member name="T:NewCity.DataAccess.Model.PaymentRecord_Advance">
+        <member name="P:NewCity.DataAccess.Model.PaymentRecord.Contract_Id">
+            <summary>
+            合約編號
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecord.TotalAmount">
+            <summary>
+            總金額
+            [double, nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.PaymentRecordCollect">
+             <summary>
+            收款作業代收關聯表
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecordCollect.BatchNo">
+            <summary>
+            批號
+            [varchar(10), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecordCollect.TransDate">
+            <summary>
+            繳費日期
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecordCollect.TransAmount">
+            <summary>
+            繳費金額
+            [double, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecordCollect.Code_CollectType">
+            <summary>
+            繳款通路
+            [varchar(10), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecordCollect.FeePayer">
+            <summary>
+            交易手續費負擔方
+            [varchar(20), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecordCollect.SlipFee">
+            <summary>
+            交易手續費
+            [double, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecordCollect.ActualFee">
+            <summary>
+            實際交易手續費
+            [double, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecordCollect.NcFee">
+            <summary>
+            平台負擔手續費
+            [double, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecordCollect.ExpectedAmount">
+            <summary>
+            應入帳金額
+            [double, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecordCollect.ExpectedDate">
+            <summary>
+            預計入帳日
+            [date, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecordCollect.reviewUser_Id">
+            <summary>
+            核示人
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecordCollect.ReviewDate">
+            <summary>
+            核示日期時間
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecordCollect.AccountAmount">
+            <summary>
+            社區入帳金額
+            [double, nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.PaymentRecord_Advanced">
              <summary>
             收款銷帳預收明細
              </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Advance.PaymentRecord_Id">
+        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Advanced.PaymentRecord_Id">
             <summary>
             頭檔ID
             [char(36), nullable(False)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Advance.InOut">
+        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Advanced.Direction">
             <summary>
-            收/取
+            In/Out(收進/取用)
             [varchar(3), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Advance.PaymentSlip_Advanced_Id">
+        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Advanced.PaymentSlip_Advanced_Id">
             <summary>
             預繳單ID
             [char(36), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Advance.Amount">
+        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Advanced.Amount">
             <summary>
-            預收金額
-            [int(11), nullable(True)]
+            金額
+            [double, nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Advance.AdvanceMemo">
+        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Advanced.AdvanceMemo">
             <summary>
-            預收期間
+            預收備註
             [varchar(50), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Advanced.ChargeItem_Id">
+            <summary>
+            收費項目
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Advanced.AdvanceTerm">
+            <summary>
+            預收、保證金、暫收
+            [varchar(20), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Advanced.VoucherTerm">
+            <summary>
+            傳票別
+            [varchar(20), nullable(True)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.PaymentRecord_Check">
@@ -5317,7 +6310,7 @@
         </member>
         <member name="P:NewCity.DataAccess.Model.PaymentRecord_Money.MoneyTerm">
             <summary>
-            金額來源/使用類別(A.現金.銀存.B.票據.取預收.取保證金.取暫收.管理費用.呆帳錯帳C.(沖帳金額).收預收款.收保證金.收暫收款)
+            金額類別(現金.銀存.管理費用.呆帳錯帳)
             [varchar(50), nullable(False)]
             </summary>
         </member>
@@ -5327,15 +6320,9 @@
             [varchar(50), nullable(False)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Money.dAmount">
+        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Money.Amount">
             <summary>
             借方金額
-            [int(11), nullable(False)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Money.cAmount">
-            <summary>
-            貸方金額
             [int(11), nullable(False)]
             </summary>
         </member>
@@ -5343,6 +6330,12 @@
             <summary>
             往來帳戶
             [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentRecord_Money.Memo">
+            <summary>
+            說明
+            [varchar(50), nullable(True)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.PaymentSlip">
@@ -5358,7 +6351,7 @@
         </member>
         <member name="P:NewCity.DataAccess.Model.PaymentSlip.ApiInterface">
             <summary>
-            Api介面
+            Api介面(appcr-app信用卡,appstore-app超商,appatm-app ATM,appbank-app臨櫃,webcr-信用卡,webstore-超商印單,webmng-管理中心)
             [varchar(20), nullable(True)]
             </summary>
         </member>
@@ -5422,12 +6415,6 @@
             [double, nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentSlip.SourceChain">
-            <summary>
-            來源主機
-            [varchar(50), nullable(True)]
-            </summary>
-        </member>
         <member name="P:NewCity.DataAccess.Model.PaymentSlip.BarCode1">
             <summary>
             條碼1
@@ -5452,6 +6439,12 @@
             [char(1), nullable(True)]
             </summary>
         </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentSlip.EffectiveDate">
+            <summary>
+            繳款期限
+            [date, nullable(True)]
+            </summary>
+        </member>
         <member name="T:NewCity.DataAccess.Model.PaymentSlip_Advanced">
              <summary>
             繳款單號預繳檔
@@ -5469,27 +6462,15 @@
             [char(36), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentSlip_Advanced.ChargeSettingAmount">
+        <member name="P:NewCity.DataAccess.Model.PaymentSlip_Advanced.ChargeSettingListAmount">
             <summary>
             每期金額
             [double, nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentSlip_Advanced.CouponSetting_Id">
-            <summary>
-            優惠方案
-            [char(36), nullable(True)]
-            </summary>
-        </member>
         <member name="P:NewCity.DataAccess.Model.PaymentSlip_Advanced.OriginalAmount">
             <summary>
             應收總金額
-            [double, nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentSlip_Advanced.PayRate">
-            <summary>
-            優惠繳費%
             [double, nullable(True)]
             </summary>
         </member>
@@ -5505,9 +6486,15 @@
             [double, nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentSlip_Advanced.CouponStartYearMonth">
+        <member name="P:NewCity.DataAccess.Model.PaymentSlip_Advanced.StartYearMonth">
             <summary>
             優惠生效月份
+            [date, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentSlip_Advanced.TotalPeriod">
+            <summary>
+            總期數
             [date, nullable(True)]
             </summary>
         </member>
@@ -5515,6 +6502,29 @@
             <summary>
             失效(0:否1:是)
             [char(1), nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.PaymentSlip_Advanced_CouponSetting">
+             <summary>
+            繳款單號預繳優惠方案檔
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentSlip_Advanced_CouponSetting.PaymentSlip_Advanced_Id">
+            <summary>
+            頭檔ID
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentSlip_Advanced_CouponSetting.CouponSetting_Id">
+            <summary>
+            優惠方案
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.PaymentSlip_Advanced_CouponSetting.DiscountAmount">
+            <summary>
+            折扣金額(新增時直接關聯couponsetting.payrate計算出折扣金額，或帶入折扣金額)
+            [double, nullable(True)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.PaymentSlip_Sales_ChargeItem">
@@ -5525,12 +6535,6 @@
         <member name="P:NewCity.DataAccess.Model.PaymentSlip_Sales_ChargeItem.PaymentSlip_Id">
             <summary>
             頭檔ID
-            [char(36), nullable(False)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.PaymentSlip_Sales_ChargeItem.Company_Id">
-            <summary>
-            公司大樓
             [char(36), nullable(False)]
             </summary>
         </member>
@@ -5601,6 +6605,12 @@
         <member name="P:NewCity.DataAccess.Model.Post.Company_Id">
             <summary>
             公司大樓Id
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Post.Building_Id">
+            <summary>
+            棟別Id
             [char(36), nullable(True)]
             </summary>
         </member>
@@ -5693,10 +6703,10 @@
             [char(36), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.Post_Track.SignFile_Id">
+        <member name="P:NewCity.DataAccess.Model.Post_Track.signFile_Id">
             <summary>
             簽名檔
-            [char(36), nullable(False)]
+            [char(36), nullable(True)]
             </summary>
         </member>
         <member name="P:NewCity.DataAccess.Model.Post_Track.House_Id">
@@ -5760,8 +6770,8 @@
         </member>
         <member name="P:NewCity.DataAccess.Model.Program.Platform">
             <summary>
-            適用平台(Web,APP)
-            [varchar(10), nullable(True)]
+            適用平台，(Web,APP.....由低至高)
+            [int(11), nullable(True)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.Program_AvaliableAction">
@@ -5775,10 +6785,28 @@
             [char(36), nullable(False)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.Program_AvaliableAction.ActionCode">
+        <member name="P:NewCity.DataAccess.Model.Program_AvaliableAction.FunctionCode">
             <summary>
-            動作編號(Insert/Update/Delete/Print...)
+            動作編號(Insert/Update/Delete/Select/Print...)
             [varchar(30), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Program_AvaliableAction.FunctionName">
+            <summary>
+            功能名稱
+            [varchar(50), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Program_AvaliableAction.HttpMethod">
+            <summary>
+            Http方法名
+            [varchar(10), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Program_AvaliableAction.ActionUrl">
+            <summary>
+            ControllerName/ActionName
+            [varchar(50), nullable(False)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.ReadHistory">
@@ -5998,6 +7026,59 @@
             [datetime, nullable(True)]
             </summary>
         </member>
+        <member name="T:NewCity.DataAccess.Model.SalesVoid">
+             <summary>
+            銷貨作廢
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.SalesVoid.Date">
+            <summary>
+            日期
+            [datetime, nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.SalesVoid.Sales_ChargeItem_Id">
+            <summary>
+            作廢單號
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.SalesVoid.Code_VoidReason">
+            <summary>
+            作廢原因
+            [varchar(20), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.SalesVoid.Memo">
+            <summary>
+            備註
+            [varchar(150), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.SalesVoid.addUser_Id">
+            <summary>
+            新增人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.SalesVoid.AddDate">
+            <summary>
+            新增日期
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.SalesVoid.modUser_Id">
+            <summary>
+            修改人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.SalesVoid.ModDate">
+            <summary>
+            修改日期
+            [datetime, nullable(True)]
+            </summary>
+        </member>
         <member name="T:NewCity.DataAccess.Model.Sales_ChargeItem">
              <summary>
             銷貨收費項目明細
@@ -6081,6 +7162,18 @@
             [char(36), nullable(True)]
             </summary>
         </member>
+        <member name="P:NewCity.DataAccess.Model.Sales_ChargeItem.SourceTerm">
+            <summary>
+            來源類別
+            [varchar(30), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Sales_ChargeItem.SourceId">
+            <summary>
+            來源ID
+            [char(36), nullable(True)]
+            </summary>
+        </member>
         <member name="T:NewCity.DataAccess.Model.Sales_ChargeItem_Track">
              <summary>
             銷貨收費項目異動紀錄
@@ -6107,19 +7200,13 @@
         <member name="P:NewCity.DataAccess.Model.Sales_ChargeItem_Track.Amount">
             <summary>
             金額
-            [char(36), nullable(True)]
+            [double, nullable(True)]
             </summary>
         </member>
         <member name="P:NewCity.DataAccess.Model.Sales_ChargeItem_Track.AddDate">
             <summary>
             異動時間
             [datetime, nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.Sales_ChargeItem_Track.couponAmount">
-            <summary>
-            折扣金額
-            [double, nullable(True)]
             </summary>
         </member>
         <member name="P:NewCity.DataAccess.Model.Sales_ChargeItem_Track.Coupon_Id">
@@ -6130,8 +7217,37 @@
         </member>
         <member name="P:NewCity.DataAccess.Model.Sales_ChargeItem_Track.VoucherTerm">
             <summary>
-            傳票別
+            傳票別(1現金收入2現金支出3轉帳)
             [varchar(20), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Sales_ChargeItem_Track.Memo">
+            <summary>
+            備註
+            [varchar(120), nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.Sales_ChargeItem_Track_Goods">
+             <summary>
+            銷貨退回商品明細
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Sales_ChargeItem_Track_Goods.Sales_ChargeItem_Track_Id">
+            <summary>
+            頭檔ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Sales_ChargeItem_Track_Goods.Inventory_Id">
+            <summary>
+            庫存異動紀錄ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Sales_ChargeItem_Track_Goods.Memo">
+            <summary>
+            備註
+            [varchar(50), nullable(True)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.Sales_Goods">
@@ -6161,6 +7277,29 @@
             <summary>
             庫存異動紀錄ID
             [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.ServerSetting">
+             <summary>
+            代收Gateway上轉發各專案伺服器的設定檔
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.ServerSetting.Name">
+            <summary>
+            Server名稱
+            [varchar(20), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.ServerSetting.ServiceURL">
+            <summary>
+            服務位址
+            [varchar(150), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.ServerSetting.KeyChain">
+            <summary>
+            加密用鑰匙
+            [varchar(150), nullable(True)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.Settlement">
@@ -6662,6 +7801,11 @@
             JWT中存放的使用者物件
             </summary>
         </member>
+        <member name="P:NewCity.DataAccess.Model.TokenUserInfo.CurrentCompanyId">
+            <summary>
+            作用中的CompanyId
+            </summary>
+        </member>
         <member name="P:NewCity.DataAccess.Model.TokenUserInfo.Code">
             <summary>
             帳號
@@ -6700,9 +7844,19 @@
             使用者所屬組織
             </summary>
         </member>
+        <member name="P:NewCity.DataAccess.Model.TokenUserInfo.userCompany">
+            <summary>
+            帳號所對應的住戶
+            </summary>
+        </member>
         <member name="P:NewCity.DataAccess.Model.TokenUserInfo.programs">
             <summary>
             使用者擁有的程式權限
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.TokenUserInfo.programsId">
+            <summary>
+            user可使用的program
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.ProgramAction">
@@ -6710,10 +7864,70 @@
             程式權限
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.ProgramAction.ActionCode">
+        <member name="P:NewCity.DataAccess.Model.ProgramAction.FunctionCode">
             <summary>
             動作編號(Insert/Update/Delete/Print...)
             [varchar(30), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.ProgramAction.FunctionName">
+            <summary>
+            功能名稱
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.ProgramAction.HttpMethod">
+            <summary>
+            Http方法名
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.ProgramAction.ActionUrl">
+            <summary>
+            ControllerName/ActionName
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.UserCompany">
+            <summary>
+            使用者所屬社宅架構
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.UserCompany.ClientId">
+            <summary>
+            Client_Id
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.UserCompany.ClientName">
+            <summary>
+            Client Short Name
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.UserCompany.HouseId">
+            <summary>
+            House_Id
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.UserCompany.HouseName">
+            <summary>
+            House Short Name
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.UserCompany.BuildingId">
+            <summary>
+            Building_Id
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.UserCompany.BuildingName">
+            <summary>
+            Building Short Name
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.UserCompany.CompanyId">
+            <summary>
+            Company_Id
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.UserCompany.CompanyName">
+            <summary>
+            Company Short Name
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.TransCode">
@@ -6749,6 +7963,140 @@
             <summary>
             對應類別(1-傳輸代號2-銀存.應收票.應付票.匯費3-立帳借方.立帳貸方.退回.作廢.預收款.立帳稅.營業稅.代扣稅.預收已開.認列(收入.費用))
             [varchar(20), nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.Transfer">
+             <summary>
+            移轉作業
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Transfer.Company_Id">
+            <summary>
+            公司大樓
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Transfer.Date">
+            <summary>
+            轉換日期
+            [datetime, nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Transfer.TransferTerm">
+            <summary>
+            轉換類別(advance預收.depositin保證金.artemp暫收.sales銷貨.point點數)
+            [varchar(50), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Transfer.SourceHouse_Id">
+            <summary>
+            來源戶號
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Transfer.SourceClient_Id">
+            <summary>
+            來源住戶
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Transfer.TargetHouse_Id">
+            <summary>
+            目的戶號
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Transfer.TargetClient_Id">
+            <summary>
+            目的住戶
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Transfer.Memo">
+            <summary>
+            備註
+            [varchar(150), nullable(False)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.Transfer_Advanced">
+             <summary>
+            移轉作業預保暫明細
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Transfer_Advanced.Transfer_Id">
+            <summary>
+            頭檔ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Transfer_Advanced.Voucher_EntryOffsetC_Id">
+            <summary>
+            立帳ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Transfer_Advanced.TargetChargeItem_Id">
+            <summary>
+            目的收費項目
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Transfer_Advanced.Amount">
+            <summary>
+            金額
+            [double, nullable(False)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.Transfer_Point">
+             <summary>
+            移轉作業點數明細,因有效期限不同,由USER自行選定移轉哪幾筆點數ID
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Transfer_Point.Transfer_Id">
+            <summary>
+            頭檔ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Transfer_Point.PointTerm">
+            <summary>
+            點數類別
+            [varchar(20), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Transfer_Point.PointRecord_Id">
+            <summary>
+            點數ID
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Transfer_Point.Point">
+            <summary>
+            移轉點數
+            [int(11), nullable(False)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.Transfer_SalesChargeItem">
+             <summary>
+            移轉作業銷貨明細
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Transfer_SalesChargeItem.Transfer_Id">
+            <summary>
+            頭檔ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Transfer_SalesChargeItem.Sales_ChargeItem_Id">
+            <summary>
+            銷貨明細ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Transfer_SalesChargeItem.Amount">
+            <summary>
+            金額
+            [double, nullable(False)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.User">
@@ -7083,6 +8431,12 @@
             [datetime, nullable(False)]
             </summary>
         </member>
+        <member name="P:NewCity.DataAccess.Model.Visit.Company_Id">
+            <summary>
+            社區ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
         <member name="P:NewCity.DataAccess.Model.Visit.House_Id">
             <summary>
             拜訪戶號
@@ -7172,12 +8526,6 @@
             [varchar(20), nullable(True)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.Voucher.VoucherNo">
-            <summary>
-            傳票編號
-            [varchar(20), nullable(False)]
-            </summary>
-        </member>
         <member name="P:NewCity.DataAccess.Model.Voucher.Amount">
             <summary>
             總金額
@@ -7192,7 +8540,7 @@
         </member>
         <member name="P:NewCity.DataAccess.Model.Voucher.SourceTable">
             <summary>
-            來源類別
+            來源TableName
             [varchar(50), nullable(True)]
             </summary>
         </member>
@@ -7238,6 +8586,170 @@
             [datetime, nullable(True)]
             </summary>
         </member>
+        <member name="T:NewCity.DataAccess.Model.VoucherGroup">
+             <summary>
+            彙總傳票
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherGroup.Company_Id">
+            <summary>
+            公司大樓
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherGroup.Date">
+            <summary>
+            傳票日期
+            [date, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherGroup.VoucherTerm">
+            <summary>
+            傳票類別(現金、轉帳、調整)
+            [varchar(30), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherGroup.VoucherNo">
+            <summary>
+            傳票編號
+            [varchar(20), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherGroup.SourceTerm">
+            <summary>
+            來源類別(銷貨單、收款、銷貨折讓、銷貨作廢、住戶退款，支出、付款、進貨退回、進貨作廢、廠商退款，應收票據異動、應付票據異動、期初應收開帳、期初預收開帳)
+            [varchar(20), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherGroup.addUser_Id">
+            <summary>
+            新增人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherGroup.AddDate">
+            <summary>
+            新增日期
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.VoucherGroup_Entry">
+             <summary>
+            彙總傳票分錄
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherGroup_Entry.VoucherGroup_Id">
+            <summary>
+            頭檔ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherGroup_Entry.Sort">
+            <summary>
+            序號
+            [char(4), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherGroup_Entry.AccountingItem_Id">
+            <summary>
+            會計科目
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherGroup_Entry.DAmount">
+            <summary>
+            借方金額
+            [double, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherGroup_Entry.CAmount">
+            <summary>
+            貸方金額
+            [double, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherGroup_Entry.Note">
+            <summary>
+            摘要
+            [varchar(200), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherGroup_Entry.modUser_Id">
+            <summary>
+            修改人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherGroup_Entry.ModDate">
+            <summary>
+            修改日期
+            [datetime, nullable(True)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.VoucherGroup_Entry_Source">
+             <summary>
+            彙總傳票分錄來源
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherGroup_Entry_Source.VoucherGroup_Entry_Id">
+            <summary>
+            頭檔ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherGroup_Entry_Source.Voucher_Entry_Id">
+            <summary>
+            來源ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="T:NewCity.DataAccess.Model.VoucherSettle">
+             <summary>
+            傳票結帳檔
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherSettle.Company_Id">
+            <summary>
+            公司大樓
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherSettle.SettleTerm">
+            <summary>
+            結帳類別(日結.月結.年結)
+            [varchar(20), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherSettle.SettleDate">
+            <summary>
+            結帳日期
+            [date, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherSettle.AccountingItem_Id">
+            <summary>
+            會計科目
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherSettle.Amount">
+            <summary>
+            結餘金額
+            [double, nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherSettle.addUser_Id">
+            <summary>
+            新增人員
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.VoucherSettle.AddDate">
+            <summary>
+            新增日期
+            [datetime, nullable(True)]
+            </summary>
+        </member>
         <member name="T:NewCity.DataAccess.Model.Voucher_Entry">
              <summary>
             傳票身檔
@@ -7255,15 +8767,9 @@
             [varchar(10), nullable(False)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.Voucher_Entry.Accounting_Id">
+        <member name="P:NewCity.DataAccess.Model.Voucher_Entry.AccountingItem_Id">
             <summary>
             會計科目
-            [char(36), nullable(True)]
-            </summary>
-        </member>
-        <member name="P:NewCity.DataAccess.Model.Voucher_Entry.ChargeItem_Id">
-            <summary>
-            費用項目
             [char(36), nullable(True)]
             </summary>
         </member>
@@ -7289,6 +8795,18 @@
             <summary>
             備註
             [varchar(100), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Voucher_Entry.Voucher_EntryWriteOff_Id">
+            <summary>
+            沖帳單號
+            [char(36), nullable(True)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Voucher_Entry.Voucher_EntryOffset_Id">
+            <summary>
+            立帳單號
+            [char(36), nullable(True)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.Voucher_EntryData">
@@ -7322,79 +8840,106 @@
         </member>
         <member name="P:NewCity.DataAccess.Model.Voucher_EntryData.SourceTable">
             <summary>
-            來源表(立帳單、沖帳單、收入認列、費用認列)
+            來源Table
             [varchar(20), nullable(True)]
             </summary>
         </member>
         <member name="P:NewCity.DataAccess.Model.Voucher_EntryData.SourceId">
             <summary>
-            對應沖帳頭檔ID
+            來源ID
             [char(36), nullable(True)]
             </summary>
         </member>
-        <member name="T:NewCity.DataAccess.Model.Voucher_EntryGroup">
+        <member name="T:NewCity.DataAccess.Model.Voucher_EntryOffsetC">
              <summary>
-            傳票彙總身檔
+            立帳單號貸方
              </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.Voucher_EntryGroup.Voucher_Id">
+        <member name="P:NewCity.DataAccess.Model.Voucher_EntryOffsetC.Voucher_Entry_Id">
             <summary>
-            傳票ID
-            [char(36), nullable(True)]
+            傳票分錄ID
+            [char(36), nullable(False)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.Voucher_EntryGroup.Sort">
+        <member name="P:NewCity.DataAccess.Model.Voucher_EntryOffsetC.OffsetNo">
             <summary>
-            序號
-            [varchar(10), nullable(True)]
+            立帳單號
+            [varchar(20), nullable(False)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.Voucher_EntryGroup.Accounting_Id">
+        <member name="P:NewCity.DataAccess.Model.Voucher_EntryOffsetC.OffsetTerm">
             <summary>
-            會計科目
-            [char(36), nullable(True)]
+            立帳類別
+            [varchar(30), nullable(False)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.Voucher_EntryGroup.DAmount">
+        <member name="T:NewCity.DataAccess.Model.Voucher_EntryOffsetD">
+             <summary>
+            立帳單號借方
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Voucher_EntryOffsetD.Voucher_Entry_Id">
             <summary>
-            借方金額
-            [int(11), nullable(True)]
+            傳票分錄ID
+            [char(36), nullable(False)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.Voucher_EntryGroup.CAmount">
+        <member name="P:NewCity.DataAccess.Model.Voucher_EntryOffsetD.OffsetNo">
             <summary>
-            貸方金額
-            [int(11), nullable(True)]
+            立帳單號
+            [varchar(20), nullable(False)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.Voucher_EntryGroup.Note">
+        <member name="P:NewCity.DataAccess.Model.Voucher_EntryOffsetD.OffsetTerm">
             <summary>
-            摘要
-            [varchar(50), nullable(True)]
+            立帳類別
+            [varchar(30), nullable(False)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.Voucher_EntryGroup.House_Id">
+        <member name="T:NewCity.DataAccess.Model.Voucher_EntryWriteOffC">
+             <summary>
+            沖帳單號貸方
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Voucher_EntryWriteOffC.Voucher_Entry_Id">
             <summary>
-            戶號
-            [char(36), nullable(True)]
+            傳票分錄ID
+            [char(36), nullable(False)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.Voucher_EntryGroup.Client_Id">
+        <member name="P:NewCity.DataAccess.Model.Voucher_EntryWriteOffC.WriteOffNo">
             <summary>
-            住戶
-            [char(36), nullable(True)]
+            沖帳單號
+            [varchar(20), nullable(False)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.Voucher_EntryGroup.Supplier_Id">
+        <member name="P:NewCity.DataAccess.Model.Voucher_EntryWriteOffC.WriteOffTerm">
             <summary>
-            廠商
-            [char(36), nullable(True)]
+            沖帳類別
+            [varchar(30), nullable(False)]
             </summary>
         </member>
-        <member name="P:NewCity.DataAccess.Model.Voucher_EntryGroup.Contract_Id">
+        <member name="T:NewCity.DataAccess.Model.Voucher_EntryWriteOffD">
+             <summary>
+            沖帳單號借方
+             </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Voucher_EntryWriteOffD.Voucher_Entry_Id">
             <summary>
-            合約編號
-            [char(36), nullable(True)]
+            傳票分錄ID
+            [char(36), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Voucher_EntryWriteOffD.WriteOffNo">
+            <summary>
+            沖帳單號
+            [varchar(20), nullable(False)]
+            </summary>
+        </member>
+        <member name="P:NewCity.DataAccess.Model.Voucher_EntryWriteOffD.WriteOffTerm">
+            <summary>
+            沖帳類別
+            [varchar(30), nullable(False)]
             </summary>
         </member>
         <member name="T:NewCity.DataAccess.Model.Warehouse">
@@ -7535,11 +9080,20 @@
         </member>
         <member name="M:NewCity.DataAccess.QueryCmd.GetSPResult(System.String,System.Object)">
             <summary>
-            呼叫與除程序方法
+            呼叫預儲程序方法
             </summary>
             <param name="spname">程序名</param>
             <param name="param">參數</param>
             <returns>查詢的動態類別</returns>
+        </member>
+        <member name="M:NewCity.DataAccess.QueryCmd.GetSPResult``1(System.String,System.Object)">
+            <summary>
+            呼叫預儲程序方法
+            </summary>
+            <typeparam name="T">回傳型別</typeparam>
+            <param name="spname">程序名</param>
+            <param name="param">參數</param>
+            <returns></returns>
         </member>
         <member name="T:NewCity.DataAccess.TableEntity`1">
             <summary>

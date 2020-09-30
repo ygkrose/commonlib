@@ -17,7 +17,7 @@ public class BookingRecord : TableBase
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid Company_Id { get; set; }
+public Guid Org_Id { get; set; }
 
 ///<summary>
 ///戶號
@@ -47,9 +47,10 @@ public string Email { get; set; }
 
 ///<summary>
 ///預約項目
-///[char(36), nullable(True)]
+///[char(36), nullable(False)]
 ///</summary>
-public Guid? BookingItem_Id { get; set; }
+[Required]
+public Guid Amenity_Id { get; set; }
 
 ///<summary>
 ///預約日期
@@ -59,10 +60,11 @@ public Guid? BookingItem_Id { get; set; }
 public DateTime Date { get; set; }
 
 ///<summary>
-///產品
-///[char(36), nullable(True)]
+///時段
+///[char(36), nullable(False)]
 ///</summary>
-public Guid? BookingItem_Product_Id { get; set; }
+[Required]
+public Guid Amenity_TimePhase_Id { get; set; }
 
 ///<summary>
 ///預約數量

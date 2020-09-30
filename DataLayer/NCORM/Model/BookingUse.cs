@@ -17,7 +17,7 @@ public class BookingUse : TableBase
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid Company_Id { get; set; }
+public Guid Org_Id { get; set; }
 
 ///<summary>
 ///戶號
@@ -45,7 +45,7 @@ public DateTime Date { get; set; }
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid BookingItem_Id { get; set; }
+public Guid Amenity_Id { get; set; }
 
 ///<summary>
 ///使用人數
@@ -64,12 +64,6 @@ public Guid? cameraFile_Id { get; set; }
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? signatureFile_Id { get; set; }
-
-///<summary>
-///桌號
-///[char(36), nullable(True)]
-///</summary>
-public Guid? BookingTableNo_Id { get; set; }
 
 ///<summary>
 ///新增人員
@@ -99,12 +93,12 @@ public DateTime? SettleDate { get; set; }
 ///取消人員
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? cancelUser_Id { get; set; }
+public Guid? voidUser_Id { get; set; }
 
 ///<summary>
 ///取消日期
 ///[datetime, nullable(True)]
 ///</summary>
-public DateTime? CancelDate { get; set; }
+public DateTime? voidDate { get; set; }
 }
 }

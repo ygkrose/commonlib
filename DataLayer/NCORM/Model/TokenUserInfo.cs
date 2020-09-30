@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
 namespace NewCity.DataAccess.Model
@@ -65,6 +67,23 @@ namespace NewCity.DataAccess.Model
         /// 使用者擁有的程式權限
         /// </summary>
         public Dictionary<string, List<ProgramAction>> programs { get; set; }
+
+        /// <summary>
+        /// user可使用的program
+        /// </summary>
+        public IEnumerable<Guid> programsId
+        {
+            get {
+                IEnumerable<ProgramAction> rst = programs.Values?.First();
+
+                for (var i = 1; i < programs.Values?.Count; i++) {
+                    rst.Union(programs.Values.AsEnumerable().ElementAt(i));
+                }
+
+                return rst?.Select(p=>p.Id).Distinct();
+               
+            }
+        }
     }
 
     /// <summary>
