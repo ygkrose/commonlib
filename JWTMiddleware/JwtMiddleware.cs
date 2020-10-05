@@ -129,7 +129,7 @@ namespace JWTMiddleware
                 {
                     NCLog.ExceptionLog(ex, $"Token={token}");
 
-                    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
                     context.Response.ContentType = "application/json";
 
                     string response = JsonSerializer.Serialize(JWTErrorStruct.ErrorNum.error_undefined.JWTGetErrReturn(ex.Message));
