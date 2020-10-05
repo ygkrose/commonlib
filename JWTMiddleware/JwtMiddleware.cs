@@ -82,6 +82,7 @@ namespace JWTMiddleware
                     {
                         if (p.Value.Any(e =>
                         {
+                            if (e.Id == Guid.Empty) return false;
                             return (e.HttpMethod.ToLower() == httpMethod.ToLower() && e.ActionUrl.ToLower().Contains(action.ToString().ToLower())
                             && e.ActionUrl.ToLower().Contains(controller.ToString().ToLower()));
                         }))
