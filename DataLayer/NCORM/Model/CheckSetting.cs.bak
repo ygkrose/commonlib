@@ -24,16 +24,6 @@ public string Code { get; set; }
 ///</summary>
 public string Name { get; set; }
 
-///<summary>
-///組織Id
-///[char(36), nullable(True)]
-///</summary>
 public Guid? Org_Id { get; set; }
-
-///<summary>
-///檢查類別(Facility設備巡檢,Guideline工作準則, Sop -SOP文件)
-///[varchar(20), nullable(True)]
-///</summary>
-public string CheckType { get; set; }
 }
 }

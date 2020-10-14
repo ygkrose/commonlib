@@ -13,9 +13,9 @@ namespace NewCity.DataAccess.Model
     public class TokenUserInfo : UserData
     {
         /// <summary>
-        /// 作用中的CompanyId
+        /// 作用中的CompanyId,BuildingId,HouseId,ClientId,RoleId
         /// </summary>
-        public Guid CurrentCompanyId { get; set; }
+        public CurrentData CurrentUserData { get; set; }
 
         ///<summary>
         ///帳號
@@ -66,7 +66,8 @@ namespace NewCity.DataAccess.Model
         /// <summary>
         /// 使用者擁有的程式權限
         /// </summary>
-        public Dictionary<string, List<ProgramAction>> programs { get; set; }
+        public  List<ProgramAction> programActions { get; set; }
+        //public Dictionary<string, List<ProgramAction>> programs { get; set; }
 
         /// <summary>
         /// user可使用的program
@@ -74,14 +75,16 @@ namespace NewCity.DataAccess.Model
         public IEnumerable<Guid> programsId
         {
             get {
-                IEnumerable<ProgramAction> rst = programs.Values?.First();
 
-                for (var i = 1; i < programs.Values?.Count; i++) {
-                    rst.Union(programs.Values.AsEnumerable().ElementAt(i));
-                }
+                //IEnumerable<ProgramAction> rst = programs.Values?.First();
+                //for (var i = 1; i < programs.Values?.Count; i++)
+                //{
+                //    rst.Union(programs.Values.AsEnumerable().ElementAt(i));
+                //}
+                //return rst?.Select(p => p.Id).Distinct();
 
-                return rst?.Select(p=>p.Id).Distinct();
-               
+                return programActions.Select(x=>x.Id).Distinct();
+
             }
         }
     }
@@ -110,6 +113,11 @@ namespace NewCity.DataAccess.Model
         /// ControllerName/ActionName
         /// </summary>
         public string ActionUrl { get; set; }
+
+        /// <summary>
+        /// 權限來源Id
+        /// </summary>
+        public Guid SourceId { get; set; }
     }
 
     /// <summary>
@@ -120,27 +128,27 @@ namespace NewCity.DataAccess.Model
         /// <summary>
         /// Client_Id
         /// </summary>
-        public Guid ClientId { get; set; }
+        public Guid? ClientId { get; set; }
         /// <summary>
         /// Client Short Name
         /// </summary>
-        public string ClientName { get; set; }
+        public virtual string ClientName { get; set; }
         /// <summary>
         /// House_Id
         /// </summary>
-        public Guid HouseId { get; set; }
+        public Guid? HouseId { get; set; }
         /// <summary>
         /// House Short Name
         /// </summary>
-        public string HouseName { get; set; }
+        public virtual string HouseName { get; set; }
         /// <summary>
         /// Building_Id
         /// </summary>
-        public Guid BuildingId { get; set; }
+        public Guid? BuildingId { get; set; }
         /// <summary>
         /// Building Short Name
         /// </summary>
-        public string BuildingName { get; set; }
+        public virtual string BuildingName { get; set; }
         /// <summary>
         /// Company_Id
         /// </summary>
@@ -148,6 +156,22 @@ namespace NewCity.DataAccess.Model
         /// <summary>
         /// Company Short Name
         /// </summary>
-        public string CompanyName { get; set; }
+        public virtual string CompanyName { get; set; }
+    }
+
+    /// <summary>
+    /// 當前使用的Id
+    /// </summary>
+    public class CurrentData : UserCompany
+    {
+        /// <summary>
+        /// 當前使用的角色Id
+        /// </summary>
+        public Guid? RoleId { get; set; }
+
+        /// <summary>
+        /// 當前角色名稱
+        /// </summary>
+        public virtual string RoleName { get; set; }
     }
 }

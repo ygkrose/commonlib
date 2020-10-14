@@ -5,19 +5,26 @@ using System.ComponentModel.DataAnnotations;
 namespace NewCity.DataAccess.Model
 {
 /// <summary>
-///車位使用明細
+///點數購買
 /// </summary>
-public class ParkingSpace_Using : TableBase
+public class PointPurchase : TableBase
 {
 
 
 
 ///<summary>
-///頭檔ID
+///日期
+///[datetime, nullable(False)]
+///</summary>
+[Required]
+public DateTime Date { get; set; }
+
+///<summary>
+///大樓
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid ParkingSpace_Id { get; set; }
+public Guid Company_Id { get; set; }
 
 ///<summary>
 ///戶號
@@ -27,58 +34,45 @@ public Guid ParkingSpace_Id { get; set; }
 public Guid House_Id { get; set; }
 
 ///<summary>
-///使用者Id
+///住戶
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? Client_Id { get; set; }
 
 ///<summary>
-///使用起日
-///[date, nullable(True)]
+///購買金額
+///[int(11), nullable(False)]
 ///</summary>
-public DateTime? StartDate { get; set; }
+[Required]
+public Int32? Amount { get; set; }
 
 ///<summary>
-///使用訖日
-///[date, nullable(True)]
+///已收現金
+///[int(11), nullable(False)]
 ///</summary>
-public DateTime? EndDate { get; set; }
+[Required]
+public Int32? Cash { get; set; }
 
 ///<summary>
-///車牌號碼
-///[varchar(10), nullable(True)]
+///收入項目
+///[char(36), nullable(False)]
 ///</summary>
-public string Plate { get; set; }
+[Required]
+public Guid ChargeItem_Id { get; set; }
 
 ///<summary>
-///停車證號碼
-///[varchar(10), nullable(True)]
+///點數類別
+///[varchar(20), nullable(False)]
 ///</summary>
-public string ParkingLicenseNo { get; set; }
+[Required]
+public string PointTerm { get; set; }
 
 ///<summary>
-///遙控器號碼
-///[varchar(20), nullable(True)]
+///點數
+///[double, nullable(False)]
 ///</summary>
-public string RemoteCtrlCard_Id { get; set; }
-
-///<summary>
-///車型
-///[varchar(20), nullable(True)]
-///</summary>
-public string Code_Car { get; set; }
-
-///<summary>
-///顏色
-///[varchar(10), nullable(True)]
-///</summary>
-public string CarColor { get; set; }
-
-///<summary>
-///廠牌
-///[varchar(30), nullable(True)]
-///</summary>
-public string CarBrand { get; set; }
+[Required]
+public Double? Point { get; set; }
 
 ///<summary>
 ///新增人員

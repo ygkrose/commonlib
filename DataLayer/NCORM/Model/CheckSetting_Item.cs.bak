@@ -54,11 +54,5 @@ public Int32? Qty { get; set; }
 ///[char(1), nullable(True)]
 ///</summary>
 public string Must { get; set; }
-
-///<summary>
-///上傳檔案
-///[char(36), nullable(True)]
-///</summary>
-public Guid? uploadFile_Id { get; set; }
 }
 }

@@ -22,6 +22,6 @@ public string Addr { get; set; }
 ///房屋類型
 ///[varchar(20), nullable(True)]
 ///</summary>
-public string Code_HouseType { get; set; }
+public string Code_House { get; set; }
 }
 }

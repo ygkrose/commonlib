@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>NCORM</id>
+    <version>1.1.7.3</version>
+    <authors>NewCity</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>新都興資料庫元件</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="Dapper" version="2.0.35" exclude="Build,Analyzers" />
+        <dependency id="MySql.Data" version="8.0.19" exclude="Build,Analyzers" />
+        <dependency id="System.Data.SqlClient" version="4.8.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\Project_Gitea\CommonLib\DataLayer\NCORM\bin\Debug\netcoreapp3.1\NCORM.dll" target="lib\netcoreapp3.1\NCORM.dll" />
+    <file src="D:\Project_Gitea\CommonLib\DataLayer\NCORM\bin\Debug\netcoreapp3.1\NCORM.xml" target="lib\netcoreapp3.1\NCORM.xml" />
+  </files>
+</package>

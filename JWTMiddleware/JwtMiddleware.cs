@@ -36,7 +36,7 @@ namespace JWTMiddleware
             var controller = context.GetRouteValue("controller");
 
             var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
-            var companyId = context.Request.Headers["CompanyId"].FirstOrDefault()?.Split(" ").Last();
+            var _current = context.Request.Headers["CurrentData"].FirstOrDefault()?.ToString();
 
             if (string.IsNullOrEmpty(token))
             {
@@ -75,27 +75,41 @@ namespace JWTMiddleware
                     // Notde : Here can be validate user permission. If user has no permission then throws exception
                     // pass tokenUserInfo to next
                     var _userinfo = JsonSerializer.Deserialize<TokenUserInfo>(((JwtSecurityToken)securityToken).Payload["permissions"].ToString());
-                    if (companyId!=null)
-                        _userinfo.CurrentCompanyId = Guid.Parse(companyId);
-                    bool allow = false;
-                    _userinfo.programs.ToList().ForEach(p =>
+                    if (!string.IsNullOrEmpty(_current))
                     {
-                        if (p.Value.Any(e =>
-                        {
-                            if (e.Id == Guid.Empty) return false;
-                            return (e.HttpMethod.ToLower() == httpMethod.ToLower() && e.ActionUrl.ToLower().Contains(action.ToString().ToLower())
-                            && e.ActionUrl.ToLower().Contains(controller.ToString().ToLower()));
-                        }))
-                        {
-                            allow = true;
-                        }
+                        var _cdata = JsonSerializer.Deserialize<CurrentData>(_current);
+                        if (_userinfo.userCompany.Any(p => p.CompanyId == _cdata.CompanyId) && _userinfo.userCompany.Any(p=> _cdata.BuildingId == null || p.BuildingId==_cdata.BuildingId) &&
+                            _userinfo.userCompany.Any(p => _cdata.HouseId == null || p.HouseId == _cdata.HouseId) && _userinfo.userCompany.Any(p => _cdata.ClientId == null || p.ClientId == _cdata.ClientId) &&
+                            _userinfo.user_Roles.Any(p => _cdata.RoleId == null ||  p.Id == _cdata.RoleId))
+                            _userinfo.CurrentUserData = _cdata;
+                        else
+                            throw new SecurityTokenValidationException("CurrentData is not allowed");
+                    }
+                        
+                    bool allow = false;
+                    //_userinfo.programs.ToList().ForEach(p =>
+                    //{
+                    //    if (p.Value.Any(e =>
+                    //    {
+                    //        if (e.Id == Guid.Empty) return false;
+                    //        return (e.HttpMethod.ToLower() == httpMethod.ToLower() && e.ActionUrl.ToLower().Contains(action.ToString().ToLower())
+                    //        && e.ActionUrl.ToLower().Contains(controller.ToString().ToLower()));
+                    //    }))
+                    //    {
+                    //        allow = true;
+                    //    }
+                    //});
+                    allow = _userinfo.programActions.Any(e => {
+                        if (e.Id == Guid.Empty) return false;
+                        return (e.HttpMethod.ToLower() == httpMethod.ToLower() && e.ActionUrl.ToLower().Contains(action.ToString().ToLower())
+                              && e.ActionUrl.ToLower().Contains(controller.ToString().ToLower()));
                     });
                     if (!allow) 
                     { 
                         //throw new Exception("request is not allow for this user");
                         context.Response.StatusCode = StatusCodes.Status405MethodNotAllowed;
                         context.Response.ContentType = "application/json";
-                        string response = JsonSerializer.Serialize(JWTErrorStruct.ErrorNum.token_expired.JWTGetErrReturn("request is not allow for this user"));
+                        string response = JsonSerializer.Serialize(JWTErrorStruct.ErrorNum.token_invalid.JWTGetErrReturn("request is not allow for this user"));
                         await context.Response.WriteAsync(response);
                         return;
                     }

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>JWTMiddleware</id>
+    <version>1.0.0.6</version>
+    <authors>JWTMiddleware</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NewCity JWT中間層</description>
+    <releaseNotes>加入判斷呼叫方法的使用權</releaseNotes>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="Microsoft.AspNetCore.Authentication.JwtBearer" version="3.1.6" exclude="Build,Analyzers" />
+        <dependency id="NCCommon" version="1.0.4.4" exclude="Build,Analyzers" />
+        <dependency id="NCORM" version="1.1.6.9" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.1">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="D:\Project_Gitea\CommonLib\JWTMiddleware\bin\Debug\netcoreapp3.1\JWTMiddleware.dll" target="lib\netcoreapp3.1\JWTMiddleware.dll" />
+  </files>
+</package>

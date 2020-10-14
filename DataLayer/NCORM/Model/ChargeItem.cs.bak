@@ -27,10 +27,10 @@ public string Code { get; set; }
 public string Name { get; set; }
 
 ///<summary>
-///項目類別(R收入類、P支出類、D折舊類、S分攤)
+///項目類別
 ///[varchar(20), nullable(True)]
 ///</summary>
-public string ChargeItemType { get; set; }
+public string Code_ChargeItem { get; set; }
 
 ///<summary>
 ///停用日期

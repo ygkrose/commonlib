@@ -88,7 +88,7 @@ public Int32? RemitAmount { get; set; }
 ///網銀案件編號
 ///[varchar(20), nullable(True)]
 ///</summary>
-public string BankCaseNo { get; set; }
+public string CaseNo { get; set; }
 
 ///<summary>
 ///簽核狀態

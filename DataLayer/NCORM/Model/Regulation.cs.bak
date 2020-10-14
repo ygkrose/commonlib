@@ -7,7 +7,7 @@ namespace NewCity.DataAccess.Model
 /// <summary>
 ///規約辦法文件管理(規約辦法、住戶手冊、操作手冊)
 /// </summary>
-public class Company_Regulation : TableBase
+public class Regulation : TableBase
 {
 
 
@@ -17,7 +17,7 @@ public class Company_Regulation : TableBase
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid Company_Id { get; set; }
+public Guid Org_Id { get; set; }
 
 ///<summary>
 ///類別
@@ -59,7 +59,7 @@ public string AccordingTo { get; set; }
 ///檔案上傳
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? uploadFile_Id { get; set; }
+public Guid? File_UploadMap_Id { get; set; }
 
 ///<summary>
 ///連結網址
@@ -77,7 +77,13 @@ public string IsHidden { get; set; }
 ///公佈日期
 ///[date, nullable(True)]
 ///</summary>
-public DateTime? Date { get; set; }
+public DateTime? StartDate { get; set; }
+
+///<summary>
+///停用日期
+///[date, nullable(True)]
+///</summary>
+public DateTime? EndDate { get; set; }
 
 ///<summary>
 ///html內文

@@ -24,7 +24,7 @@ public Guid House_Id { get; set; }
 ///[varchar(25), nullable(False)]
 ///</summary>
 [Required]
-public string Code { get; set; }
+public string Code_HouseProperty { get; set; }
 
 ///<summary>
 ///屬性名稱

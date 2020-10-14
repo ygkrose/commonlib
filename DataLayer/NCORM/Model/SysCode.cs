@@ -22,7 +22,7 @@ public string Code { get; set; }
 ///上階
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? PId { get; set; }
+public Guid? Pid { get; set; }
 
 ///<summary>
 ///描述
