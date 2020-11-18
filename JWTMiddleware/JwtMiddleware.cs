@@ -2,12 +2,15 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using NewCity.Common;
 using NewCity.DataAccess.Model;
+using NewCity.DataAccess.Tools;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -22,11 +25,11 @@ namespace JWTMiddleware
         private const string _Issuer = "NC";
         private const string _SignKey = "624ec7d357cc31debffbfa5064f1bb52e6ef102270efa126d68385bf9096b1cb";
 
-
-        public JwtMiddleware(RequestDelegate next)
+        private IConfiguration _configuration;
+        public JwtMiddleware(RequestDelegate next, IConfiguration configuration)
         {
             _next = next;
-            //_configuration = configuration;
+            _configuration = configuration;
         }
 
         public async Task Invoke(HttpContext context)
@@ -74,7 +77,9 @@ namespace JWTMiddleware
 
                     // Notde : Here can be validate user permission. If user has no permission then throws exception
                     // pass tokenUserInfo to next
-                    var _userinfo = JsonSerializer.Deserialize<TokenUserInfo>(((JwtSecurityToken)securityToken).Payload["permissions"].ToString());
+                    
+                    //var _userinfo = JsonSerializer.Deserialize<TokenUserInfo>(((JwtSecurityToken)securityToken).Payload["permissions"].ToString());
+                    var _userinfo = JsonSerializer.Deserialize<TokenUserInfo>(getRedisData(_configuration.GetSection("ServiceURL:Connection"), ((JwtSecurityToken)securityToken).Id));
                     if (!string.IsNullOrEmpty(_current))
                     {
                         var _cdata = JsonSerializer.Deserialize<CurrentData>(_current);
@@ -155,7 +160,57 @@ namespace JWTMiddleware
 
             await _next(context);
         }
+
+        private string getRedisData(IConfigurationSection section,string rediskey)
+        {
+            var redisconn = GetService<DBInfo>(section.Value);
+            CSRedis.CSRedisClient csredis;
+            try
+            {
+                csredis = new CSRedis.CSRedisClient(ConnSecure.Decrypt(redisconn.RedisConnStr));
+                RedisHelper.Initialization(csredis);
+            }
+            catch (Exception err)
+            {
+                NCLog.ExceptionLog(err, $"getRedisData error: {err.Message}");
+                throw new Exception($"getRedisData error: {err.Message}");
+            }
+            var tokenstr = csredis.Get(rediskey);
+            return tokenstr;
+        }
+
+        private T GetService<T>(string url)
+        {
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    string Uri = url;
+                    var response = client.GetAsync(Uri).Result;
+                    var rtn = response.Content.ReadAsStringAsync().Result;
+                    if (!string.IsNullOrEmpty(rtn) && rtn.ToLower().IndexOf("errorcode") < 0)
+                    {
+                        var connobj = JsonSerializer.Deserialize<T>(rtn);
+                        return connobj;
+                    }
+                    else
+                    {
+                        //訊息紀錄
+                        NCLog.InfomationLog($"GetServiceErr> check {url} server log information");
+                        return default(T);
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                //例外紀錄
+                NCLog.ExceptionLog(err, $"GetService from url: {url}");
+                return default(T);
+            }
+        }
     }
+
+  
 
     public static class JwtMiddlewareExtensions
     {

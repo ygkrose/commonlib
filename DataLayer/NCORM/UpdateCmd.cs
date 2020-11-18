@@ -65,13 +65,12 @@ namespace NewCity.DataAccess
                     //sbQry.AppendFormat(" Where {0}={1} ", propInfo[0].Name, "[" + ctr + "]");
                     sbQry.AppendFormat($" Where {_keyCol} ='{propInfo.Where((x) => x.Name == _keyCol).FirstOrDefault().GetValue(row)}';");
                 }
+                
             }
             catch (Exception err)
             {
                 throw err;
             }
-
-            //sbQry.Replace("[", "{").Replace("]", "}");
 
             return sbQry.ToString();
         }

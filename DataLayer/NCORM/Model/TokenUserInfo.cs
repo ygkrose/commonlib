@@ -54,7 +54,7 @@ namespace NewCity.DataAccess.Model
         public List<Role> user_Roles { get; set; }
 
         /// <summary>
-        /// 使用者所屬組織
+        /// 使用者對應的資料權限
         /// </summary>
         public List<Org> user_Org { get; set; }
 
