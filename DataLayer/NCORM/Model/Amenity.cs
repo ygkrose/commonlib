@@ -57,6 +57,12 @@ public Int32? CancelHour { get; set; }
 public string Disable { get; set; }
 
 ///<summary>
+///可外租(0:否1:是)
+///[char(1), nullable(True)]
+///</summary>
+public string RentOut { get; set; }
+
+///<summary>
 ///新增人員
 ///[char(36), nullable(True)]
 ///</summary>

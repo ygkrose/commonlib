@@ -20,11 +20,25 @@ public class ChargeSetting : TableBase
 public string Name { get; set; }
 
 ///<summary>
-///大樓
+///公司
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
 public Guid Company_Id { get; set; }
+
+///<summary>
+///大樓
+///[char(36), nullable(False)]
+///</summary>
+[Required]
+public Guid Building_Id { get; set; }
+
+///<summary>
+///棟別
+///[char(36), nullable(False)]
+///</summary>
+[Required]
+public Guid Arch_Id { get; set; }
 
 ///<summary>
 ///有效起日
@@ -40,14 +54,14 @@ public DateTime StartDate { get; set; }
 public DateTime? EndDate { get; set; }
 
 ///<summary>
-///收費月份
+///收費月份(老闆堅持留下，實際上用身檔值判斷)
 ///[smallint(1), nullable(False)]
 ///</summary>
 [Required]
 public Int16? ChargeMonth { get; set; }
 
 ///<summary>
-///收款週期(單位月)
+///收款週期(老闆堅持留下，實際上用身檔值判斷)
 ///[smallint(1), nullable(False)]
 ///</summary>
 [Required]
@@ -58,5 +72,23 @@ public Int16? Period { get; set; }
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? ChargeItem_Id { get; set; }
+
+///<summary>
+///計算方法(戶,坪,平方公尺)
+///[varchar(30), nullable(True)]
+///</summary>
+public string Code_ChargeBy { get; set; }
+
+///<summary>
+///單價
+///[double, nullable(True)]
+///</summary>
+public Double? UnitPrice { get; set; }
+
+///<summary>
+///車位類型
+///[varchar(20), nullable(True)]
+///</summary>
+public string Code_ParkingSpaceType { get; set; }
 }
 }

@@ -35,7 +35,7 @@ public Guid? ParkingSpace_Id { get; set; }
 ///住戶
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? Client_Id { get; set; }
+public Guid? Customer_Id { get; set; }
 
 ///<summary>
 ///金額
@@ -74,9 +74,29 @@ public Guid? modUser_Id { get; set; }
 public DateTime? ModDate { get; set; }
 
 ///<summary>
-///終止日
+///收費起日
 ///[date, nullable(True)]
 ///</summary>
-public DateTime? StopDate { get; set; }
+public DateTime? StartDate { get; set; }
+
+///<summary>
+///收費訖日
+///[date, nullable(True)]
+///</summary>
+public DateTime? EndDate { get; set; }
+
+///<summary>
+///收費月份
+///[smallint(1), nullable(False)]
+///</summary>
+[Required]
+public Int16? ChargeMonth { get; set; }
+
+///<summary>
+///收款週期(單位月)
+///[smallint(1), nullable(False)]
+///</summary>
+[Required]
+public Int16? Period { get; set; }
 }
 }

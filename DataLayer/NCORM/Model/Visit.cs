@@ -20,6 +20,12 @@ public class Visit : TableBase
 public DateTime VisitDate { get; set; }
 
 ///<summary>
+///預計拜訪時間
+///[datetime, nullable(True)]
+///</summary>
+public DateTime? ExpectedDate { get; set; }
+
+///<summary>
 ///社區ID
 ///[char(36), nullable(False)]
 ///</summary>
@@ -27,7 +33,7 @@ public DateTime VisitDate { get; set; }
 public Guid Company_Id { get; set; }
 
 ///<summary>
-///拜訪戶號
+///受訪戶號
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? House_Id { get; set; }
@@ -36,20 +42,56 @@ public Guid? House_Id { get; set; }
 ///拜訪住戶
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? Client_Id { get; set; }
+public Guid? Customer_Id { get; set; }
+
+///<summary>
+///受訪單位
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Dept_Id { get; set; }
+
+///<summary>
+///受訪員工
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Employee_Id { get; set; }
 
 ///<summary>
 ///訪客姓名
-///[varchar(20), nullable(False)]
+///[varchar(30), nullable(False)]
 ///</summary>
 [Required]
 public string Visitor { get; set; }
+
+///<summary>
+///受訪人姓名
+///[varchar(30), nullable(True)]
+///</summary>
+public string Name { get; set; }
 
 ///<summary>
 ///訪客電話
 ///[varchar(20), nullable(True)]
 ///</summary>
 public string Tel { get; set; }
+
+///<summary>
+///訪客車牌號碼
+///[varchar(20), nullable(True)]
+///</summary>
+public string Plate { get; set; }
+
+///<summary>
+///訪客人數
+///[int(11), nullable(True)]
+///</summary>
+public Int32? Qty { get; set; }
+
+///<summary>
+///引導位置
+///[varchar(30), nullable(True)]
+///</summary>
+public string Place { get; set; }
 
 ///<summary>
 ///事由類別
@@ -92,5 +134,29 @@ public DateTime? LeaveDate { get; set; }
 ///[varchar(100), nullable(True)]
 ///</summary>
 public string Memo { get; set; }
+
+///<summary>
+///新增人員
+///[char(36), nullable(True)]
+///</summary>
+public Guid? addUser_Id { get; set; }
+
+///<summary>
+///新增日期時間
+///[datetime, nullable(True)]
+///</summary>
+public DateTime? AddDate { get; set; }
+
+///<summary>
+///修改人員
+///[char(36), nullable(True)]
+///</summary>
+public Guid? modUser_Id { get; set; }
+
+///<summary>
+///修改日期時間
+///[datetime, nullable(True)]
+///</summary>
+public DateTime? ModDate { get; set; }
 }
 }

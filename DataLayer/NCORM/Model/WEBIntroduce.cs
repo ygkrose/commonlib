@@ -13,13 +13,6 @@ public class WEBIntroduce : TableBase
 
 
 ///<summary>
-///組織ID
-///[char(36), nullable(False)]
-///</summary>
-[Required]
-public Guid Org_Id { get; set; }
-
-///<summary>
 ///排序
 ///[varchar(4), nullable(True)]
 ///</summary>
@@ -38,10 +31,22 @@ public string Title { get; set; }
 public string Content { get; set; }
 
 ///<summary>
-///圖檔上傳
+///平面圖
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? File_UploadMap_Id { get; set; }
+public Guid? planFile_UploadMap_Id { get; set; }
+
+///<summary>
+///全景照圖檔
+///[char(36), nullable(True)]
+///</summary>
+public Guid? panoramaFile_Id { get; set; }
+
+///<summary>
+///置頂(0:否1:是)
+///[char(1), nullable(True)]
+///</summary>
+public string OnTop { get; set; }
 
 ///<summary>
 ///簡介類型
@@ -60,5 +65,56 @@ public DateTime? StartDate { get; set; }
 ///[date, nullable(True)]
 ///</summary>
 public DateTime? EndDate { get; set; }
+
+///<summary>
+///連結網址
+///[varchar(250), nullable(True)]
+///</summary>
+public string Url { get; set; }
+
+///<summary>
+///BIM連結網址
+///[varchar(250), nullable(True)]
+///</summary>
+public string BimUrl { get; set; }
+
+///<summary>
+///不顯示(0:否1:是)
+///[char(1), nullable(True)]
+///</summary>
+public string IsHidden { get; set; }
+
+///<summary>
+///審核人員
+///[char(36), nullable(True)]
+///</summary>
+public Guid? reviewUser_Id { get; set; }
+
+///<summary>
+///審核日期
+///[datetime, nullable(True)]
+///</summary>
+public DateTime? ReviewDate { get; set; }
+
+///<summary>
+///公司
+///[char(36), nullable(False)]
+///</summary>
+[Required]
+public Guid Company_Id { get; set; }
+
+///<summary>
+///大樓
+///[char(36), nullable(False)]
+///</summary>
+[Required]
+public Guid Building_Id { get; set; }
+
+///<summary>
+///戶號
+///[char(36), nullable(False)]
+///</summary>
+[Required]
+public Guid House_Id { get; set; }
 }
 }

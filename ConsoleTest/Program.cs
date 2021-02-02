@@ -25,7 +25,7 @@ namespace ConsoleTest
             //Task.Run(()=> dBEntity.logHistory("a", "b", Guid.NewGuid()));
 
             TableEntity<NCModel.Org> userOrgTable = new TableEntity<NCModel.Org>(dBEntity);
-            User_Org userOrgx = new User_Org { User_Id = Guid.Parse("1a7e021d-09ed-4d8c-adc7-39c5be0befd5") };
+            User_Company userOrgx = new User_Company { User_Id = Guid.Parse("1a7e021d-09ed-4d8c-adc7-39c5be0befd5") };
             var userOrgs = userOrgTable.Select(new NCModel.Org());
             //var userOrgs = userOrgTable.Select(new NCModel.Org { Code = "%0%"});
 

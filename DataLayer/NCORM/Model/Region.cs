@@ -19,7 +19,7 @@ public class Region : TableBase
 public Guid? Pid { get; set; }
 
 ///<summary>
-///階層
+///代碼
 ///[varchar(12), nullable(True)]
 ///</summary>
 public string Code { get; set; }
@@ -47,5 +47,11 @@ public UInt16? Rank { get; set; }
 ///[varchar(4), nullable(True)]
 ///</summary>
 public string Ord { get; set; }
+
+///<summary>
+///地區天氣代碼
+///[varchar(10), nullable(True)]
+///</summary>
+public string WeatherCode { get; set; }
 }
 }

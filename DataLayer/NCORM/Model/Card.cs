@@ -20,28 +20,42 @@ public class Card : TableBase
 public string Code { get; set; }
 
 ///<summary>
+///公司
+///[char(36), nullable(False)]
+///</summary>
+[Required]
+public Guid Company_Id { get; set; }
+
+///<summary>
+///戶號
+///[char(36), nullable(False)]
+///</summary>
+[Required]
+public Guid House_Id { get; set; }
+
+///<summary>
 ///卡片型式
 ///[varchar(20), nullable(True)]
 ///</summary>
-public string Code_Card { get; set; }
+public string Code_CardForm { get; set; }
 
 ///<summary>
 ///使用類別
 ///[varchar(20), nullable(True)]
 ///</summary>
-public string Code_Usage { get; set; }
+public string Code_CardUsage { get; set; }
 
 ///<summary>
 ///卡片類型
 ///[varchar(20), nullable(True)]
 ///</summary>
-public string Code_Type { get; set; }
+public string Code_CardType { get; set; }
 
 ///<summary>
 ///住戶
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? Client_Id { get; set; }
+public Guid? Customer_Id { get; set; }
 
 ///<summary>
 ///使用起日
@@ -101,6 +115,6 @@ public DateTime? ModDate { get; set; }
 ///組織ID
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? Org_Id { get; set; }
+public Guid? Building_Id { get; set; }
 }
 }

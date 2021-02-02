@@ -59,5 +59,11 @@ public DateTime? ModDate { get; set; }
 ///[varchar(50), nullable(True)]
 ///</summary>
 public string Nickname { get; set; }
+
+///<summary>
+///員工
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Employee_Id { get; set; }
 }
 }

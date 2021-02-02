@@ -106,8 +106,8 @@ namespace JWTMiddleware
                     //});
                     allow = _userinfo.programActions.Any(e => {
                         if (e.Id == Guid.Empty) return false;
-                        return (e.HttpMethod.ToLower() == httpMethod.ToLower() && e.ActionUrl.ToLower().Contains(action.ToString().ToLower())
-                              && e.ActionUrl.ToLower().Contains(controller.ToString().ToLower()));
+                        return (e.HttpMethod.ToLower() == httpMethod.ToLower() && e.ActionUrl.ToLower().Contains(action==null?"":action.ToString().ToLower())
+                              && e.ActionUrl.ToLower().Contains(controller==null?"":controller.ToString().ToLower()));
                     });
                     if (!allow) 
                     { 

@@ -27,10 +27,16 @@ public string Code { get; set; }
 public Int16? Floor { get; set; }
 
 ///<summary>
-///車位類型(平面車位、機械上層、機械下層、機車位)
+///車位總類(法定車位、獎勵車位、增設車位、自劃車位)
 ///[varchar(20), nullable(True)]
 ///</summary>
 public string Code_ParkingSpaceTerm { get; set; }
+
+///<summary>
+///車位類型(平面車位、機械上層、機械下層、機車位)
+///[varchar(20), nullable(True)]
+///</summary>
+public string Code_ParkingSpaceType { get; set; }
 
 ///<summary>
 ///產權性質(公有、私有)
@@ -39,16 +45,16 @@ public string Code_ParkingSpaceTerm { get; set; }
 public string Ownership { get; set; }
 
 ///<summary>
-///歸屬組織Id
+///公司Id
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? Org_Id { get; set; }
+public Guid? Company_Id { get; set; }
 
 ///<summary>
-///自行增設(0:否1:是)
-///[char(1), nullable(True)]
+///大樓
+///[char(36), nullable(True)]
 ///</summary>
-public string IsIncreased { get; set; }
+public Guid? Building_Id { get; set; }
 
 ///<summary>
 ///限停車位數
@@ -84,12 +90,36 @@ public DateTime? ModDate { get; set; }
 ///收費對象
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? billClient_Id { get; set; }
+public Guid? billCustomer_Id { get; set; }
 
 ///<summary>
 ///住戶收費對象
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? billHouse_Id { get; set; }
+
+///<summary>
+///資產ID
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Property_Id { get; set; }
+
+///<summary>
+///室內外
+///[varchar(10), nullable(True)]
+///</summary>
+public string InOutDoor { get; set; }
+
+///<summary>
+///備註
+///[varchar(150), nullable(True)]
+///</summary>
+public string Memo { get; set; }
+
+///<summary>
+///檔案上傳
+///[char(36), nullable(True)]
+///</summary>
+public Guid? File_UploadMap_Id { get; set; }
 }
 }

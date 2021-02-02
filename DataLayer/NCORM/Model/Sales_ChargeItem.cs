@@ -75,24 +75,6 @@ public string YearMonth { get; set; }
 public Guid? ParkingSpace_Id { get; set; }
 
 ///<summary>
-///戶號
-///[char(36), nullable(True)]
-///</summary>
-public Guid? House_Id { get; set; }
-
-///<summary>
-///住戶
-///[char(36), nullable(True)]
-///</summary>
-public Guid? Client_Id { get; set; }
-
-///<summary>
-///合約編號
-///[char(36), nullable(True)]
-///</summary>
-public Guid? Contract_Id { get; set; }
-
-///<summary>
 ///來源類別
 ///[varchar(30), nullable(True)]
 ///</summary>
@@ -103,5 +85,11 @@ public string SourceTerm { get; set; }
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? SourceId { get; set; }
+
+///<summary>
+///發票稅籍
+///[char(36), nullable(True)]
+///</summary>
+public Guid? InvoiceUnit_Id { get; set; }
 }
 }

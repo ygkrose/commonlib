@@ -28,7 +28,7 @@ public Guid? House_Id { get; set; }
 ///住戶
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? Client_Id { get; set; }
+public Guid? Customer_Id { get; set; }
 
 ///<summary>
 ///車位

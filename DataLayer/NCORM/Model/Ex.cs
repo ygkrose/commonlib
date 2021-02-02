@@ -58,7 +58,7 @@ public Guid? addUser_Id { get; set; }
 
 ///<summary>
 ///新增日期
-///[date, nullable(True)]
+///[datetime, nullable(True)]
 ///</summary>
 public DateTime? AddDate { get; set; }
 
@@ -70,7 +70,7 @@ public Guid? modUser_Id { get; set; }
 
 ///<summary>
 ///修改日期
-///[date, nullable(True)]
+///[datetime, nullable(True)]
 ///</summary>
 public DateTime? ModDate { get; set; }
 }

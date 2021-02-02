@@ -69,10 +69,16 @@ public string Content { get; set; }
 public string Url { get; set; }
 
 ///<summary>
-///公告區域id
+///公告縣市ID
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? targetRegion_Id { get; set; }
+public Guid? cityRegion_Id { get; set; }
+
+///<summary>
+///公告區域ID
+///[char(36), nullable(True)]
+///</summary>
+public Guid? townRegion_Id { get; set; }
 
 ///<summary>
 ///公告大類
@@ -111,7 +117,7 @@ public string IsCarousel { get; set; }
 public Guid? carouselFile_Id { get; set; }
 
 ///<summary>
-///輪播開始時間
+///推播日期時間
 ///[datetime, nullable(True)]
 ///</summary>
 public DateTime? PushDate { get; set; }
@@ -147,9 +153,27 @@ public Guid? modUser_Id { get; set; }
 public DateTime? ModDate { get; set; }
 
 ///<summary>
-///組織ID
+///集團
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? Org_Id { get; set; }
+public Guid? Group_Id { get; set; }
+
+///<summary>
+///公司
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Company_Id { get; set; }
+
+///<summary>
+///大樓
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Building_Id { get; set; }
+
+///<summary>
+///全體適用(0:否1:是)
+///[char(1), nullable(True)]
+///</summary>
+public string ForAll { get; set; }
 }
 }

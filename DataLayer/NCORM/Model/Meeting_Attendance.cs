@@ -38,7 +38,7 @@ public Guid House_Id { get; set; }
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid Client_Id { get; set; }
+public Guid Customer_Id { get; set; }
 
 ///<summary>
 ///本人/委託出席

@@ -45,7 +45,7 @@ public Guid SourceHouse_Id { get; set; }
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid SourceClient_Id { get; set; }
+public Guid SourceCustomer_Id { get; set; }
 
 ///<summary>
 ///目的戶號
@@ -59,7 +59,7 @@ public Guid TargetHouse_Id { get; set; }
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid TargetClient_Id { get; set; }
+public Guid TargetCustomer_Id { get; set; }
 
 ///<summary>
 ///備註

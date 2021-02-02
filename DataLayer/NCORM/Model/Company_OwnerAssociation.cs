@@ -49,7 +49,7 @@ public Guid? House_Id { get; set; }
 ///住戶Id
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? Client_Id { get; set; }
+public Guid? Customer_Id { get; set; }
 
 ///<summary>
 ///委員姓名
@@ -76,10 +76,16 @@ public DateTime? StartDate { get; set; }
 public DateTime? EndDate { get; set; }
 
 ///<summary>
+///縣市ID
+///[char(36), nullable(True)]
+///</summary>
+public Guid? cityRegion_Id { get; set; }
+
+///<summary>
 ///區域ID
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? Region_Id { get; set; }
+public Guid? townRegion_Id { get; set; }
 
 ///<summary>
 ///地址

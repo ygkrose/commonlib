@@ -58,6 +58,6 @@ public Guid? SourceTable_Id { get; set; }
 ///住戶Id
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? Client_Id { get; set; }
+public Guid? Customer_Id { get; set; }
 }
 }

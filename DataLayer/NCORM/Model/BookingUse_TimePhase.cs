@@ -26,7 +26,7 @@ public Guid BookingUse_Id { get; set; }
 public Guid? BookingRecord_Id { get; set; }
 
 ///<summary>
-///產品
+///時段
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? Amenity_TimePhase_Id { get; set; }

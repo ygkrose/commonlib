@@ -20,22 +20,17 @@ public class CheckSetting_Item : TableBase
 public Guid CheckSetting_Id { get; set; }
 
 ///<summary>
+///檢查項目ID
+///[char(36), nullable(False)]
+///</summary>
+[Required]
+public Guid CheckCrmSetting_Item_Id { get; set; }
+
+///<summary>
 ///代號
 ///[varchar(20), nullable(True)]
 ///</summary>
 public string Code { get; set; }
-
-///<summary>
-///項目名稱
-///[varchar(50), nullable(True)]
-///</summary>
-public string Name { get; set; }
-
-///<summary>
-///上階代號
-///[char(36), nullable(True)]
-///</summary>
-public Guid? Pid { get; set; }
 
 ///<summary>
 ///審查說明
@@ -56,9 +51,21 @@ public Int32? Qty { get; set; }
 public string Must { get; set; }
 
 ///<summary>
-///上傳檔案
-///[char(36), nullable(True)]
+///停用(0:否1:是)
+///[char(1), nullable(True)]
 ///</summary>
-public Guid? uploadFile_Id { get; set; }
+public string Disable { get; set; }
+
+///<summary>
+///起始日期
+///[date, nullable(True)]
+///</summary>
+public DateTime? StartDate { get; set; }
+
+///<summary>
+///標準值
+///[varchar(10), nullable(True)]
+///</summary>
+public string StandardValue { get; set; }
 }
 }

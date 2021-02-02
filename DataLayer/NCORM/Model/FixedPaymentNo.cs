@@ -14,17 +14,15 @@ public class FixedPaymentNo : TableBase
 
 ///<summary>
 ///公司大樓
-///[char(36), nullable(False)]
+///[char(36), nullable(True)]
 ///</summary>
-[Required]
-public Guid Company_Id { get; set; }
+public Guid? Company_Id { get; set; }
 
 ///<summary>
 ///住戶
-///[char(36), nullable(False)]
+///[char(36), nullable(True)]
 ///</summary>
-[Required]
-public Guid Client_Id { get; set; }
+public Guid? Customer_Id { get; set; }
 
 ///<summary>
 ///類別(ATM、超商)
@@ -42,10 +40,15 @@ public string PaymentNo { get; set; }
 
 ///<summary>
 ///新增日期
-///[datetime, nullable(False)]
+///[datetime, nullable(True)]
 ///</summary>
-[Required]
-public DateTime AddDate { get; set; }
+public DateTime? AddDate { get; set; }
+
+///<summary>
+///新增人員
+///[char(36), nullable(True)]
+///</summary>
+public Guid? addUser_Id { get; set; }
 
 ///<summary>
 ///註銷(0:否1:是)

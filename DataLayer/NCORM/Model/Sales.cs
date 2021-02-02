@@ -13,10 +13,46 @@ public class Sales : TableBase
 
 
 ///<summary>
-///公司大樓
+///公司
 ///[char(36), nullable(True)]
 ///</summary>
 public Guid? Company_Id { get; set; }
+
+///<summary>
+///大樓
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Building_Id { get; set; }
+
+///<summary>
+///戶號
+///[char(36), nullable(True)]
+///</summary>
+public Guid? House_Id { get; set; }
+
+///<summary>
+///住戶
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Customer_Id { get; set; }
+
+///<summary>
+///部門
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Dept_Id { get; set; }
+
+///<summary>
+///承辦人
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Employee_Id { get; set; }
+
+///<summary>
+///合約編號
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Contract_Id { get; set; }
 
 ///<summary>
 ///日期時間(使用者輸入的日期不需時間)

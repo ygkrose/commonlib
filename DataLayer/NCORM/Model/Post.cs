@@ -49,7 +49,7 @@ public Guid House_Id { get; set; }
 ///[char(36), nullable(False)]
 ///</summary>
 [Required]
-public Guid Client_Id { get; set; }
+public Guid Customer_Id { get; set; }
 
 ///<summary>
 ///收件人
@@ -64,6 +64,13 @@ public string Name { get; set; }
 ///</summary>
 [Required]
 public string Code_PostTerm { get; set; }
+
+///<summary>
+///擺放位置
+///[varchar(20), nullable(False)]
+///</summary>
+[Required]
+public string Code_PostPlace { get; set; }
 
 ///<summary>
 ///寄件單位

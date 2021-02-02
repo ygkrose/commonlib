@@ -56,7 +56,7 @@ namespace NewCity.DataAccess.Model
         /// <summary>
         /// 使用者對應的資料權限
         /// </summary>
-        public List<Org> user_Org { get; set; }
+        public List<User_Company> user_Company { get; set; }
 
         /// <summary>
         /// 帳號所對應的住戶
@@ -128,11 +128,11 @@ namespace NewCity.DataAccess.Model
         /// <summary>
         /// Client_Id
         /// </summary>
-        public Guid? ClientId { get; set; }
+        public Guid? CustomerId { get; set; }
         /// <summary>
         /// Client Short Name
         /// </summary>
-        public virtual string ClientName { get; set; }
+        public virtual string CustomerName { get; set; }
         /// <summary>
         /// House_Id
         /// </summary>
@@ -141,6 +141,14 @@ namespace NewCity.DataAccess.Model
         /// House Short Name
         /// </summary>
         public virtual string HouseName { get; set; }
+        /// <summary>
+        /// Arch_Id
+        /// </summary>
+        public Guid? ArchId { get; set; }
+        /// <summary>
+        /// Arch Name
+        /// </summary>
+        public virtual string ArchName { get; set; }
         /// <summary>
         /// Building_Id
         /// </summary>

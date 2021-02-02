@@ -5,25 +5,12 @@ using System.ComponentModel.DataAnnotations;
 namespace NewCity.DataAccess.Model
 {
 /// <summary>
-///規約辦法文件管理(規約辦法、住戶手冊、操作手冊)
+///規約辦法文件管理(規約辦法、住戶手冊)
 /// </summary>
 public class Regulation : TableBase
 {
 
 
-
-///<summary>
-///社區Id
-///[char(36), nullable(False)]
-///</summary>
-[Required]
-public Guid Org_Id { get; set; }
-
-///<summary>
-///類別
-///[varchar(20), nullable(True)]
-///</summary>
-public string Code_Law { get; set; }
 
 ///<summary>
 ///標題
@@ -92,7 +79,7 @@ public DateTime? EndDate { get; set; }
 public string HtmlContent { get; set; }
 
 ///<summary>
-///程式類別
+///程式類別(Regulation規約辦法、Manual住戶手冊)
 ///[varchar(20), nullable(True)]
 ///</summary>
 public string Code_RegulationProg { get; set; }
@@ -102,5 +89,59 @@ public string Code_RegulationProg { get; set; }
 ///[varchar(5), nullable(True)]
 ///</summary>
 public string Ord { get; set; }
+
+///<summary>
+///置頂(0:否1:是)
+///[char(1), nullable(True)]
+///</summary>
+public string OnTop { get; set; }
+
+///<summary>
+///文件等級
+///[char(1), nullable(True)]
+///</summary>
+public string DocRank { get; set; }
+
+///<summary>
+///審核人員
+///[char(36), nullable(True)]
+///</summary>
+public Guid? reviewUser_Id { get; set; }
+
+///<summary>
+///審核日期
+///[datetime, nullable(True)]
+///</summary>
+public DateTime? ReviewDate { get; set; }
+
+///<summary>
+///公司ID
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Company_Id { get; set; }
+
+///<summary>
+///集團
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Group_Id { get; set; }
+
+///<summary>
+///資料維護部門
+///[char(36), nullable(True)]
+///</summary>
+public Guid? Dept_Id { get; set; }
+
+///<summary>
+///上架(0:否1:是)
+///[char(1), nullable(True)]
+///</summary>
+public string Released { get; set; }
+
+///<summary>
+///全體適用(0:否1:是)
+///[char(1), nullable(True)]
+///</summary>
+public string ForAll { get; set; }
 }
 }

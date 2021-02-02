@@ -19,7 +19,7 @@ public class PaymentSlip : TableBase
 public string Chain { get; set; }
 
 ///<summary>
-///Api介面(appcr-app信用卡,appstore-app超商,appatm-app ATM,appbank-app臨櫃,webcr-信用卡,webstore-超商印單,webmng-管理中心)
+///Api介面(PAPER-印單作業、WEBCR-網頁信用卡、APPCR-APP信用卡、APPSTORE-APP超商、APPBANK-APP臨櫃、APPATM-APP ATM)
 ///[varchar(20), nullable(True)]
 ///</summary>
 public string ApiInterface { get; set; }
@@ -58,7 +58,7 @@ public Guid? House_Id { get; set; }
 ///住戶
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? Client_Id { get; set; }
+public Guid? Customer_Id { get; set; }
 
 ///<summary>
 ///總金額

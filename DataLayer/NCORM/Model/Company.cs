@@ -5,12 +5,37 @@ using System.ComponentModel.DataAnnotations;
 namespace NewCity.DataAccess.Model
 {
 /// <summary>
-///公司大樓
+///公司
 /// </summary>
 public class Company : TableBase
 {
 
 
+
+///<summary>
+///代號
+///[varchar(30), nullable(True)]
+///</summary>
+public string Code { get; set; }
+
+///<summary>
+///簡稱
+///[varchar(30), nullable(True)]
+///</summary>
+public string ShortName { get; set; }
+
+///<summary>
+///全銜
+///[varchar(100), nullable(True)]
+///</summary>
+public string FullName { get; set; }
+
+///<summary>
+///所屬集團
+///[char(36), nullable(False)]
+///</summary>
+[Required]
+public Guid Group_Id { get; set; }
 
 ///<summary>
 ///統一編號
@@ -19,22 +44,16 @@ public class Company : TableBase
 public string GuiNo { get; set; }
 
 ///<summary>
-///稅籍編號
-///[varchar(15), nullable(True)]
+///縣市ID
+///[char(36), nullable(True)]
 ///</summary>
-public string TaxIdNo { get; set; }
-
-///<summary>
-///負責人/主委(信函列印時有委員資料時抓委員，無時才帶這個值)
-///[varchar(15), nullable(True)]
-///</summary>
-public string Chief { get; set; }
+public Guid? cityRegion_Id { get; set; }
 
 ///<summary>
 ///區域ID
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? Region_Id { get; set; }
+public Guid? townRegion_Id { get; set; }
 
 ///<summary>
 ///郵遞區號
@@ -61,6 +80,12 @@ public string Tel { get; set; }
 public string Fax { get; set; }
 
 ///<summary>
+///聯絡人職稱
+///[varchar(15), nullable(True)]
+///</summary>
+public string ContactJobTitle { get; set; }
+
+///<summary>
 ///聯絡人
 ///[varchar(20), nullable(True)]
 ///</summary>
@@ -83,5 +108,11 @@ public string Email { get; set; }
 ///[varchar(150), nullable(True)]
 ///</summary>
 public string Website { get; set; }
+
+///<summary>
+///備註
+///[varchar(100), nullable(True)]
+///</summary>
+public string Mome { get; set; }
 }
 }

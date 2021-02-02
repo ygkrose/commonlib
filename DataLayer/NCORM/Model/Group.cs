@@ -25,10 +25,16 @@ public string GuiNo { get; set; }
 public string Chief { get; set; }
 
 ///<summary>
+///縣市ID
+///[char(36), nullable(True)]
+///</summary>
+public Guid? cityRegion_Id { get; set; }
+
+///<summary>
 ///區域ID
 ///[char(36), nullable(True)]
 ///</summary>
-public Guid? Region_Id { get; set; }
+public Guid? townRegion_Id { get; set; }
 
 ///<summary>
 ///郵遞區號

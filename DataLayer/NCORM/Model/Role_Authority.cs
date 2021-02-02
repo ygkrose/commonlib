@@ -25,5 +25,17 @@ public Guid Role_Id { get; set; }
 ///</summary>
 [Required]
 public Guid Program_AvaliableAction_Id { get; set; }
+
+///<summary>
+///資料新增人員
+///[char(36), nullable(True)]
+///</summary>
+public Guid? addUser_Id { get; set; }
+
+///<summary>
+///新增日期
+///[datetime, nullable(True)]
+///</summary>
+public DateTime? AddDate { get; set; }
 }
 }

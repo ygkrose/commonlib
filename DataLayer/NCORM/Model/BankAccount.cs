@@ -81,7 +81,7 @@ public string IsAchApproval { get; set; }
 public string IsDefault { get; set; }
 
 ///<summary>
-///識別名稱
+///帳戶簡稱
 ///[varchar(20), nullable(True)]
 ///</summary>
 public string ShortName { get; set; }
@@ -91,5 +91,17 @@ public string ShortName { get; set; }
 ///[varchar(10), nullable(True)]
 ///</summary>
 public string BankCode { get; set; }
+
+///<summary>
+///備註
+///[varchar(150), nullable(True)]
+///</summary>
+public string Memo { get; set; }
+
+///<summary>
+///統一編號
+///[varchar(12), nullable(True)]
+///</summary>
+public string GuiNo { get; set; }
 }
 }

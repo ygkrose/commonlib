@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 namespace NewCity.DataAccess.Model
 {
 /// <summary>
-///公設項目開放日設定
+///公設項目開放日設定有此表設定產生Amenity_OpenDate
 /// </summary>
 public class Amenity_OpenPeriod : TableBase
 {

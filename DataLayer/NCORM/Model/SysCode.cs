@@ -13,7 +13,7 @@ public class SysCode : TableBase
 
 ///<summary>
 ///代碼
-///[varchar(20), nullable(False)]
+///[varchar(30), nullable(False)]
 ///</summary>
 [Required]
 public string Code { get; set; }
@@ -34,7 +34,7 @@ public string Name { get; set; }
 ///預設(0:否，1:是)
 ///[char(1), nullable(True)]
 ///</summary>
-public string Default { get; set; }
+public string IsDefault { get; set; }
 
 ///<summary>
 ///排序
