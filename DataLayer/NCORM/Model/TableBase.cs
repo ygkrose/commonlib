@@ -8,6 +8,9 @@ using System.Text;
 
 namespace NewCity.DataAccess.Model
 {
+    /// <summary>
+    /// model base class
+    /// </summary>
     public class TableBase
     {
         /// <summary>
@@ -23,5 +26,6 @@ namespace NewCity.DataAccess.Model
         [Required]
         [Key]
         public virtual Guid Id { get; set; }  // char(36), not null
+
     }
 }

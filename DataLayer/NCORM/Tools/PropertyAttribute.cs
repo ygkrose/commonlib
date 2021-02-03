@@ -30,6 +30,13 @@ namespace NewCity.DataAccess.Tools
             }
             if (string.IsNullOrEmpty(tableName))
             {
+                var curr = type.Name;
+                while (type.BaseType.Name != "TableBase")
+                {
+                    type = type.BaseType;
+                    if (type.Name == curr)
+                        break;
+                }
                 tableName = type.Name;
             }
             return tableName;
