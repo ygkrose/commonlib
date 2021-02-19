@@ -4,16 +4,17 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.0.9</Version>
+    <Version>1.0.1.1</Version>
     <Description>NewCity JWT中間層</Description>
     <PackageReleaseNotes>加入判斷呼叫方法的使用權</PackageReleaseNotes>
+    <AssemblyVersion>1.0.1.1</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="CSRedisCore" Version="3.6.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.6" />
     <PackageReference Include="NCCommon" Version="1.0.4.4" />
-    <PackageReference Include="NCORM" Version="1.1.7.5" />
+    <PackageReference Include="NCORM" Version="1.1.8.3" />
   </ItemGroup>
 
   <ItemGroup>

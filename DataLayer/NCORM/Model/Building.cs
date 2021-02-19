@@ -21,10 +21,9 @@ public Guid Company_Id { get; set; }
 
 ///<summary>
 ///資料維護部門
-///[char(36), nullable(False)]
+///[char(36), nullable(True)]
 ///</summary>
-[Required]
-public Guid Dept_Id { get; set; }
+public Guid? Dept_Id { get; set; }
 
 ///<summary>
 ///住址

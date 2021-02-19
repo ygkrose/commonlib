@@ -7,7 +7,7 @@ namespace NewCity.DataAccess.Model
 /// <summary>
 ///大樓委員明細
 /// </summary>
-public class Company_OwnerAssociation : TableBase
+public class Company_Member : TableBase
 {
 
 

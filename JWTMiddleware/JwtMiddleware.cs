@@ -84,7 +84,7 @@ namespace JWTMiddleware
                     {
                         var _cdata = JsonSerializer.Deserialize<CurrentData>(_current);
                         if (_userinfo.userCompany.Any(p => p.CompanyId == _cdata.CompanyId) && _userinfo.userCompany.Any(p=> _cdata.BuildingId == null || p.BuildingId==_cdata.BuildingId) &&
-                            _userinfo.userCompany.Any(p => _cdata.HouseId == null || p.HouseId == _cdata.HouseId) && _userinfo.userCompany.Any(p => _cdata.ClientId == null || p.ClientId == _cdata.ClientId) &&
+                            _userinfo.userCompany.Any(p => _cdata.HouseId == null || p.HouseId == _cdata.HouseId) && _userinfo.userCompany.Any(p => _cdata.CustomerId == null || p.CustomerId == _cdata.CustomerId) &&
                             _userinfo.user_Roles.Any(p => _cdata.RoleId == null ||  p.Id == _cdata.RoleId))
                             _userinfo.CurrentUserData = _cdata;
                         else
@@ -104,11 +104,19 @@ namespace JWTMiddleware
                     //        allow = true;
                     //    }
                     //});
-                    allow = _userinfo.programActions.Any(e => {
-                        if (e.Id == Guid.Empty) return false;
-                        return (e.HttpMethod.ToLower() == httpMethod.ToLower() && e.ActionUrl.ToLower().Contains(action==null?"":action.ToString().ToLower())
-                              && e.ActionUrl.ToLower().Contains(controller==null?"":controller.ToString().ToLower()));
-                    });
+                    if (_userinfo.user_Roles.Exists(p => p.Name == "Admin"))
+                    {
+                        allow = true;
+                    }
+                    else
+                    {
+                        allow = _userinfo.programActions.Any(e => {
+                            if (e.Id == Guid.Empty) return false;
+                            return (e.HttpMethod.ToLower() == httpMethod.ToLower() && e.ActionUrl.ToLower().Contains(action == null ? "" : action.ToString().ToLower())
+                                  && e.ActionUrl.ToLower().Contains(controller == null ? "" : controller.ToString().ToLower()));
+                        });
+                    }
+                    
                     if (!allow) 
                     { 
                         //throw new Exception("request is not allow for this user");

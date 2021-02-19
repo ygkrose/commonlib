@@ -113,6 +113,6 @@ public string Website { get; set; }
 ///備註
 ///[varchar(100), nullable(True)]
 ///</summary>
-public string Mome { get; set; }
+public string Memo { get; set; }
 }
 }

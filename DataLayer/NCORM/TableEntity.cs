@@ -76,6 +76,7 @@ namespace NewCity.DataAccess
             }
         }
 
+
         public bool Exist(T rowdata)
         {
             var rtnRow = Select(rowdata);
